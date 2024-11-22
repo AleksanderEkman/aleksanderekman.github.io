@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    
 </script>
 
 <section class="hero-section">
