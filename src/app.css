@@ -3,12 +3,12 @@
 @import 'tailwindcss/utilities';
 @font-face {
 	font-family: "SF Pro Display";
-	src: url("$lib/fonts/SFPRODISPLAYREGULAR.otf") format("opentype");
+	src: url("/fonts/SFPRODISPLAYREGULAR.otf") format("opentype");
 	font-display: swap;
 }
 @font-face {
 	font-family: "Media Sans Extended";
-	src: url("$lib/fonts/MediaSansExtended-Bold-Trial.otf") format("opentype");
+	src: url("/fonts/MediaSansExtended-Bold-Trial.otf") format("opentype");
 	font-display: swap;
 }
 :root {
