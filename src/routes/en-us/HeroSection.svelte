@@ -1,15 +1,23 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { fade } from 'svelte/transition';
-    
+    let percentage = 45;
+    let increment = -1;
     let visible = false;
 
+    function updateGradient() {
+        percentage += increment;
+        if (percentage <= 22 || percentage >= 45) {
+            increment *= -1;
+        }
+    }
+    setInterval(updateGradient, 200);
     onMount(() => {
         visible = true;
     });
 </script>
 
-<section class="hero-section">
+<section class="hero-section" style="background: radial-gradient(circle, rgb(15, 35, 55) 10%, rgba(4,20,35) {percentage}%);">
     <div class="hero-section_content" class:visible>
         {#if visible}
             <h1 class="hero-section_title" transition:fade={{ delay: 300, duration: 1000 }}>
@@ -30,7 +38,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: radial-gradient(circle, rgb(13, 32, 55) 10%, rgba(10,24,40,1) 42%);
         color: #FFFFFF;
         padding: 2rem;
     }
@@ -56,7 +63,7 @@
         line-height: 200%;
         font-size: 3.5rem;
         margin-bottom: 0.5rem;
-        color: #BFA181;
+        color: #c9af93;
     }
 
     .hero-section_description {
@@ -84,12 +91,13 @@
     }
 
     .btn-primary {
-        background-color: #BFA181;
+        background-color: #c9af93;
         color: #0A1828;
     }
 
     .btn-primary:hover {
-        background-color: #d4b797;
+        background-color: #c9af93;
+        cursor: none;
     }
 
     .btn-secondary {
@@ -100,6 +108,7 @@
 
     .btn-secondary:hover {
         background-color: rgba(191, 161, 129, 0.1);
+        cursor: none;
     }
 
     @media (max-width: 768px) {

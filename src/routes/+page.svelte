@@ -2,10 +2,10 @@
 
     import { onMount } from 'svelte';
     import { goto } from '$app/navigation';
-    import HeroSection from './en/HeroSection.svelte';
+    import HeroSection from './en-us/HeroSection.svelte';
 
     onMount(() => {
-        goto('/en')
+        goto('/en-us')
     });
 </script>
 

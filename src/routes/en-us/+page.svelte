@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>   
-    <title>Aleksander's Portfolio</title>
+    <title>Aleksander Ekman</title>
     <meta name="description" content="Aleksander's portfolio website with view over projects."/>
 </svelte:head>
 

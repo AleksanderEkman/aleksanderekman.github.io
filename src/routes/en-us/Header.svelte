@@ -13,7 +13,7 @@
     <nav aria-label='Main navigation'>
         <ul role="menubar">
             <li role="menuitem">
-                <button onclick={() => goto(`/en/`)} 
+                <button onclick={() => goto(`/en-us/`)} 
                     tabindex="0" class='name' 
                     aria-label='Home page' title="Portfolio website front page" 
                     aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
@@ -23,16 +23,16 @@
             <div class="right">
                 <div class="side-menu">
                     <li role="menuitem">
-                        <button onclick={() => goto(`/en/projects`)}
+                        <button onclick={() => goto(`/en-us/projects`)}
                             tabindex="0" aria-label="View Projects"
-                            title="Projects" aria-current={$page.url.pathname === '/en/projects' ? 'page' : undefined}>
+                            title="Projects" aria-current={$page.url.pathname === '/en-us/projects' ? 'page' : undefined}>
                             Projects
                         </button>
                     </li>
                     <li role="menuitem">
-                        <button onclick={() => goto(`/en/about`)}
+                        <button onclick={() => goto(`/en-us/about`)}
                             tabindex="0" aria-label="View about page"
-                            title="About Page" aria-current={$page.url.pathname === '/en/about' ? 'page' : undefined}>
+                            title="About Page" aria-current={$page.url.pathname === '/en-us/about' ? 'page' : undefined}>
                             About
                         </button>
                     </li>
@@ -46,7 +46,7 @@
                         </button>
                         <button id="en-button" onclick={() => goto(`/${subdirectory()}`)}
                             tabindex="0" aria-label="English language"
-                            title="English Language" aria-current={$page.url.pathname.startsWith('/en') ? 'page' : undefined}>
+                            title="English Language" aria-current={$page.url.pathname.startsWith('/en-us') ? 'page' : undefined}>
                             EN
                         </button>
                     </li>
@@ -67,8 +67,9 @@
         z-index: 1000;
         box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.1);
         background-color: #0A1828;
+        color: #d9c7b3;
     }
-
+    
     nav {
         width: 95%;
         display: flex;
@@ -93,7 +94,9 @@
         height: 100%;
         position: relative;
     }
-
+    button:hover {
+        cursor: none;
+    }
     nav button {
         height: 100%;
         color: var(--color-text);
