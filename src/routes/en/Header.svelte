@@ -1,6 +1,5 @@
 <script lang="ts">
     import { page } from '$app/stores';
-    import { base } from '$app/paths';
     import { goto } from '$app/navigation';
 
     function subdirectory() {
@@ -14,7 +13,7 @@
     <nav aria-label='Main navigation'>
         <ul role="menubar">
             <li role="menuitem">
-                <button onclick={() => goto(`${base}/en/`)} 
+                <button onclick={() => goto(`/en/`)} 
                     tabindex="0" class='name' 
                     aria-label='Home page' title="Portfolio website front page" 
                     aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
@@ -24,14 +23,14 @@
             <div class="right">
                 <div class="side-menu">
                     <li role="menuitem">
-                        <button onclick={() => goto(`${base}/en/projects`)}
+                        <button onclick={() => goto(`/en/projects`)}
                             tabindex="0" aria-label="View Projects"
                             title="Projects" aria-current={$page.url.pathname === '/en/projects' ? 'page' : undefined}>
                             Projects
                         </button>
                     </li>
                     <li role="menuitem">
-                        <button onclick={() => goto(`${base}/en/about`)}
+                        <button onclick={() => goto(`/en/about`)}
                             tabindex="0" aria-label="View about page"
                             title="About Page" aria-current={$page.url.pathname === '/en/about' ? 'page' : undefined}>
                             About
@@ -40,12 +39,12 @@
                 </div>
                 <div class="lang-menu">
                     <li role="menuitem">
-                        <button id="no-button" onclick={() => goto(`${base}/${subdirectory()}`)}
+                        <button id="no-button" onclick={() => goto(`/${subdirectory()}`)}
                             tabindex="0" aria-label="Norwegian language"
                             title="Norwegian Language" aria-current={$page.url.pathname.startsWith('/no') ? 'page' : undefined}>
                             NO
                         </button>
-                        <button id="en-button" onclick={() => goto(`${base}/${subdirectory()}`)}
+                        <button id="en-button" onclick={() => goto(`/${subdirectory()}`)}
                             tabindex="0" aria-label="English language"
                             title="English Language" aria-current={$page.url.pathname.startsWith('/en') ? 'page' : undefined}>
                             EN
