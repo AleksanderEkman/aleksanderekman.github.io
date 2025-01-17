@@ -41,6 +41,7 @@
 
 <style>
     header {
+        padding: 0.3rem 0 0.3rem 0;
         display: flex;
         justify-content: center;
         width: 100%;
