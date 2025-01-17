@@ -4,22 +4,25 @@
 	import { onMount } from 'svelte';
 	import '../../app.css';
 
-	interface Props {
-		children?: import('svelte').Snippet;
-	}
-
-	let { children }: Props = $props();
-
+	export let children: import('svelte').Snippet;
+	let cursor;
+    const timeoutMap = new Map();
 	const moveCursor = (cursor: HTMLElement, e: MouseEvent) => {
 		cursor.style.opacity = '1';
 			cursor.style.top = e.pageY + 'px';
 			cursor.style.left = e.pageX + 'px';
 			cursor.classList.add('glow');
 
-			clearTimeout(cursor.timeoutId);
-			cursor.timeoutId = setTimeout(() => {
+			if (timeoutMap.has(cursor)) {
+				clearTimeout(timeoutMap.get(cursor));
+			}
+
+			const timeoutId = setTimeout(() => {
 				cursor.classList.remove('glow');
+				timeoutMap.delete(cursor);
 			}, 150);
+
+			timeoutMap.set(cursor, timeoutId);
 	}
 
 	const cursorClick = (cursor: HTMLElement) => {
