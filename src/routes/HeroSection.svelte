@@ -1,10 +1,14 @@
 <script lang="ts">
+    import { t } from "svelte-i18n";
     import { onMount } from "svelte";
     import { fade } from 'svelte/transition';
+    import { setupI18n } from '$lib/i18n/index';
     let percentage = 45;
     let increment = -0.5;
     let visible = false;
 
+    setupI18n();
+    
     function updateGradient() {
         percentage += increment;
         if (percentage <= 22 || percentage >= 45) {
@@ -15,18 +19,19 @@
     onMount(() => {
         visible = true;
     });
+    
 </script>
 
 <section class="hero-section" style="background: radial-gradient(circle, rgb(15, 35, 55) 10%, rgba(4,20,35) {percentage}%);">
     <div class="hero-section_content" class:visible>
         {#if visible}
             <h1 class="hero-section_title" transition:fade={{ delay: 300, duration: 1000 }}>
-                <div class="font-impact">Welcome,</div> my name is Aleksander
+                <div class="font-impact">{ $t('welcome') }</div> {$t('name')}
             </h1>
-            <p class="hero-section_description" transition:fade={{ delay: 600, duration: 1000 }}>Fullstack Developer | Design and Web Development | I.T. Student</p>
+            <p class="hero-section_description" transition:fade={{ delay: 600, duration: 1000 }}>{$t('desc')}</p>
             <div class="hero-section_cta" transition:fade={{ delay: 900, duration: 1000 }}>
-                <a href="/en-us/projects" class="btn btn-primary">View My Work</a>
-                <a href="/en-us/contact" class="btn btn-secondary">Get in Touch</a>
+                <a href="/projects" class="btn btn-primary">{ $t('work') }</a>
+                <a href="/contact" class="btn btn-secondary">{ $t('contact') }</a>
             </div>
         {/if}
     </div>
@@ -68,6 +73,7 @@
     }
 
     .hero-section_description {
+        text-wrap: nowrap;
         text-align: center;
         font-size: 1.5rem; /* Increased size for emphasis */
         margin-bottom: 2rem;

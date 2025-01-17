@@ -1,19 +1,15 @@
 <script lang="ts">
     import { page } from '$app/stores';
     import { goto } from '$app/navigation';
+    import LanguageToggle from './components/LanguageToggle.svelte';
 
-    function subdirectory() {
-        const path = $page.url.pathname;
-        const segments = path.split('/');
-        return segments.length > 1 ? segments[1] : '';
-    }
 </script>
 
 <header>
     <nav aria-label='Main navigation'>
         <ul role="menubar">
             <li role="menuitem">
-                <button onclick={() => goto(`/en-us/`)} 
+                <button onclick={() => goto(`/`)} 
                     tabindex="0" class='name' 
                     aria-label='Home page' title="Portfolio website front page" 
                     aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
@@ -23,34 +19,21 @@
             <div class="right">
                 <div class="side-menu">
                     <li role="menuitem">
-                        <button onclick={() => goto(`/en-us/projects`)}
+                        <button onclick={() => goto(`/projects`)}
                             tabindex="0" aria-label="View Projects"
-                            title="Projects" aria-current={$page.url.pathname === '/en-us/projects' ? 'page' : undefined}>
+                            title="Projects">
                             Projects
                         </button>
                     </li>
                     <li role="menuitem">
-                        <button onclick={() => goto(`/en-us/about`)}
+                        <button onclick={() => goto(`/about`)}
                             tabindex="0" aria-label="View about page"
-                            title="About Page" aria-current={$page.url.pathname === '/en-us/about' ? 'page' : undefined}>
+                            title="About Page">
                             About
                         </button>
                     </li>
                 </div>
-                <div class="lang-menu">
-                    <li role="menuitem">
-                        <button id="no-button" onclick={() => goto(`/${subdirectory()}`)}
-                            tabindex="0" aria-label="Norwegian language"
-                            title="Norwegian Language" aria-current={$page.url.pathname.startsWith('/no') ? 'page' : undefined}>
-                            NO
-                        </button>
-                        <button id="en-button" onclick={() => goto(`/${subdirectory()}`)}
-                            tabindex="0" aria-label="English language"
-                            title="English Language" aria-current={$page.url.pathname.startsWith('/en-us') ? 'page' : undefined}>
-                            EN
-                        </button>
-                    </li>
-                </div>
+                <LanguageToggle />
             </div>
         </ul>
     </nav>
@@ -132,16 +115,6 @@
         width: 60%;
     }
 
-    .lang-menu {
-        font-size: 1rem;
-        width: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .lang-menu li {
-        gap: 0.6rem;
-    }
     .right {
         display: flex;
         justify-content: space-between;
@@ -196,10 +169,6 @@
 
         .right {
             width: 50%;
-        }
-
-        .lang-menu {
-            width: 20%;
         }
     }
 </style>

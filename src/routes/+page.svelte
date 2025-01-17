@@ -2,15 +2,12 @@
 
     import { onMount } from 'svelte';
     import { goto } from '$app/navigation';
-    import HeroSection from './en-us/HeroSection.svelte';
+    import HeroSection from './HeroSection.svelte';
 
-    onMount(() => {
-        goto('/en-us')
-    });
 </script>
 
 <svelte:head>   
-    <title>Redirecting..</title>
+    <title>Aleksander Ekman</title>
     <meta name="description" content="Aleksander's portfolio website with view over projects."/>
 </svelte:head>
 

@@ -2,7 +2,9 @@
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
 	import { onMount } from 'svelte';
-	import '../../app.css';
+	import '../app.css';
+	import { setupI18n } from '$lib/i18n/index';
+	setupI18n();
 
 	export let children: import('svelte').Snippet;
 	let cursor;
@@ -74,15 +76,15 @@
 
 		opacity: 0;
 		position: fixed;
-		width: 0.8rem;
-		height: 0.8rem;
+		width: 0.9rem;
+		height: 0.9rem;
 		border-radius: 50%;
 		background-color: #fff; /* Customize the color as needed */
 		pointer-events: none;
 		z-index: 9999;
 
 		box-shadow: 0 0 0 0 rgb(255, 255, 255); /* Customize the color as needed */
-		transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1); /* Smooth transitions */
+        transition: box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);/* Smooth transitions */
 	}
 	
 	:global(.mouse-cursor.glow) {
@@ -91,7 +93,7 @@
 	}
 
 	:global(.mouse-cursor.click) {
-		transform: scale(1.3);
+		transform: scale(1.4);
 		box-shadow: 1px 0 4px 2px rgb(255, 255, 255);
 	}
 	
