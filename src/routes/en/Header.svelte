@@ -67,7 +67,7 @@
         left: 0;
         z-index: 1000;
         box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.1);
-        background: white;
+        background-color: #0A1828;
     }
 
     nav {
@@ -127,18 +127,19 @@
     .side-menu {
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        width: 60%;
     }
 
     .lang-menu {
-        font-size: 0.25rem;
+        font-size: 1rem;
         width: auto;
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 2rem;
+        justify-content: space-between;
     }
-
+    .lang-menu li {
+        gap: 0.6rem;
+    }
     .right {
         display: flex;
         justify-content: space-between;
