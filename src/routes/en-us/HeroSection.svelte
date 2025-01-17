@@ -2,7 +2,7 @@
     import { onMount } from "svelte";
     import { fade } from 'svelte/transition';
     let percentage = 45;
-    let increment = -1;
+    let increment = -0.5;
     let visible = false;
 
     function updateGradient() {
@@ -11,7 +11,7 @@
             increment *= -1;
         }
     }
-    setInterval(updateGradient, 200);
+    setInterval(updateGradient, 100);
     onMount(() => {
         visible = true;
     });
@@ -23,10 +23,10 @@
             <h1 class="hero-section_title" transition:fade={{ delay: 300, duration: 1000 }}>
                 <div class="font-impact">Welcome,</div> my name is Aleksander
             </h1>
-            <p class="hero-section_description" transition:fade={{ delay: 600, duration: 1000 }}>Fullstack, design & web development, I.T. Student</p>
+            <p class="hero-section_description" transition:fade={{ delay: 600, duration: 1000 }}>Fullstack Developer | Design and Web Development | I.T. Student</p>
             <div class="hero-section_cta" transition:fade={{ delay: 900, duration: 1000 }}>
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                <a href="/en-us/projects" class="btn btn-primary">View My Work</a>
+                <a href="/en-us/contact" class="btn btn-secondary">Get in Touch</a>
             </div>
         {/if}
     </div>
@@ -40,6 +40,7 @@
         align-items: center;
         color: #FFFFFF;
         padding: 2rem;
+        font-family: var(--font-header);
     }
 
     .hero-section_content {
@@ -67,12 +68,18 @@
     }
 
     .hero-section_description {
-        font-size: 1.2rem;
+        text-align: center;
+        font-size: 1.5rem; /* Increased size for emphasis */
         margin-bottom: 2rem;
-        color: #178582;
+        color: #178582; 
+        font-weight: bold; /* Make text bold */
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.7); /* Add shadow for emphasis */
+        font-family: var(--font-header);
     }
 
     .hero-section_cta {
+        justify-self: flex-start;
+        font-family: var(--font-header);
         display: flex;
         justify-content: center;
         gap: 1rem;
