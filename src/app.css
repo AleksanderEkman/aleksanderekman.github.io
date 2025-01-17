@@ -3,7 +3,7 @@
 @import 'tailwindcss/utilities';
 @font-face {
 	font-family: "SF Pro Display";
-	src: url("/fonts/SFPRODISPLAYREGULAR.otf") format("opentype");
+	src: "/fonts/SFPRODISPLAYREGULAR.otf" format("opentype");
 	font-display: swap;
 }
 @font-face {
