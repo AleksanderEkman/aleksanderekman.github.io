@@ -2,12 +2,11 @@
     import { t } from "svelte-i18n";
     import { onMount } from "svelte";
     import { fade } from 'svelte/transition';
-    import { setupI18n } from '$lib/i18n/index';
+	import { goto } from "$app/navigation";
     let percentage = 45;
     let increment = -0.5;
     let visible = false;
 
-    setupI18n();
     
     function updateGradient() {
         percentage += increment;
@@ -22,16 +21,19 @@
     
 </script>
 
-<section class="hero-section" style="background: radial-gradient(circle, rgb(15, 35, 55) 10%, rgba(4,20,35) {percentage}%);">
+<section class="hero-section" style="background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(circle, rgb(15, 35, 55) 10%, rgba(4,20,35) {percentage}%)
+    ;">
     <div class="hero-section_content" class:visible>
         {#if visible}
-            <h1 class="hero-section_title" transition:fade={{ delay: 300, duration: 1000 }}>
+            <h1 class="hero-section_title" transition:fade={{ delay: 200, duration: 1000 }}>
                 <div class="font-impact">{ $t('welcome') }</div> {$t('name')}
             </h1>
-            <p class="hero-section_description" transition:fade={{ delay: 600, duration: 1000 }}>{$t('desc')}</p>
-            <div class="hero-section_cta" transition:fade={{ delay: 900, duration: 1000 }}>
-                <a href="/projects" class="btn btn-primary">{ $t('work') }</a>
-                <a href="/contact" class="btn btn-secondary">{ $t('contact') }</a>
+            <p class="hero-section_description" transition:fade={{ delay: 500, duration: 1000 }}>{$t('desc')}</p>
+            <div class="hero-section_cta" transition:fade={{ delay: 800, duration: 1000 }}>
+                <button onclick={() => goto('/projects')} class="btn btn-primary">{ $t('work') }</button>
+                <button onclick={() => goto('/contact')} class="btn btn-secondary">{ $t('contact') }</button>
             </div>
         {/if}
     </div>
@@ -64,6 +66,7 @@
     .font-impact {
         font-family: var(--font-impact);
         line-height: 0;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
     }
     .hero-section_title {
         line-height: 200%;
@@ -78,7 +81,7 @@
         font-size: 1.5rem; /* Increased size for emphasis */
         margin-bottom: 2rem;
         color: #178582; 
-        font-weight: bold; /* Make text bold */
+        font-weight: bold;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.7); /* Add shadow for emphasis */
         font-family: var(--font-header);
     }
@@ -93,14 +96,16 @@
 
     .btn {
         padding: 0.75rem 1.5rem;
-        border-radius: 5px;
+        border-radius: 6px;
         text-decoration: none;
         font-weight: bold;
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
-
+    .btn:active {
+        cursor: none !important; 
+    }
     .btn:hover {
-        transform: translateY(-2px);
+        transform: translateY(-3px);
     }
 
     .btn-primary {

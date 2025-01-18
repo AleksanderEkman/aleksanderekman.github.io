@@ -1,7 +1,12 @@
 {
-    "welcome": "Velkommen,",
-    "name": "jeg heter Aleksander",
-    "desc": "Fullstack-utvikler | Web Design & Utviklings-Entusiast | I.T.-Elev",
-    "work": "Se Mitt Arbeid",
-    "contact": "Ta Kontakt"
-  }
+  "error.notFound": "Oops! Denne siden finnes ikke.",
+  "error.backHome": "Tilbake til Hjemmesiden",
+  "nav1": "Prosjekter",
+  "nav2": "Om Meg",
+  "nav3": "Kontakt",
+  "welcome": "Velkommen,",
+  "name": "jeg heter Aleksander",
+  "desc": "Fullstack-utvikler | Web Design & Utviklings-Entusiast | I.T.-Elev",
+  "work": "Se Mitt Arbeid",
+  "contact": "Ta Kontakt"
+}

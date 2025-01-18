@@ -2,6 +2,7 @@
     import { page } from '$app/stores';
     import { goto } from '$app/navigation';
     import LanguageToggle from './components/LanguageToggle.svelte';
+    import { t } from 'svelte-i18n';
 
 </script>
 
@@ -22,14 +23,21 @@
                         <button onclick={() => goto(`/projects`)}
                             tabindex="0" aria-label="View Projects"
                             title="Projects">
-                            Projects
+                            {$t('nav1')}
                         </button>
                     </li>
                     <li role="menuitem">
                         <button onclick={() => goto(`/about`)}
                             tabindex="0" aria-label="View about page"
                             title="About Page">
-                            About
+                            {$t('nav2')}
+                        </button>
+                    </li>
+                    <li role="menuitem">
+                        <button onclick={() => goto(`/about`)}
+                            tabindex="0" aria-label="Contact me"
+                            title="Contact Page">
+                            {$t('nav3')}
                         </button>
                     </li>
                 </div>
@@ -113,7 +121,7 @@
     .side-menu {
         display: flex;
         justify-content: space-between;
-        width: 60%;
+        width: 80%;
     }
 
     .right {

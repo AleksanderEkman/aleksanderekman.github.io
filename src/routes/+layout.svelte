@@ -1,13 +1,12 @@
 <script lang="ts">
+	import { setupI18n } from '$lib/i18n/index';
+	setupI18n();
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
 	import { onMount } from 'svelte';
 	import '../app.css';
-	import { setupI18n } from '$lib/i18n/index';
-	setupI18n();
 
 	export let children: import('svelte').Snippet;
-	let cursor;
     const timeoutMap = new Map();
 	const moveCursor = (cursor: HTMLElement, e: MouseEvent) => {
 		cursor.style.opacity = '1';
@@ -35,6 +34,7 @@
 	}
 
 	onMount(() => {
+		document.body.style.cursor = 'none';
 		const cursor = document.querySelector('.mouse-cursor') as HTMLElement;
 		if (!cursor) return;
 
@@ -73,32 +73,48 @@
 <style>
 	:global(.mouse-cursor) {
 		display: flex;
-
 		opacity: 0;
 		position: fixed;
-		width: 0.9rem;
-		height: 0.9rem;
+		width: 1.4rem;
+		height: 1.4rem;
 		border-radius: 50%;
-		background-color: #fff; /* Customize the color as needed */
+		background-color: rgba(255, 255, 255, 0.8);
 		pointer-events: none;
 		z-index: 9999;
-
-		box-shadow: 0 0 0 0 rgb(255, 255, 255); /* Customize the color as needed */
-        transition: box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);/* Smooth transitions */
+		mix-blend-mode: difference;
+		transition: box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+		transform: translate(-50%, -50%);
 	}
-	
+
+	:global(.mouse-cursor::after) {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		border: 2px solid rgba(255, 255, 255, 0.5);
+		animation: pulse 2s infinite;
+	}
+
 	:global(.mouse-cursor.glow) {
 		opacity: 1;
-		box-shadow: 0px 0 7px 3px rgb(255, 255, 255); /* Customize the color as needed */
+		box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
 	}
 
 	:global(.mouse-cursor.click) {
-		transform: scale(1.4);
-		box-shadow: 1px 0 4px 2px rgb(255, 255, 255);
+		transform: translate(-50%, -50%) scale(1.2);
+		background-color: rgba(255, 255, 255, 1);
+		box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.7);
 	}
-	
+
+	@keyframes pulse {
+		0% { transform: scale(1); opacity: 1; }
+		50% { transform: scale(1.75); opacity: 0; }
+		100% { transform: scale(1); opacity: 1; }
+	}
+
 	.app {
-		cursor: none; /* Hide the default cursor */
+		cursor: none;
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;

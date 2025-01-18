@@ -20,6 +20,7 @@
 
 html, body {
 	background-color: white;
+	cursor: none !important;
 }
 
 pre {

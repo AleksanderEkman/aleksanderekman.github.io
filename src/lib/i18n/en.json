@@ -1,7 +1,12 @@
 {
-    "welcome": "Welcome,",
-    "name": "my name is Aleksander",
-    "desc": "Fullstack Developer | Web Design & Development Enthusiast | I.T. Student",
-    "work": "View My Work",
-    "contact": "Get In Touch"
-  }
+  "error.notFound": "Oops! Page not found.",
+  "error.backHome": "Back to Home",
+  "nav1": "Projects",
+  "nav2": "About Me",
+  "nav3": "Contact",
+  "welcome": "Welcome,",
+  "name": "my name is Aleksander",
+  "desc": "Fullstack Developer | Web Design & Development Enthusiast | I.T. Student",
+  "work": "View My Work",
+  "contact": "Get In Touch"
+}
