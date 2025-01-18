@@ -36,7 +36,7 @@
     }
 
     function createParticles() {
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 60; i++) {
             const x = Math.random() * canvas.width;
             const y = Math.random() * canvas.height;
             const size = Math.random() * 2 + 2;

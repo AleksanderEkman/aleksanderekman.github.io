@@ -1,4 +1,5 @@
 <script lang="ts">
+    import ParticleCanvas from "./components/ParticleCanvas.svelte";
     import { t } from "svelte-i18n";
     import { onMount } from "svelte";
 	import { goto } from "$app/navigation";
@@ -9,6 +10,7 @@
     });
 </script>
 
+<ParticleCanvas />
 <section class="error-section">
     <div class="error-section_content" class:visible>
         <h1 class="error-section_title">
