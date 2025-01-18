@@ -1,6 +1,5 @@
 <script lang="ts">
     import { t } from "svelte-i18n";
-    import { fade } from "svelte/transition";
     import { onMount } from "svelte";
 	import { goto } from "$app/navigation";
     let visible = false;

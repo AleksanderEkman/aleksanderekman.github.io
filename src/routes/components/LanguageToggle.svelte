@@ -36,12 +36,13 @@
 
 <style>
     .lang-menu {
+        margin-left: 2rem;
         display: flex;
         gap: 0.5rem; 
         font-size: 1.3rem;
-        padding: 0.5rem; /* Added padding for better touch target */
-        border-radius: 5px; /* Rounded corners */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        padding: 0.5rem;
+        border-radius: 10px; 
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
     }
     button {
         background: transparent;

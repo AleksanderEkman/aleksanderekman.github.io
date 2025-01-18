@@ -1,5 +1,6 @@
 <script lang="ts">
     import { t } from "svelte-i18n";
+    import ParticleCanvas from "./components/ParticleCanvas.svelte";
     import { onMount } from "svelte";
     import { fade } from 'svelte/transition';
 	import { goto } from "$app/navigation";
@@ -21,6 +22,7 @@
     
 </script>
 
+<ParticleCanvas />
 <section class="hero-section" style="background:
     radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 60%),
     radial-gradient(circle, rgb(15, 35, 55) 10%, rgba(4,20,35) {percentage}%)
@@ -71,7 +73,6 @@
     .hero-section_title {
         line-height: 200%;
         font-size: 3.5rem;
-        margin-bottom: 0.5rem;
         color: #c9af93;
     }
 

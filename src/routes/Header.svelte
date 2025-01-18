@@ -23,21 +23,21 @@
                         <button onclick={() => goto(`/projects`)}
                             tabindex="0" aria-label="View Projects"
                             title="Projects">
-                            {$t('nav1')}
+                            {$t('nav1') || 'Projects'}
                         </button>
                     </li>
                     <li role="menuitem">
                         <button onclick={() => goto(`/about`)}
                             tabindex="0" aria-label="View about page"
                             title="About Page">
-                            {$t('nav2')}
+                            {$t('nav2') || 'About Me'}
                         </button>
                     </li>
                     <li role="menuitem">
                         <button onclick={() => goto(`/about`)}
                             tabindex="0" aria-label="Contact me"
                             title="Contact Page">
-                            {$t('nav3')}
+                            {$t('nav3') || 'Contact'}
                         </button>
                     </li>
                 </div>
@@ -49,7 +49,7 @@
 
 <style>
     header {
-        padding: 0.3rem 0 0.3rem 0; 
+        padding: 0.3rem 0 0.3rem 0;
         display: flex;
         justify-content: center;
         width: 100%;
@@ -57,36 +57,54 @@
         top: 0;
         left: 0;
         z-index: 1000;
-        box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.1);
-        background-color: #0A1828;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        background-color: rgba(10, 24, 40, 0.5);
+        backdrop-filter: blur(10px);
         color: #d9c7b3;
     }
 
     nav {
         width: 95%;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
     }
 
     ul {
         width: 100%;
-        padding: 0; /* Ensure no padding */
-        margin: 0; /* Ensure no margin */
-        height: 3.6rem; /* Consistent height */
+        padding: 0;
+        margin: 0;
+        height: 3.6rem;
         display: flex;
-        justify-content: space-between;
-        align-items: center; /* Center items vertically */
+        justify-content: space-evenly;
+        align-items: center;
         list-style: none;
     }
 
     li {
-        margin: 0 5rem 0 5rem;
+        margin: 0 2.5rem 0 2.5rem;
         display: flex;
-        align-items: center; /* Center items vertically */
+        flex-direction: column;
+        align-items: center;
+    }
+    li::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: white;
+        transition: width 0.3s;
+    }
+    li:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease, color 0.3s ease;
+        color: var(--color-theme-1);
+    }
+    li:hover::after {
+        width: 100%;
     }
 
     button {
-        height: 100%; /* Ensure buttons take full height */
+        height: 100%;
         color: var(--color-text);
         font-size: 1.3rem;
         letter-spacing: 0.05em;
@@ -96,34 +114,30 @@
         transition: all 0.3s ease;
         font-family: var(--font-header);
     }
+
     button:hover {
         cursor: none;
-    }
-    nav button.name {
-        font-size: 2rem; /* Larger font size for the name */
+        color: white;
+        text-shadow: 0 0 5px black, 0 0 10px black;
     }
 
-    /* Adjustments for side menu */
+    nav button.name {
+        font-size: 2rem;
+    }
+
     .side-menu {
         display: flex;
-        justify-content: space-between; 
+        justify-content: space-between;
     }
 
-    /* Adjustments for right section */
     .right {
         display: flex;
-        align-items: center; /* Center items vertically */
+        align-items: center;
     }
 
     strong {
-        text-shadow: 0.5px 0 0 currentColor, -0.5px 0 0 currentColor, 
+        text-shadow: 0.5px 0 0 currentColor, -0.5px 0 0 currentColor,
                     0 0.5px 0 currentColor, 0 -0.5px 0 currentColor;
-    }
-
-    /* Hover and focus styles */
-    button:hover,
-    button:focus {
-        color: var(--color-theme-1);
     }
 
     button:hover::after,
@@ -133,16 +147,15 @@
 
     @media (max-width: 768px) {
         nav button {
-            font-size: 1rem; /* Adjust font size for smaller screens */
-            padding: 0; /* Remove padding for smaller screens */
-            margin-right: 1rem; /* Add some spacing between buttons */
+            font-size: 1rem;
+            padding: 0;
+            margin-right: 1rem;
         }
 
         .right {
-            width: auto; /* Allow right section to adjust based on content */
-            justify-content: center; /* Center the right section on small screens */
-            gap: 1rem; /* Add gap between language toggle and buttons */
+            width: auto;
+            justify-content: center;
+            gap: 1rem;
         }
     }
-
 </style>

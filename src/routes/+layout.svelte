@@ -10,8 +10,8 @@
     const timeoutMap = new Map();
 	const moveCursor = (cursor: HTMLElement, e: MouseEvent) => {
 		cursor.style.opacity = '1';
-			cursor.style.top = e.pageY + 'px';
-			cursor.style.left = e.pageX + 'px';
+			cursor.style.top = e.clientY + 'px';
+			cursor.style.left = e.clientX + 'px';
 			cursor.classList.add('glow');
 
 			if (timeoutMap.has(cursor)) {
@@ -75,8 +75,8 @@
 		display: flex;
 		opacity: 0;
 		position: fixed;
-		width: 1.5rem;
-		height: 1.5rem;
+		width: 1.9rem;
+		height: 1.9rem;
 		border-radius: 50%;
 		background-color: rgba(255, 255, 255, 0.8);
 		pointer-events: none;
@@ -111,7 +111,7 @@
 
 	@keyframes pulse {
 		0% { transform: scale(1); opacity: 1; }
-		50% { transform: scale(1.75); opacity: 0; }
+		50% { transform: scale(1.8); opacity: 0; }
 		100% { transform: scale(1); opacity: 1; }
 	}
 
