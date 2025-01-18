@@ -17,7 +17,7 @@ const config = {
 			strict: true
 		}),
 		csp: {
-			mode: 'nonce',
+			mode: 'hash',
 			directives: {
 				'script-src': ["'self'"],
 				'script-src-elem': ["'self'"],
