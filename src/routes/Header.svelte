@@ -49,7 +49,7 @@
 
 <style>
     header {
-        padding: 0.3rem 0 0.3rem 0;
+        padding: 0.3rem 0 0.3rem 0; 
         display: flex;
         justify-content: center;
         width: 100%;
@@ -61,7 +61,7 @@
         background-color: #0A1828;
         color: #d9c7b3;
     }
-    
+
     nav {
         width: 95%;
         display: flex;
@@ -70,27 +70,23 @@
 
     ul {
         width: 100%;
-        padding: 0;
-        margin: 0;
-        height: 3.6rem;
+        padding: 0; /* Ensure no padding */
+        margin: 0; /* Ensure no margin */
+        height: 3.6rem; /* Consistent height */
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: center; /* Center items vertically */
         list-style: none;
-        background: var(--background);
     }
 
     li {
+        margin: 0 5rem 0 5rem;
         display: flex;
-        align-items: center;
-        height: 100%;
-        position: relative;
+        align-items: center; /* Center items vertically */
     }
-    button:hover {
-        cursor: none;
-    }
-    nav button {
-        height: 100%;
+
+    button {
+        height: 100%; /* Ensure buttons take full height */
         color: var(--color-text);
         font-size: 1.3rem;
         letter-spacing: 0.05em;
@@ -100,84 +96,53 @@
         transition: all 0.3s ease;
         font-family: var(--font-header);
     }
-
-    nav button::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        height: 3px;
-        background: var(--color-theme-1);
-        transition: all 0.3s ease;
+    button:hover {
+        cursor: none;
+    }
+    nav button.name {
+        font-size: 2rem; /* Larger font size for the name */
     }
 
-    nav button:hover::after,
-    nav button:focus::after {
-        width: 100%;
-        left: 0;
-    }
-
+    /* Adjustments for side menu */
     .side-menu {
         display: flex;
-        justify-content: space-between;
-        width: 80%;
+        justify-content: space-between; 
     }
 
+    /* Adjustments for right section */
     .right {
         display: flex;
-        justify-content: space-between;
-        width: 30%;
-    }
-
-    nav button.name {
-        display: flex;
-        justify-self: center;
-        font-size: 2rem;
-        padding: 0;
+        align-items: center; /* Center items vertically */
     }
 
     strong {
-        text-shadow: 0.5px 0 0 currentColor, -0.5px 0 0 currentColor, 0 0.5px 0 currentColor, 0 -0.5px 0 currentColor;
+        text-shadow: 0.5px 0 0 currentColor, -0.5px 0 0 currentColor, 
+                    0 0.5px 0 currentColor, 0 -0.5px 0 currentColor;
     }
 
+    /* Hover and focus styles */
     button:hover,
     button:focus {
         color: var(--color-theme-1);
     }
 
-    button:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(var(--color-theme-1-rgb), 0.5);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        nav button,
-        nav button::after {
-            transition: none;
-        }
+    button:hover::after,
+    button:focus::after {
+        width: 100%;
     }
 
     @media (max-width: 768px) {
-        ul {
-            justify-content: center;
-        }
-
         nav button {
-            font-size: 1rem;
-            padding: 0 1rem;
-        }
-
-        nav button.name {
-            font-size: 2rem;
-        }
-
-        nav {
-            width: 100%;
+            font-size: 1rem; /* Adjust font size for smaller screens */
+            padding: 0; /* Remove padding for smaller screens */
+            margin-right: 1rem; /* Add some spacing between buttons */
         }
 
         .right {
-            width: 50%;
+            width: auto; /* Allow right section to adjust based on content */
+            justify-content: center; /* Center the right section on small screens */
+            gap: 1rem; /* Add gap between language toggle and buttons */
         }
     }
+
 </style>

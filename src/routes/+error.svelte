@@ -64,7 +64,7 @@
     .btn:hover {
         cursor: none;
         background-color: rgba(191, 161, 129, 0.1);
-        transform: translateY(-3px);
+        transform: translateY(-4px);
     }  
     .btn {
         padding: 0.75rem 1.5rem;

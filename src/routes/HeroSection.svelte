@@ -105,7 +105,7 @@
         cursor: none !important; 
     }
     .btn:hover {
-        transform: translateY(-3px);
+        transform: translateY(-4px);
     }
 
     .btn-primary {

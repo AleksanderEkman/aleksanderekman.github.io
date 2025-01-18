@@ -75,14 +75,16 @@
 		display: flex;
 		opacity: 0;
 		position: fixed;
-		width: 1.4rem;
-		height: 1.4rem;
+		width: 1.5rem;
+		height: 1.5rem;
 		border-radius: 50%;
 		background-color: rgba(255, 255, 255, 0.8);
 		pointer-events: none;
 		z-index: 9999;
 		mix-blend-mode: difference;
-		transition: box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+		transition: box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), 
+					opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), 
+					transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 		transform: translate(-50%, -50%);
 	}
 
@@ -92,7 +94,7 @@
 		width: 100%;
 		height: 100%;
 		border-radius: 50%;
-		border: 2px solid rgba(255, 255, 255, 0.5);
+		border: 3px solid rgba(255, 255, 255, 0.5);
 		animation: pulse 2s infinite;
 	}
 
@@ -102,7 +104,7 @@
 	}
 
 	:global(.mouse-cursor.click) {
-		transform: translate(-50%, -50%) scale(1.2);
+		transform: translate(-50%, -50%) scale(1.25);
 		background-color: rgba(255, 255, 255, 1);
 		box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.7);
 	}
