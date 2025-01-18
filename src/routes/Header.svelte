@@ -3,12 +3,22 @@
     import { goto } from '$app/navigation';
     import LanguageToggle from './components/LanguageToggle.svelte';
     import { t } from 'svelte-i18n';
+    import { waitLocale } from 'svelte-i18n';
+	import { onMount } from 'svelte';
+    
+    let translationReady = false;
+
+    onMount(async() => {
+        await waitLocale();
+        translationReady = true;
+    });
 
 </script>
 
 <header>
     <nav aria-label='Main navigation'>
         <ul role="menubar">
+            {#if translationReady}
             <li role="menuitem">
                 <button onclick={() => goto(`/`)} 
                     tabindex="0" class='name' 
@@ -23,26 +33,27 @@
                         <button onclick={() => goto(`/projects`)}
                             tabindex="0" aria-label="View Projects"
                             title="Projects">
-                            {$t('nav1') || 'Projects'}
+                                {$t('nav1')}
                         </button>
                     </li>
                     <li role="menuitem">
                         <button onclick={() => goto(`/about`)}
                             tabindex="0" aria-label="View about page"
                             title="About Page">
-                            {$t('nav2') || 'About Me'}
+                            {$t('nav2')}
                         </button>
                     </li>
                     <li role="menuitem">
                         <button onclick={() => goto(`/about`)}
                             tabindex="0" aria-label="Contact me"
                             title="Contact Page">
-                            {$t('nav3') || 'Contact'}
+                            {$t('nav3')}
                         </button>
                     </li>
                 </div>
                 <LanguageToggle />
             </div>
+            {/if}
         </ul>
     </nav>
 </header>
