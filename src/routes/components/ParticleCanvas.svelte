@@ -80,10 +80,30 @@
 
 
 <canvas bind:this={canvas} id="particleCanvas"></canvas>
+<div class="overlay"></div>
 
 <style>
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.01) 10%, 
+            rgba(0, 0, 0, 0) 20%,
+            rgba(255, 255, 255, 0.01) 30%, 
+            rgba(0, 0, 0, 0) 40%,
+            rgba(255, 255, 255, 0.01) 50%, 
+            rgba(0, 0, 0, 0) 60%, 
+            rgba(255, 255, 255, 0.01) 70%, 
+            rgba(0, 0, 0, 0) 80%, 
+            rgba(255, 255, 255, 0.01) 90%, 
+            rgba(0, 0, 0, 0) 100%);
+    }
     #particleCanvas {
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;

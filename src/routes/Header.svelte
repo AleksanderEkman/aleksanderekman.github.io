@@ -20,10 +20,11 @@
         <ul role="menubar">
             {#if translationReady}
             <li role="menuitem">
-                <button onclick={() => goto(`/`)} 
+                <button onclick={() => goto(`/`)}
                     tabindex="0" class='name' 
                     aria-label='Home page' title="Portfolio website front page" 
                     aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
+                    <img src="/favicon.png" alt="">
                     Aleksander<strong>Ekman</strong>
                 </button>
             </li>
@@ -105,25 +106,32 @@
         background: white;
         transition: width 0.3s;
     }
-    li:hover {
+    .side-menu li:hover {
         transform: scale(1.05);
         transition: transform 0.3s ease, color 0.3s ease;
-        color: var(--color-theme-1);
     }
     li:hover::after {
         width: 100%;
     }
 
     button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         height: 100%;
         color: var(--color-text);
         font-size: 1.3rem;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.03em;
         background: none;
         border: none;
         cursor: pointer;
         transition: all 0.3s ease;
         font-family: var(--font-header);
+    }
+    button img {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.5rem;
     }
 
     button:hover {

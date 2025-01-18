@@ -73,7 +73,7 @@
     .hero-section_title {
         line-height: 200%;
         font-size: 3.5rem;
-        color: #c9af93;
+        color: var(--text-color);
     }
 
     .hero-section_description {
@@ -110,19 +110,19 @@
     }
 
     .btn-primary {
-        background-color: #c9af93;
+        background-color: var(--text-color);
         color: #0A1828;
     }
 
     .btn-primary:hover {
-        background-color: #c9af93;
+        background-color: var(--text-color);
         cursor: none;
     }
 
     .btn-secondary {
         background-color: transparent;
-        color: #BFA181;
-        border: 2px solid #BFA181;
+        color: var(--text-color);
+        border: 2px solid var(--text-color);
     }
 
     .btn-secondary:hover {

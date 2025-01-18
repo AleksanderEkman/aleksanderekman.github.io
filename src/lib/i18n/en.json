@@ -8,5 +8,9 @@
   "name": "my name is Aleksander",
   "desc": "Fullstack Developer | Web Design & Development Enthusiast | I.T. Student",
   "work": "View My Work",
-  "contact": "Get In Touch"
+  "contact": "Get In Touch",
+  "location": "Location",
+  "norway": "Norway",
+  "contactMe": "Contact Me",
+  "SocialMedia": "Social Media"
 }
