@@ -6,13 +6,25 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
+		csrf: {
+			checkOrigin: true
+		},
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
 			fallback: '404.html',
 			precompress: false,
 			strict: true
-		})
+		}),
+		csp: {
+			mode: 'nonce',
+			directives: {
+				'script-src': ["'self'"],
+				'script-src-elem': ["'self'"],
+				'object-src': ["'self'"],
+				'base-uri': ["'self'"]
+			}
+		}
 	}
 };
 
