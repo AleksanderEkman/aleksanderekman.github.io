@@ -64,9 +64,9 @@
         animate();
 
         const handleResize = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
             if (window.matchMedia('(min-width: 1024px)').matches) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
                 particles.length = 0; 
                 createParticles(); 
             }
@@ -94,12 +94,12 @@
         height: 100%;
         z-index: 0;
 background: linear-gradient(45deg, 
-    rgba(255, 255, 255, 0.02) 0%, 
-    rgba(255, 255, 255, 0.03) 20%, 
-    rgba(255, 255, 255, 0.01) 40%,
-    rgba(255, 255, 255, 0.02) 60%,
-    rgba(255, 255, 255, 0.03) 80%,
-    rgba(255, 255, 255, 0.01) 100%)
+    rgba(255, 255, 255, 0.03) 0%, 
+    rgba(255, 255, 255, 0.04) 20%, 
+    rgba(255, 255, 255, 0.02) 40%,
+    rgba(255, 255, 255, 0.03) 60%,
+    rgba(255, 255, 255, 0.04) 80%,
+    rgba(255, 255, 255, 0.02) 100%)
     }
     #particleCanvas {
         position: absolute;
