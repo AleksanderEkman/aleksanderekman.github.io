@@ -8,31 +8,31 @@
 	import { initGoogleAnalytics } from '$lib/googleAnalytics';
 
 	export let children: import('svelte').Snippet;
-    const timeoutMap = new Map();
+	const timeoutMap = new Map();
 	const moveCursor = (cursor: HTMLElement, e: MouseEvent) => {
 		cursor.style.opacity = '1';
-			cursor.style.top = e.clientY + 'px';
-			cursor.style.left = e.clientX + 'px';
-			cursor.classList.add('glow');
+		cursor.style.top = e.clientY + 'px';
+		cursor.style.left = e.clientX + 'px';
+		cursor.classList.add('glow');
 
-			if (timeoutMap.has(cursor)) {
-				clearTimeout(timeoutMap.get(cursor));
-			}
+		if (timeoutMap.has(cursor)) {
+			clearTimeout(timeoutMap.get(cursor));
+		}
 
-			const timeoutId = setTimeout(() => {
-				cursor.classList.remove('glow');
-				timeoutMap.delete(cursor);
-			}, 150);
+		const timeoutId = setTimeout(() => {
+			cursor.classList.remove('glow');
+			timeoutMap.delete(cursor);
+		}, 150);
 
-			timeoutMap.set(cursor, timeoutId);
-	}
+		timeoutMap.set(cursor, timeoutId);
+	};
 
 	const cursorClick = (cursor: HTMLElement) => {
 		cursor.classList.add('click');
 		setTimeout(() => {
 			cursor.classList.remove('click');
 		}, 75);
-	}
+	};
 
 	onMount(() => {
 		initGoogleAnalytics();
@@ -43,7 +43,7 @@
 		document.addEventListener('mousemove', (e) => {
 			moveCursor(cursor, e);
 		});
-	
+
 		document.addEventListener('click', () => {
 			cursorClick(cursor);
 		});
@@ -51,7 +51,7 @@
 			cursor.style.opacity = '1';
 		});
 		document.addEventListener('mouseleave', () => {
-			cursor.style.opacity = '0'; 
+			cursor.style.opacity = '0';
 		});
 		return () => {
 			document.removeEventListener('mousemove', () => {});
@@ -69,7 +69,9 @@
 	<Footer />
 </div>
 
-<div class="mouse-cursor"></div> <!-- Ensure this div is present -->
+<div class="mouse-cursor"></div>
+
+<!-- Ensure this div is present -->
 
 <style>
 	:global(.mouse-cursor) {
@@ -83,9 +85,10 @@
 		pointer-events: none;
 		z-index: 9999;
 		mix-blend-mode: difference;
-		transition: box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), 
-					opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1), 
-					transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+		transition:
+			box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+			opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+			transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 		transform: translate(-50%, -50%);
 	}
 
@@ -111,9 +114,18 @@
 	}
 
 	@keyframes pulse {
-		0% { transform: scale(1); opacity: 1; }
-		50% { transform: scale(1.8); opacity: 0; }
-		100% { transform: scale(1); opacity: 1; }
+		0% {
+			transform: scale(1);
+			opacity: 1;
+		}
+		50% {
+			transform: scale(1.8);
+			opacity: 0;
+		}
+		100% {
+			transform: scale(1);
+			opacity: 1;
+		}
 	}
 
 	.app {
@@ -126,10 +138,10 @@
 
 	main {
 		flex: 1;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
 	@media (max-width: 930px) {
 		:global(.mouse-cursor) {
 			display: none;
