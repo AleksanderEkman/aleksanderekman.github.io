@@ -68,7 +68,6 @@
 	.contact-field {
 		font-size: 1.2rem;
 		display: flex;
-		margin-top: -2.5rem;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
@@ -87,7 +86,7 @@
 		flex-direction: column;
 		align-items: center;
         cursor: none;
-		border-radius: 1.5rem;
+		border-radius: 40px;
 		padding: 2rem;
 		width: 100%;
 		background-color: rgba(5, 10, 15, 0.3);
@@ -148,7 +147,7 @@
 		height: 2.5rem;
 		margin: 0;
 		overflow: hidden;
-		border-radius: 5px;
+		border-radius: 7px;
 		border: solid 0.8px var(--text-color);
 		color: white;
 		padding: 0.4rem;
@@ -204,6 +203,10 @@
 	}
 
 	@media screen and (max-width: 1600px) {
+		.contact-field {
+			margin-top: 3rem;
+			width: 55%;
+		}
 		.input-container {
 			margin: 0;
 			padding: 0.5rem;
@@ -211,7 +214,6 @@
 
 		.contact-content {
 			padding: 1rem;
-			background-color: rgba(0, 0, 0, 0.4);
 		}
 
 		#message {
