@@ -30,7 +30,9 @@
                         tabindex="0" class='name' 
                         aria-label='Home page' title="Portfolio website front page">
                         <img src="/favicon.png" alt="">
-                        Aleksander<strong>Ekman</strong>
+                        <h1>
+                            Aleksander<strong>Ekman</strong>
+                        </h1>
                     </button>
                 </li>
                 <div class="desktop">
