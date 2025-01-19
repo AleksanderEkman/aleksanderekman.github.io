@@ -175,7 +175,7 @@
 		padding: 0.4rem;
 		font-size: 1rem;
 		resize: vertical;
-		color: var(--text-color);
+
 	}
 
 	button {
@@ -198,7 +198,7 @@
 	}
 
 	button:active {
-		background-color: rgba(11, 111, 244, 0.4);
+		background-color: rgb(122, 105, 88);
 		transform: scale(0.95);
 	}
 
