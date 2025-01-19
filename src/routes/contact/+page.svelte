@@ -23,19 +23,15 @@
 		justify-content: center;
 		align-items: center;
 		width: 100vw;
-		height: auto;
+		height: 100svh;
 		position: relative;
 		text-transform: none;
 		overflow: hidden;
 		text-align: center;
 		transition: background-image 1s ease-in-out;
 	}
-	@media (min-width: 1450px) {
-		.contact {
-			height: 86.25vh;
-		}
-	}
-	@media (max-width: 540px) {
+
+	@media (max-width: 1024px) {
 		.contact {
 			padding: 4.5rem 1rem;
 			height: 47.5rem;

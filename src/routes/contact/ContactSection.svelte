@@ -89,7 +89,7 @@
 		border-radius: 40px;
 		padding: 2rem;
 		width: 100%;
-		background-color: rgba(5, 10, 15, 0.3);
+		background-color: rgba(10, 15, 10, 0.3);
 		box-shadow:
 			inset 0 0 0 0.1rem rgba(0, 0, 0, 0.1),
 			0 4px 8px rgba(0, 0, 0, 0.4);
@@ -113,7 +113,7 @@
 	}
 	#contact-header {
 		font-family: var(--font-impact);
-		font-size: 3rem;
+		font-size: 2.5rem;
 		font-weight: 700;
 		margin-bottom: 1rem;
 	}
@@ -125,7 +125,6 @@
 		align-items: center;
 	}
 	.input-container {
-
         cursor: none;
 		display: flex;
 		flex-direction: column;
@@ -175,7 +174,7 @@
 		padding: 0.4rem;
 		font-size: 1rem;
 		resize: vertical;
-
+		color: var(--text-color);
 	}
 
 	button {
@@ -209,6 +208,7 @@
 		}
 		.input-container {
 			margin: 0;
+			width: 60%;
 			padding: 0.5rem;
 		}
 
@@ -243,11 +243,16 @@
 	}
 
 	@media screen and (max-width: 540px) {
+		#contact-header {
+			font-size: 1.75rem;
+		}
 		#message {
 			height: 5rem;
-			font-size: 0.75rem;
+			font-size: 1rem;
 		}
-
+		button {
+			font-size: 1rem;
+		}
 		input,
 		textarea {
 			padding: 0.25rem;
@@ -261,6 +266,9 @@
 		button {
 			padding: 0 1.5rem;
 			height: 3.5rem;
+		}
+		.input-container {
+			width: 80%;
 		}
 	}
 </style>
