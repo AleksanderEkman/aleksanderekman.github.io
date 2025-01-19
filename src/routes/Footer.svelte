@@ -116,7 +116,7 @@
 		position: absolute;
 		width: 0;
 		height: 1px;
-		bottom: -4px;
+		bottom: -2px;
 		left: 0;
 		background-color: var(--text-color);
 		transition: width 0.2s ease;
