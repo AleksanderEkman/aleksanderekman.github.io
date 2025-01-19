@@ -244,7 +244,7 @@
 
 	@media screen and (max-width: 540px) {
 		#contact-header {
-			font-size: 2rem;
+			font-size: 1.75rem;
 		}
 		#message {
 			height: 5rem;
@@ -266,6 +266,9 @@
 		button {
 			padding: 0 1.5rem;
 			height: 3.5rem;
+		}
+		.input-container {
+			width: 80%;
 		}
 	}
 </style>
