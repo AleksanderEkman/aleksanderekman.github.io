@@ -20,6 +20,27 @@
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
+
+		<script lang="ts">
+			window.addEventListener('load', function () {
+				setTimeout(function () {
+					var script = document.createElement('script');
+					script.src = 'https://www.googletagmanager.com/gtag/js?id=G-LYL2HNSHV0';
+					script.async = true;
+					script.defer = true;
+					document.head.appendChild(script);
+					// ID-en hentes fra Google Analytics
+					script.onload = function () {
+						window.dataLayer = window.dataLayer || [];
+						function gtag() {
+							dataLayer.push(arguments);
+						}
+						gtag('js', new Date());
+						gtag('config', 'G-LYL2HNSHV0');
+					};
+				}, 5500);
+			});
+		</script>
 	</body>
 	
 </html>
