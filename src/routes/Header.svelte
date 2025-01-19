@@ -122,7 +122,8 @@
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
         background-color: rgba(10, 24, 40, 0.5);
         backdrop-filter: blur(10px);
-        color: #d9c7b3;
+        color: var(--text-color);
+        touch-action: manipulation;
     }
 
     nav {
@@ -299,6 +300,7 @@
             margin: 0;
             height: auto;
             border: 1px solid rgba(0,0,0,0.4);
+            touch-action: manipulation;
         }
         .mobile-menu li {
             padding: 0.5rem 4rem 0.5rem 4rem;
