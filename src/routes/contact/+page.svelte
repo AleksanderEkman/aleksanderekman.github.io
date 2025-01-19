@@ -4,7 +4,7 @@
 </script>
 <svelte:head>
 	<title>Aleksander Ekman Kontaktskjema</title>
-	<link rel="canonical" href="https://allsers.github.io/kontakt-oss" />
+	<link rel="canonical" href="https://allsers.github.io/contact" />
 </svelte:head>
 
 <ParticleCanvas />
