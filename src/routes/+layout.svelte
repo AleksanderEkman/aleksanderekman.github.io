@@ -5,6 +5,7 @@
 	import Footer from './Footer.svelte';
 	import { onMount } from 'svelte';
 	import '../app.css';
+	import { initGoogleAnalytics } from '$lib/googleAnalytics';
 
 	export let children: import('svelte').Snippet;
     const timeoutMap = new Map();
@@ -34,6 +35,7 @@
 	}
 
 	onMount(() => {
+		initGoogleAnalytics();
 		document.body.style.cursor = 'none';
 		const cursor = document.querySelector('.mouse-cursor') as HTMLElement;
 		if (!cursor) return;
@@ -51,7 +53,6 @@
 		document.addEventListener('mouseleave', () => {
 			cursor.style.opacity = '0'; 
 		});
-
 		return () => {
 			document.removeEventListener('mousemove', () => {});
 			document.removeEventListener('mouseenter', () => {});
