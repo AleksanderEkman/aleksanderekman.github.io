@@ -1,12 +1,18 @@
 <script lang="ts">
-    import { page } from '$app/stores';
+    import { fade } from 'svelte/transition';
     import { goto } from '$app/navigation';
     import LanguageToggle from './components/LanguageToggle.svelte';
     import { t } from 'svelte-i18n';
     import { waitLocale } from 'svelte-i18n';
 	import { onMount } from 'svelte';
-    
+    import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
+    import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
     let translationReady = false;
+    let mobileMenuOpen = false;
+
+    function toggleMobileMenu() {
+		mobileMenuOpen = !mobileMenuOpen;
+	}
 
     onMount(async() => {
         await waitLocale();
@@ -19,48 +25,92 @@
     <nav aria-label='Main navigation'>
         <ul role="menubar">
             {#if translationReady}
-            <li role="menuitem">
-                <button onclick={() => goto(`/`)}
-                    tabindex="0" class='name' 
-                    aria-label='Home page' title="Portfolio website front page" 
-                    aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-                    <img src="/favicon.png" alt="">
-                    Aleksander<strong>Ekman</strong>
-                </button>
-            </li>
-            <div class="right">
-                <div class="side-menu">
-                    <li role="menuitem">
-                        <button onclick={() => goto(`/projects`)}
-                            tabindex="0" aria-label="View Projects"
-                            title="Projects">
-                                {$t('nav1')}
-                        </button>
-                    </li>
-                    <li role="menuitem">
-                        <button onclick={() => goto(`/about`)}
-                            tabindex="0" aria-label="View about page"
-                            title="About Page">
-                            {$t('nav2')}
-                        </button>
-                    </li>
-                    <li role="menuitem">
-                        <button onclick={() => goto(`/about`)}
-                            tabindex="0" aria-label="Contact me"
-                            title="Contact Page">
-                            {$t('nav3')}
-                        </button>
-                    </li>
+                <li role="menuitem">
+                    <button onclick={() => goto(`/`)}
+                        tabindex="0" class='name' 
+                        aria-label='Home page' title="Portfolio website front page">
+                        <img src="/favicon.png" alt="">
+                        Aleksander<strong>Ekman</strong>
+                    </button>
+                </li>
+                <div class="desktop">
+                    <div class="right">
+                        <div class="side-menu">
+                            <li role="menuitem">
+                                <button onclick={() => goto(`/projects`)}
+                                    tabindex="0" aria-label="View Projects"
+                                    title="Projects">
+                                        {$t('nav1')}
+                                </button>
+                            </li>
+                            <li role="menuitem">
+                                <button onclick={() => goto(`/about`)}
+                                    tabindex="0" aria-label="View about page"
+                                    title="About Page">
+                                    {$t('nav2')}
+                                </button>
+                            </li>
+                            <li role="menuitem">
+                                <button onclick={() => goto(`/about`)}
+                                    tabindex="0" aria-label="Contact me"
+                                    title="Contact Page">
+                                    {$t('nav3')}
+                                </button>
+                            </li>
+                        </div>
+                        <LanguageToggle />
+                    </div>
                 </div>
-                <LanguageToggle />
-            </div>
             {/if}
+            <button id="menu-button" aria-label="Åpne meny" onclick={toggleMobileMenu}>
+                <svg class:open={mobileMenuOpen} width="100" height="100" viewBox="0 0 100 100">
+                    <path class="line top" d="M 20,30 H 80"/>
+                    <path class="line middle" d="M 20,50 H 80" />
+                    <path class="line bottom" d="M 20,70 H 80"/>
+                  </svg>
+            </button>
         </ul>
     </nav>
+
 </header>
+{#if mobileMenuOpen}
+    <div in:fade={{ duration: 150 }} class="overlay"></div>
+{/if}
+<aside class="mobile">
+    {#if mobileMenuOpen}
+        <ul class="mobile-menu" in:fade={{ duration: 250 }} out:fade={{ duration: 250 }}>
+            <li role="menuitem">
+                <a
+                    href="/projects"
+                    onclick={() => {
+                        setTimeout(toggleMobileMenu, 150);
+                    }}>{$t('nav1')}
+                </a> 
+            </li>
+            <li role="menuitem">
+                <a
+                    href="/about"
+                    onclick={() => {
+                        setTimeout(toggleMobileMenu, 150);
+                    }}>{$t('nav2')}
+                </a> 
+            </li>
+            <li role="menuitem">
+                <a
+                    href="/contact"
+                    onclick={() => {
+                        setTimeout(toggleMobileMenu, 150);
+                    }}>{$t('nav3')}
+                </a> 
+            </li>
+            <LanguageToggle />
+        </ul>
+    {/if}
+</aside>
 
 <style>
     header {
+        border-radius: 0 0 25px 25px;
         padding: 0.3rem 0 0.3rem 0;
         display: flex;
         justify-content: center;
@@ -76,9 +126,9 @@
     }
 
     nav {
-        width: 95%;
+        width: 100vw;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
     }
 
     ul {
@@ -93,7 +143,7 @@
     }
 
     li {
-        margin: 0 2.5rem 0 2.5rem;
+        margin: 0 2rem 0 2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -164,17 +214,119 @@
         width: 100%;
     }
 
-    @media (max-width: 768px) {
+    .mobile {
+        display: none;
+    }
+
+    @media (max-width: 1055px) {
+        .desktop {
+            display: none;
+        }
         nav button {
             font-size: 1rem;
             padding: 0;
             margin-right: 1rem;
         }
-
-        .right {
-            width: auto;
+        nav {
             justify-content: center;
-            gap: 1rem;
         }
+        ul {
+            display: flex;
+            justify-content:center;
+            align-items: center;
+        }
+        nav button.name {
+            font-size: 1.4rem;
+        }
+        .mobile {
+            display: flex;
+            align-items: center;
+        }
+        #menu-button {
+            display: flex;
+            align-self: center;
+			position: absolute;
+			z-index: 1001;
+            width: 2.5rem;
+            height: 2.5rem;
+            right: 0;
+		}
+        .line {
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke: var(--text-color);
+            transition: all 250ms;
+        }
+        .top {
+            transform-origin: 26px 40px;
+        }
+
+        .middle {
+            stroke-dasharray: 60 60;
+        }
+
+        .bottom {
+            transform-origin: 26px 60px;
+        }
+        .open .top {
+            transform: rotate(45deg);
+        }
+        .open .middle {
+            opacity: 0;
+        }
+        .open .bottom {
+            transform: rotate(-45deg);
+        }
+        .mobile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mobile-menu {
+            top: 5rem;
+            color: var(--text-color);
+            width: 80vw;
+            position: fixed;
+            background-color: rgba(10, 24, 40, 0.5);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 0 4rem 0;
+            margin: 0;
+            height: auto;
+            border: 1px solid rgba(0,0,0,0.4);
+        }
+        .mobile-menu li {
+            padding: 0.5rem 4rem 0.5rem 4rem;
+            margin: 0.5rem 0;
+            font-size: 1rcap;
+            border-radius: 10px;
+        }
+        .mobile-menu a {
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+        }
+        .mobile-menu li:active, .mobile-menu li:hover, .mobile-menu li:focus {
+            background-color: rgba(0,0,0,0.1);
+        }
+        .overlay {
+            z-index: 1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgb(0, 0, 0);
+            background: linear-gradient(
+                180deg,
+                rgba(3, 8, 14, 0.8) 0%,
+                rgba(3, 8, 14, 0.5) 80%,
+                rgba(3, 8, 14, 0) 100%
+            );
+            width: 100vw;
+            height: 80%;
+            }
     }
 </style>

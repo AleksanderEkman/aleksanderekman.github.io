@@ -71,6 +71,7 @@
         text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
     }
     .hero-section_title {
+        text-wrap: nowrap;
         line-height: 200%;
         font-size: 3.5rem;
         color: var(--text-color);
@@ -96,8 +97,9 @@
     }
 
     .btn {
+        font-size: 1.1rem;
         padding: 0.75rem 1.5rem;
-        border-radius: 6px;
+        border-radius: 50px;
         text-decoration: none;
         font-weight: bold;
         transition: background-color 0.3s ease, transform 0.3s ease;
@@ -132,15 +134,24 @@
 
     @media (max-width: 768px) {
         .hero-section_title {
-            font-size: 2.5rem;
+            font-size: 2.25rem;
         }
-
+        .hero-section_content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
         .hero-section_description {
             font-size: 1rem;
+            text-wrap: wrap;
         }
 
         .hero-section_cta {
             flex-direction: column;
+            align-items: center;
+        }
+        .btn {
+            width: 60%;
         }
     }
 </style>

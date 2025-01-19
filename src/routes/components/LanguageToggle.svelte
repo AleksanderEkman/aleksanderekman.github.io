@@ -36,6 +36,7 @@
 
 <style>
     .lang-menu {
+        position: relative;
         margin-left: 2rem;
         display: flex;
         gap: 0.5rem; 
@@ -45,31 +46,41 @@
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
     }
     button {
+        position: relative;
         background: transparent;
         border: none;
         cursor: pointer;
         transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
         padding: 0.5rem; /* Added padding for better touch target */
     }
-    button.active {
+    button.active{
         font-weight: bold; /* Make active button more prominent */
-        text-decoration: underline; /* Keep underline for active state */
+    }
+    button.active::after{
+        width: 100%;
     }
     button:hover {
-        color: #b3a494; /* Change color on hover */
-        text-decoration: underline; /* Underline on hover for better feedback */
+        color: #ffffff; 
         cursor: none;
     }
-
-    button.active {
-        text-decoration: underline;
+    button::after {
+        content: '';
+        display: flex;
+        justify-self: center;
+        width: 0;
+        height: 2px;
+        background: #b3a494;
+        transition: width 0.3s ease;
+    }
+    button:hover::after {
+        width: 100%;
     }
     
-    @media (max-width: 768px) {
+    @media (max-width: 1055px) {
         .lang-menu {
             width: auto;
-            flex-direction: column; 
-            align-items: flex-start; 
+            margin-left: 0;
+            font-size: 1.2rem;
         }
     }
 </style>

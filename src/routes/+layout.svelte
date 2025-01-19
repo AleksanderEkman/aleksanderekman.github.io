@@ -120,6 +120,7 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+		overflow-x: hidden;
 	}
 
 	main {
@@ -128,4 +129,9 @@
         flex-direction: column;
         width: 100%;
     }
+	@media (max-width: 930px) {
+		:global(.mouse-cursor) {
+			display: none;
+		}
+	}
 </style>
