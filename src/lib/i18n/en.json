@@ -1,14 +1,23 @@
 {
 	"error.notFound": "Oops! Page not found.",
 	"error.backHome": "Back to Home",
+
 	"nav1": "Projects",
 	"nav2": "About Me",
 	"nav3": "Contact",
+
 	"welcome": "Welcome,",
 	"name": "my name is Aleksander",
 	"desc": "Fullstack Developer | Web Design & Development Enthusiast | I.T. Student",
 	"work": "View My Work",
 	"contact": "Get In Touch",
+
+	"contactTitle": "Contact Me",
+	"contactDesc": "If you have any questions or want to work with me, feel free to contact me.",
+	"contactName": "Name",
+	"contactEmail": "Email",
+	"contactMessage": "Message",
+
 	"location": "Location",
 	"norway": "Norway",
 	"contactMe": "Contact Me",

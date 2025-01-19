@@ -85,6 +85,8 @@
 
 <style>
 	.overlay {
+		-webkit-user-drag: none;
+		user-select: none;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -102,6 +104,8 @@
 		);
 	}
 	#particleCanvas {
+		user-select: none;
+		-webkit-user-drag: none;
 		position: absolute;
 		top: 0;
 		left: 0;

@@ -1,14 +1,23 @@
 {
 	"error.notFound": "Oops! Denne siden finnes ikke.",
 	"error.backHome": "Tilbake til Hjemmesiden",
+
 	"nav1": "Prosjekter",
 	"nav2": "Om Meg",
 	"nav3": "Kontakt",
+
 	"welcome": "Velkommen,",
 	"name": "jeg heter Aleksander",
 	"desc": "Fullstack-utvikler | Web Design & Utviklings-Entusiast | I.T.-Elev",
 	"work": "Se Arbeidet Mitt",
 	"contact": "Ta Kontakt",
+
+	"contactTitle": "Kontakt Meg",
+	"contactDesc": "Hvis du har noen spørsmål eller ønsker å jobbe med meg, er det bare å ta kontakt.",
+	"contactName": "Navn",
+	"contactEmail": "E-post",
+	"contactMessage": "Melding",
+
 	"location": "Lokasjon",
 	"norway": "Norge",
 	"contactMe": "Kontakt Meg",

@@ -61,7 +61,7 @@
 							</li>
 							<li role="menuitem">
 								<button
-									onclick={() => goto(`/about`)}
+									onclick={() => goto(`/contact`)}
 									tabindex="0"
 									aria-label="Contact me"
 									title="Contact Page"

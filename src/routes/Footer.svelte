@@ -68,6 +68,7 @@
 
 <style>
 	footer {
+		z-index: 1;
 		height: auto;
 		overflow: hidden;
 		display: flex;
@@ -76,11 +77,13 @@
 		width: 100%;
 		padding: 2.75rem 0em;
 		color: #0a1828;
+		background-color: #0a1828;
 		box-shadow: 0 -3px 15px rgba(255, 255, 255, 0.2);
 		text-wrap: nowrap;
 	}
 
 	.content {
+		z-index: 1;
 		overflow: hidden;
 		display: flex;
 		flex-direction: row;
@@ -92,6 +95,7 @@
 	}
 
 	.footer-col {
+		z-index: 1;
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;

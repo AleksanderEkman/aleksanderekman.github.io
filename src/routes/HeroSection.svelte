@@ -103,7 +103,7 @@
 	}
 
 	.btn {
-		font-size: 1.1rem;
+		font-size: 1.2rem;
 		padding: 0.75rem 1.5rem;
 		border-radius: 50px;
 		text-decoration: none;
