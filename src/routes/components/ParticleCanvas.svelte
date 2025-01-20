@@ -64,7 +64,7 @@
 		animate();
 
 		const handleResize = () => {
-			if (window.matchMedia('(min-width: 930px)').matches) {
+			if (window.matchMedia('(min-width: 900px)').matches) {
 				canvas.width = window.innerWidth;
 				canvas.height = window.innerHeight;
 				particles.length = 0;
