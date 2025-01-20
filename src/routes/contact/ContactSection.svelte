@@ -260,7 +260,7 @@
 		}
 
 		.contact-field {
-			width: 97.5%;
+			width: 95%;
 		}
 
 		button {
