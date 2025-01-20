@@ -76,13 +76,15 @@
 					</div>
 				</div>
 			{/if}
-			<button id="menu-button" aria-label="Åpne meny" onclick={toggleMobileMenu}>
-				<svg class:open={mobileMenuOpen} width="100" height="100" viewBox="0 0 100 100">
-					<path class="line top" d="M 20,30 H 80" />
-					<path class="line middle" d="M 20,50 H 80" />
-					<path class="line bottom" d="M 20,70 H 80" />
-				</svg>
-			</button>
+			<li id='unset'>
+				<button id="menu-button" aria-label="Åpne meny" onclick={toggleMobileMenu}>
+					<svg class:open={mobileMenuOpen} width="100" height="100" viewBox="0 0 100 100">
+						<path class="line top" d="M 20,30 H 80" />
+						<path class="line middle" d="M 20,50 H 80" />
+						<path class="line bottom" d="M 20,70 H 80" />
+					</svg>
+				</button>
+			</li>
 		</ul>
 	</nav>
 </header>
@@ -356,6 +358,13 @@
 			);
 			width: 100vw;
 			height: 80%;
+		}
+		#unset {
+			all: unset;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
 		}
 	}
 	@media (max-width: 1024px) and (orientation: landscape) {
