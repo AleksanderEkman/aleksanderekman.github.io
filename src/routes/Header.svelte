@@ -278,7 +278,7 @@
 			stroke-width: 8;
 			stroke-linecap: round;
 			stroke: var(--text-color);
-			transition: all 250ms;
+			transition: all 200ms;
 		}
 		.top {
 			transform-origin: 26px 40px;
