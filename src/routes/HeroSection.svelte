@@ -174,6 +174,9 @@
 		.hero-section_title {
 			font-size: 3.25vw;
 		}
+		.hero-section {
+			height: 100svh;
+		}
 	}
 	@media (max-width: 540px) {
 		.hero-section {
