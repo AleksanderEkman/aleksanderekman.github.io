@@ -21,7 +21,6 @@
 <header>
 	<nav aria-label="Main navigation">
 		<ul role="menubar">
-			{#if translationReady}
 				<li role="menuitem">
 					<button
 						onclick={() => goto(`/`)}
@@ -36,6 +35,7 @@
 						</h1>
 					</button>
 				</li>
+			{#if translationReady}
 				<div class="desktop">
 					<div class="right">
 						<div class="side-menu">

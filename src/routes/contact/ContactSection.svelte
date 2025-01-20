@@ -2,10 +2,18 @@
 	import { t } from 'svelte-i18n';
 	import { onMount } from 'svelte';
 	import emailjs from '@emailjs/browser';
+	import { waitLocale } from 'svelte-i18n';
 
 	let form: HTMLFormElement;
-
+	let translationReady = false;
+	
 	onMount(() => {
+        async function initialize() {
+            await waitLocale();
+			translationReady = true;
+        }
+
+        initialize();
 		emailjs.init("B_EqCDh0_Z8E6tYJP");
 	});
 
@@ -17,7 +25,6 @@
 				form.reset();
 			}, (error) => {
 				console.log('FAILED...', error);
-				// Add error handling here (e.g., show an error message)
 			});
 	};
 </script>
@@ -28,7 +35,8 @@
   method="POST"
   class="contact-field"
   on:submit={handleSubmit}
->
+>	
+{#if translationReady}
     <div class="contact-content">
         <div class="desc">
 			<h1 id="contact-header">{ $t('contactTitle' )}</h1>
@@ -56,6 +64,7 @@
 			<button type="submit">Send</button>
 		</div>
     </div>
+	{/if}
 </form>
 
 <style>
