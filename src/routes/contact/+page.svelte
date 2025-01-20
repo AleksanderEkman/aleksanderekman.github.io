@@ -8,7 +8,9 @@
 </svelte:head>
 
 <ParticleCanvas />
-
+<section class="contact">
+	<ContactSection />
+</section>
 
 
 <style>
@@ -31,7 +33,7 @@
 	@media (max-width: 1024px) {
 		.contact {
 			padding: 4.5rem 1rem;
-			height: 47.5rem;
+			height: 100svh;
 		}
 	}
 </style>
