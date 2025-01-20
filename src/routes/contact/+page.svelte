@@ -7,6 +7,7 @@
 	<link rel="canonical" href="https://allsers.github.io/contact" />
 </svelte:head>
 
+<ParticleCanvas />
 
 
 
