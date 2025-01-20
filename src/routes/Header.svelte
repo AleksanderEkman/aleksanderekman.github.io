@@ -124,6 +124,7 @@
 
 <style>
 	header {
+		user-select: none;
 		border-radius: 0 0 25px 25px;
 		padding: 0.3rem 0 0.3rem 0;
 		display: flex;
@@ -339,6 +340,7 @@
 			background-color: rgba(0, 0, 0, 0.1);
 		}
 		.overlay {
+			user-select: none;
 			z-index: 1;
 			position: fixed;
 			top: 0;

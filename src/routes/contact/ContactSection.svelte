@@ -35,11 +35,11 @@
 			<p>{ $t('contactDesc') }</p>
 		</div>
         <div class="input-container">
-			<label for="name">{ $t('contactName' ) } *</label>
+			<label for="name">{ $t('contactName' ) }</label>
 			<input type="text" id="name" name="from_name" autocomplete="name" required />
 		</div>
         <div class="input-container">
-            <label for="email">{ $t('contactEmail') } *</label>
+            <label for="email">{ $t('contactEmail') }</label>
             <input
                 type="email"
                 id="email"
@@ -49,7 +49,7 @@
             />
         </div>
         <div class="input-container">
-			<label for="message">{ $t('contactMessage') } *</label>
+			<label for="message">{ $t('contactMessage') }</label>
 			<textarea id="message" name="message" required></textarea>
 		</div>
 		<div class="button-container">
@@ -81,7 +81,7 @@
 	}
 
 	.contact-content {
-		backdrop-filter: blur(10px);
+		backdrop-filter: blur(15px);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -89,7 +89,7 @@
 		border-radius: 40px;
 		padding: 2rem;
 		width: 100%;
-		background-color: rgba(10, 15, 10, 0.3);
+		background-color: rgba(10, 15, 10, 0.2);
 		box-shadow:
 			inset 0 0 0 0.1rem rgba(0, 0, 0, 0.1),
 			0 4px 8px rgba(0, 0, 0, 0.4);
