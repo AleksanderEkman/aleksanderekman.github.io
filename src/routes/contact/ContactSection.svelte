@@ -72,7 +72,7 @@
 		justify-content: center;
 		align-items: center;
 		width: 40%;
-		height: 100%;
+		height: 100svh;
 		position: relative;
 		text-transform: none;
 		overflow: hidden;
@@ -260,7 +260,7 @@
 		}
 
 		.contact-field {
-			width: 95%;
+			width: 97.5%;
 		}
 
 		button {
