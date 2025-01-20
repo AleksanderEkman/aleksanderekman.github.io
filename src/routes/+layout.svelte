@@ -147,4 +147,9 @@
 			display: none;
 		}
 	}
+	@media (max-width: 1024px) and (orientation: landscape) {
+		:global(.mouse-cursor) {
+			display: none;
+		}
+	}
 </style>

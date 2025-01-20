@@ -7,6 +7,13 @@
 	} from '@fortawesome/free-brands-svg-icons';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { t } from 'svelte-i18n';
+	import { onMount } from 'svelte';
+
+	let visible = false;
+
+	onMount(() => {
+		visible = true;
+	});
 </script>
 
 <footer aria-label="Footer Informasjon">
@@ -32,35 +39,37 @@
 		<div class="footer-col">
 			<h3 id="header">{$t('SocialMedia')}</h3>
 			<ul>
-				<li>
-					<a href="https://github.com/allsers" target="_blank" rel="noopener">
-						<FontAwesomeIcon icon={faGithub} /> GitHub
-					</a>
-				</li>
-				<li>
-					<a href="https://www.instagram.com/aleksanderekman/" target="_blank" rel="noopener">
-						<FontAwesomeIcon icon={faInstagram} /> Instagram
-					</a>
-				</li>
-				<li>
-					<a
-						href="https://www.facebook.com/profile.php?id=100092579926144"
-						target="_blank"
-						rel="noopener"
-					>
-						<FontAwesomeIcon icon={faFacebook} /> Facebook
-					</a>
-				</li>
-				<li>
-					<a
-						href="https://www.linkedin.com/in/aleksander-ekman-a4b6712ba/"
-						target="_blank"
-						rel="noopener"
-					>
-						<FontAwesomeIcon icon={faLinkedin} /> LinkedIn
-					</a>
-				</li>
-				<li></li>
+				{#if visible}
+					<li>
+						<a href="https://github.com/allsers" target="_blank" rel="noopener">
+							<FontAwesomeIcon icon={faGithub} /> GitHub
+						</a>
+					</li>
+					<li>
+						<a href="https://www.instagram.com/aleksanderekman/" target="_blank" rel="noopener">
+							<FontAwesomeIcon icon={faInstagram} /> Instagram
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://www.facebook.com/profile.php?id=100092579926144"
+							target="_blank"
+							rel="noopener"
+						>
+							<FontAwesomeIcon icon={faFacebook} /> Facebook
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://www.linkedin.com/in/aleksander-ekman-a4b6712ba/"
+							target="_blank"
+							rel="noopener"
+						>
+							<FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+						</a>
+					</li>
+					<li></li>
+				{/if}
 			</ul>
 		</div>
 	</div>

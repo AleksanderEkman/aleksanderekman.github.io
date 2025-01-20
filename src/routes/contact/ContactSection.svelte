@@ -6,68 +6,76 @@
 
 	let form: HTMLFormElement;
 	let translationReady = false;
-	
-	onMount(() => {
-        async function initialize() {
-            await waitLocale();
-			translationReady = true;
-        }
 
-        initialize();
-		emailjs.init("B_EqCDh0_Z8E6tYJP");
+	onMount(() => {
+		async function initialize() {
+			await waitLocale();
+			translationReady = true;
+		}
+
+		initialize();
+		emailjs.init('B_EqCDh0_Z8E6tYJP');
 	});
 
 	const handleSubmit = (event: Event) => {
 		event.preventDefault();
 
-		emailjs.sendForm('service_i7l5pv2', 'template_y50jgqf', form)
-			.then(() => {
+		emailjs.sendForm('service_i7l5pv2', 'template_y50jgqf', form).then(
+			() => {
 				form.reset();
-			}, (error) => {
+			},
+			(error) => {
 				console.log('FAILED...', error);
-			});
+			}
+		);
 	};
 </script>
 
 <form
-	id = "contact-form"
+	id="contact-form"
 	bind:this={form}
-  method="POST"
-  class="contact-field"
-  on:submit={handleSubmit}
->	
-{#if translationReady}
-    <div class="contact-content">
-        <div class="desc">
-			<h1 id="contact-header">{ $t('contactTitle' )}</h1>
-			<p>{ $t('contactDesc') }</p>
+	method="POST"
+	class="contact-field"
+	on:submit={handleSubmit}
+>
+	{#if translationReady}
+		<div class="contact-content">
+			<div class="divide">
+				<div class="desc">
+					<h1 id="contact-header">{$t('contactTitle')}</h1>
+					<p>{$t('contactDesc')}</p>
+				</div>
+			</div>
+
+			<div class="divide">
+				<div class="input-container">
+					<label for="name">{$t('contactName')}</label>
+					<input type="text" id="name" name="from_name" autocomplete="name" required />
+				</div>
+				<div class="input-container">
+					<label for="email">{$t('contactEmail')}</label>
+					<input type="email" id="email" name="from_email" required autocomplete="email" />
+				</div>
+				<div class="input-container">
+					<label for="message">{$t('contactMessage')}</label>
+					<textarea id="message" name="message" required></textarea>
+				</div>
+				<div class="button-container">
+					<button type="submit">Send</button>
+				</div>
+			</div>
 		</div>
-        <div class="input-container">
-			<label for="name">{ $t('contactName' ) }</label>
-			<input type="text" id="name" name="from_name" autocomplete="name" required />
-		</div>
-        <div class="input-container">
-            <label for="email">{ $t('contactEmail') }</label>
-            <input
-                type="email"
-                id="email"
-                name="from_email"
-                required
-                autocomplete="email"
-            />
-        </div>
-        <div class="input-container">
-			<label for="message">{ $t('contactMessage') }</label>
-			<textarea id="message" name="message" required></textarea>
-		</div>
-		<div class="button-container">
-			<button type="submit">Send</button>
-		</div>
-    </div>
 	{/if}
 </form>
 
 <style>
+	.divide {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		height: auto;
+	}
 	.button-container {
 		padding: 1rem;
 		display: flex;
@@ -94,7 +102,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-        cursor: none;
+		cursor: none;
 		border-radius: 40px;
 		padding: 2rem;
 		width: 100%;
@@ -128,13 +136,13 @@
 	}
 
 	label {
-        cursor: none;
+		cursor: none;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 	}
 	.input-container {
-        cursor: none;
+		cursor: none;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -168,14 +176,14 @@
 
 	input:focus,
 	textarea:focus {
-        cursor: none;
+		cursor: none;
 	}
 	input:hover,
 	textarea:hover {
-        cursor: none;
+		cursor: none;
 		background-color: rgba(255, 255, 255, 0.06);
 	}
-	
+
 	#message {
 		height: 15rem;
 		min-height: 15rem;
@@ -201,7 +209,7 @@
 	}
 
 	button:hover {
-        cursor: none;
+		cursor: none;
 		transform: translateY(-3px);
 	}
 
@@ -233,7 +241,6 @@
 	}
 
 	@media screen and (max-width: 915px) {
-
 		#contact-header {
 			font-size: 2.5rem;
 		}
@@ -278,6 +285,50 @@
 		}
 		.input-container {
 			width: 80%;
+		}
+	}
+	@media (max-width: 1024px) and (orientation: landscape) {
+		.contact-field {
+			width: 90%;
+			height: 100%;
+			margin-top: 0;
+			padding: 0;
+		}
+
+		.contact-content {
+			margin-top: 3.5rem;
+			display: flex;
+			flex-direction: row; /* Set to row for landscape */
+			justify-content: space-between; /* Space elements evenly */
+			align-items: flex-start; /* Align items at the start */
+			height: 80%;
+			padding: 0 0.5rem;
+		}
+
+		.divide {
+			display: flex;
+			flex-direction: column; /* Keep as column for inner content */
+			width: 48%; /* Adjust width for two columns */
+		}
+
+		.input-container {
+			width: 100%;
+		}
+		.desc p {
+			width: 90%; /* Full width description */
+		}
+		button {
+			left: 18%;
+			bottom: 3rem;
+			position: absolute;
+			height: 3.5rem;
+			font-size: 1.1rem;
+		}
+		#contact-header {
+			font-size: 2.3rem;
+		}
+		#message {
+			height: 5rem;
 		}
 	}
 </style>

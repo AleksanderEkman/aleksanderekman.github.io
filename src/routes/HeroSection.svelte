@@ -140,7 +140,10 @@
 		cursor: none;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1024px) {
+		.hero-section {
+			height: 100lvh;
+		}
 		.hero-section_title {
 			font-size: 2.25rem;
 		}
@@ -161,6 +164,17 @@
 		.btn {
 			width: 60%;
 			font-size: 1rem;
+		}
+	}
+
+	@media (max-width: 1024px) and (orientation: landscape) {
+		.hero-section_content {
+			margin-top: 3rem;
+		}
+	}
+	@media (max-width: 540px) {
+		.hero-section {
+			height: 100svh;
 		}
 	}
 </style>

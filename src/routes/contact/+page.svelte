@@ -1,7 +1,8 @@
 <script lang="ts">
 	import ContactSection from './ContactSection.svelte';
-	import ParticleCanvas from "../components/ParticleCanvas.svelte";
+	import ParticleCanvas from '../components/ParticleCanvas.svelte';
 </script>
+
 <svelte:head>
 	<title>Aleksander Ekman Kontaktskjema</title>
 	<link rel="canonical" href="https://allsers.github.io/contact" />
@@ -11,7 +12,6 @@
 <section class="contact">
 	<ContactSection />
 </section>
-
 
 <style>
 	.contact {
@@ -34,6 +34,12 @@
 		.contact {
 			padding: 4.5rem 1rem;
 			height: 100svh;
+		}
+	}
+	@media (max-width: 1024px) and (orientation: landscape) {
+		.contact {
+			padding: 0;
+			overflow-y: auto;
 		}
 	}
 </style>

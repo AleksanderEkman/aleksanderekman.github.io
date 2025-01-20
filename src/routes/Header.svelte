@@ -21,6 +21,7 @@
 <header>
 	<nav aria-label="Main navigation">
 		<ul role="menubar">
+			{#if translationReady}
 				<li role="menuitem">
 					<button
 						onclick={() => goto(`/`)}
@@ -35,6 +36,7 @@
 						</h1>
 					</button>
 				</li>
+			{/if}
 			{#if translationReady}
 				<div class="desktop">
 					<div class="right">
@@ -354,6 +356,12 @@
 			);
 			width: 100vw;
 			height: 80%;
+		}
+	}
+	@media (max-width: 1024px) and (orientation: landscape) {
+		.mobile-menu {
+			padding: 1rem 0 1rem 0;
+			width: 60vw;
 		}
 	}
 </style>
