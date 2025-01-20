@@ -8,11 +8,10 @@
 </svelte:head>
 
 <ParticleCanvas />
-<main>
-	<section class="contact">
-		<ContactSection />
-	</section>
-</main>
+<section class="contact">
+	
+</section>
+
 
 <style>
 	.contact {
