@@ -297,7 +297,7 @@
 			width: 80%;
 		}
 	}
-	@media  (max-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
+	@media (max-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
 		.contact-field {
 			width: 90%;
 			height: 100%;

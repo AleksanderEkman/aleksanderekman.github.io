@@ -5,7 +5,7 @@
 	import { t } from 'svelte-i18n';
 	import { waitLocale } from 'svelte-i18n';
 	import { onMount } from 'svelte';
-	
+
 	let translationReady = false;
 	let mobileMenuOpen = false;
 
@@ -76,7 +76,7 @@
 					</div>
 				</div>
 			{/if}
-			<li id='unset'>
+			<li id="unset">
 				<button id="menu-button" aria-label="Åpne meny" onclick={toggleMobileMenu}>
 					<svg class:open={mobileMenuOpen} width="100" height="100" viewBox="0 0 100 100">
 						<path class="line top" d="M 20,30 H 80" />

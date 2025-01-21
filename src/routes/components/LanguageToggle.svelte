@@ -4,7 +4,6 @@
 	import { onMount } from 'svelte';
 	let currentLocale: string;
 
-
 	const changeLanguage = (lang: string) => {
 		locale.set(lang);
 		currentLocale = lang;
@@ -15,18 +14,18 @@
 	onMount(() => {
 		if (browser) {
 			const storedLanguage = localStorage.getItem('language');
+			currentLocale = storedLanguage || 'en-US';
 			if (storedLanguage) {
 				changeLanguage(storedLanguage);
 			}
 		}
 	});
-	
 </script>
 
 <div class="lang-menu" role="menubar" aria-label="Language selection">
 	<button
 		id="no-button"
-		class = {currentLocale === 'no' ? 'active' : ''}
+		class={currentLocale === 'no' ? 'active' : ''}
 		onclick={() => changeLanguage('no')}
 		tabindex="0"
 		aria-label="Select Norwegian language"
@@ -37,7 +36,7 @@
 	</button>
 	<button
 		id="en-button"
-		class = {currentLocale === 'en-US' ? 'active' : ''}
+		class={currentLocale === 'en-US' ? 'active' : ''}
 		onclick={() => changeLanguage('en-US')}
 		tabindex="0"
 		aria-label="Select English language"

@@ -13,9 +13,7 @@ export const setupI18n = () => {
 
 	language.subscribe((newLang) => {
 		init({
-			fallbackLocale: 'en-US',
-
+			fallbackLocale: 'en-US'
 		});
 	});
 };
-	
