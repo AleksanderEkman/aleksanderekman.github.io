@@ -127,6 +127,9 @@
 </aside>
 
 <style>
+	#unset {
+		display: none;
+	}
 	header {
 		user-select: none;
 		border-radius: 0 0 25px 25px;

@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { locale } from 'svelte-i18n';
-	import { getLocaleFromNavigator } from 'svelte-i18n';
 	import { language } from '$lib/stores/language';
 	import { browser } from '$app/environment';
 
@@ -11,6 +10,7 @@
 	});
 	const changeLanguage = (lang: string) => {
 		locale.set(lang);
+		currentLocale = lang;
 		if (browser) {
 			localStorage.setItem('language', lang);
 		}
