@@ -28,6 +28,11 @@ const config = {
 				'object-src': ["'self'"],
 				'base-uri': ["'self'"]
 			}
+		},
+		files: {
+			hooks: {
+				server: './src/hooks/hooks.server.ts'
+			}
 		}
 	}
 };
