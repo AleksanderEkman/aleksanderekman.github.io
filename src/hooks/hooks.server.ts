@@ -43,5 +43,12 @@ export const handle: Handle = async ({ event, resolve }) => {
         response.headers.set(key, value);
     }
 
+    // Set different Cache-Control for static assets
+    if (event.url.pathname.startsWith('/static/')) {
+        response.headers.set('Cache-Control', 'public, max-age=3600');
+    } else {
+        response.headers.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+    }
+
     return response;
 };
