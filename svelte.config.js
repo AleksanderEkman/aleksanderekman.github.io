@@ -42,8 +42,8 @@ const config = {
 			}
 		},
 		files: {
-			hooks: {
-				
+			hooks: process.env.ADAPTER === 'GITHUB_PAGES' ? undefined : {
+				server: 'src/hooks/hooks.server.ts'
 			}
 		}
 	}
