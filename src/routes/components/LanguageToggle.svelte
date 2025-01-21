@@ -11,7 +11,6 @@
 	});
 	const changeLanguage = (lang: string) => {
 		locale.set(lang);
-		language.set(lang);
 		if (browser) {
 			localStorage.setItem('language', lang);
 		}

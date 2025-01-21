@@ -163,6 +163,7 @@
 	}
 
 	li {
+		text-wrap: nowrap;
 		margin: 0 2rem 0 2rem;
 		display: flex;
 		flex-direction: column;
