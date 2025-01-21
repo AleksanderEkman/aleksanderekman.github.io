@@ -31,11 +31,22 @@
 	};
 </script>
 
+<svelte:head>
+	<style>
+		.contact-field {
+			visibility: hidden;
+		}
+		.contact-field.ready {
+			visibility: visible;
+		}
+	</style>
+</svelte:head>
+
 <form
 	id="contact-form"
 	bind:this={form}
 	method="POST"
-	class="contact-field"
+	class="contact-field {translationReady ? 'ready' : ''}"
 	on:submit={handleSubmit}
 >
 	{#if translationReady}
