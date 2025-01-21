@@ -1,13 +1,10 @@
 <script lang="ts">
 	import { locale } from 'svelte-i18n';
-	import { language } from '$lib/stores/language';
 	import { browser } from '$app/environment';
-
+	import { onMount } from 'svelte';
 	let currentLocale: string;
 
-	language.subscribe((value) => {
-		currentLocale = value;
-	});
+
 	const changeLanguage = (lang: string) => {
 		locale.set(lang);
 		currentLocale = lang;
@@ -15,12 +12,21 @@
 			localStorage.setItem('language', lang);
 		}
 	};
+	onMount(() => {
+		if (browser) {
+			const storedLanguage = localStorage.getItem('language');
+			if (storedLanguage) {
+				changeLanguage(storedLanguage);
+			}
+		}
+	});
+	
 </script>
 
 <div class="lang-menu" role="menubar" aria-label="Language selection">
 	<button
 		id="no-button"
-		class:active={currentLocale === 'no'}
+		class = {currentLocale === 'no' ? 'active' : ''}
 		onclick={() => changeLanguage('no')}
 		tabindex="0"
 		aria-label="Select Norwegian language"
@@ -31,7 +37,7 @@
 	</button>
 	<button
 		id="en-button"
-		class:active={currentLocale === 'en-US'}
+		class = {currentLocale === 'en-US' ? 'active' : ''}
 		onclick={() => changeLanguage('en-US')}
 		tabindex="0"
 		aria-label="Select English language"
