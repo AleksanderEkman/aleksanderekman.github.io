@@ -94,7 +94,6 @@
 		text-transform: none;
 		overflow: hidden;
 		text-align: left;
-		transition: background-image 1s ease-in-out;
 	}
 
 	.contact-content {
@@ -170,7 +169,7 @@
 		width: 100%;
 		resize: none;
 		background-color: transparent;
-		transition: all 0.2s;
+		transition: background-color 0.2s;
 		font-size: 0.95rem;
 	}
 
@@ -203,7 +202,7 @@
 		margin: 0;
 		border-radius: 50px;
 		height: 4rem;
-		transition: all 0.2s;
+		transition: transform 0.2s;
 		background-color: var(--text-color);
 		color: #0a1828;
 	}
@@ -258,7 +257,7 @@
 		}
 	}
 
-	@media screen and (max-width: 540px) {
+	@media screen and (max-width: 800px) {
 		#contact-header {
 			font-size: 1.75rem;
 		}
@@ -287,7 +286,7 @@
 			width: 80%;
 		}
 	}
-	@media (max-width: 1024px) and (orientation: landscape) {
+	@media  (max-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
 		.contact-field {
 			width: 90%;
 			height: 100%;
