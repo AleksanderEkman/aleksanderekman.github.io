@@ -5,6 +5,7 @@
 	import { t } from 'svelte-i18n';
 	import { waitLocale } from 'svelte-i18n';
 	import { onMount } from 'svelte';
+	
 	let translationReady = false;
 	let mobileMenuOpen = false;
 
@@ -22,7 +23,7 @@
 	<nav aria-label="Main navigation">
 		<ul role="menubar">
 			{#if translationReady}
-				<li role="menuitem">
+				<li role="menuitem" in:fade={{ duration: 200 }}>
 					<button
 						onclick={() => goto(`/`)}
 						tabindex="0"
@@ -36,9 +37,8 @@
 						</h1>
 					</button>
 				</li>
-			{/if}
-			{#if translationReady}
-				<div class="desktop">
+
+				<div class="desktop" in:fade={{ duration: 200 }}>
 					<div class="right">
 						<div class="side-menu">
 							<li role="menuitem">

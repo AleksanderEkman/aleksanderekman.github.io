@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import emailjs from '@emailjs/browser';
 	import { waitLocale } from 'svelte-i18n';
-
+	import { fade } from 'svelte/transition';
 	let form: HTMLFormElement;
 	let translationReady = false;
 
@@ -50,7 +50,7 @@
 	on:submit={handleSubmit}
 >
 	{#if translationReady}
-		<div class="contact-content">
+		<div class="contact-content" in:fade={{ duration: 200 }}>
 			<div class="divide">
 				<div class="desc">
 					<h1 id="contact-header">{$t('contactTitle')}</h1>
