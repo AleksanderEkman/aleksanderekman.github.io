@@ -42,9 +42,9 @@ const config = {
 			}
 		},
 		files: {
-			hooks: {
+			hooks: process.env.ADAPTER === 'vercel' ? {
 				server: './src/hooks/hooks.server.ts'
-			}
+			} : undefined
 		}
 	}
 };
