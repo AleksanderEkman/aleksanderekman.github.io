@@ -11,6 +11,7 @@ const config = {
 			checkOrigin: true
 		},
 		prerender: {
+			entries: ['*', '/404.html', '/contact', '/projects'],
 			handleHttpError: ({ path, referrer, message }) => {
 			  // Ignore 429 errors
 			  if (message.includes('429')) {
