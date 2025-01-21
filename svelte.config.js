@@ -10,6 +10,17 @@ const config = {
 		csrf: {
 			checkOrigin: true
 		},
+		prerender: {
+			handleHttpError: ({ path, referrer, message }) => {
+			  // Ignore 429 errors
+			  if (message.includes('429')) {
+				return;
+			  }
+			  
+			  // Throw other errors
+			  throw new Error(message);
+			}
+		  },
 		adapter:
 			process.env.ADAPTER === 'vercel'
 				? adapterVercel()
