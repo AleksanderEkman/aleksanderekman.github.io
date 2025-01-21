@@ -18,3 +18,4 @@ export const setupI18n = () => {
 		});
 	});
 };
+	
