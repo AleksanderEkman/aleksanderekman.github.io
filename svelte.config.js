@@ -43,7 +43,7 @@ const config = {
 		},
 		files: {
 			hooks: process.env.ADAPTER === 'vercel' ? {
-				server: './src/hooks/hooks.server.ts'
+				server: 'src/hooks/hooks.server.ts'
 			} : undefined
 		}
 	}
