@@ -5,7 +5,7 @@
 	import { fade } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 	let visible = false;
-	
+
 	let percentage = 45;
 	let increment = -0.5;
 
@@ -155,6 +155,7 @@
 			flex-direction: column;
 		}
 		.hero-section_description {
+			line-height: auto;
 			font-size: 1rem;
 			text-wrap: wrap;
 		}

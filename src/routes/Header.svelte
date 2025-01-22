@@ -29,7 +29,7 @@
 						tabindex="0"
 						class="name"
 						aria-label="Home page"
-						title="Portfolio website front page"
+						title="{$t('nav0')}"
 					>
 						<img src="/favicon.png" alt="" />
 						<h1>
@@ -46,7 +46,7 @@
 									onclick={() => goto(`/projects`)}
 									tabindex="0"
 									aria-label="View Projects"
-									title="Projects"
+									title="{$t('nav1')}"
 								>
 									{$t('nav1')}
 								</button>
@@ -56,7 +56,7 @@
 									onclick={() => goto(`/about`)}
 									tabindex="0"
 									aria-label="View about page"
-									title="About Page"
+									title="{$t('nav2')}"
 								>
 									{$t('nav2')}
 								</button>
@@ -66,7 +66,7 @@
 									onclick={() => goto(`/contact`)}
 									tabindex="0"
 									aria-label="Contact me"
-									title="Contact Page"
+									title="{$t('nav3')}"
 								>
 									{$t('nav3')}
 								</button>
