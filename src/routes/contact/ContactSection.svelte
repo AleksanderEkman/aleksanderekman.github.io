@@ -48,6 +48,7 @@
 	method="POST"
 	class="contact-field {translationReady ? 'ready' : ''}"
 	on:submit={handleSubmit}
+	hidden={!translationReady}
 >
 	{#if translationReady}
 		<div class="contact-content" in:fade={{ duration: 200 }}>
@@ -80,6 +81,12 @@
 </form>
 
 <style>
+	.contact-field {
+        visibility: hidden;
+    }
+    .contact-field.ready {
+        visibility: visible;
+    }
 	.divide {
 		display: flex;
 		flex-direction: column;
