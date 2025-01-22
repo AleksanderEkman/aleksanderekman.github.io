@@ -5,6 +5,7 @@
 		faFacebook,
 		faLinkedin
 	} from '@fortawesome/free-brands-svg-icons';
+	import { faEnvelope, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
 	import { t } from 'svelte-i18n';
 	import { onMount } from 'svelte';
@@ -25,15 +26,14 @@
 			<h3 id="header">{$t('location')}</h3>
 			<ul>
 				<li>
-					Oslo, {$t('norway')}
+					<FontAwesomeIcon icon={faMapMarkedAlt} /> Oslo, {$t('norway')}
 				</li>
 			</ul>
 		</div>
 		<div class="footer-col">
 			<h3 id="header">{$t('contactMe')}</h3>
 			<ul>
-				<li><a href="mailto:aleksander.ekman1@gmail.com">aleksander.ekman1@gmail.com</a></li>
-				<li></li>
+				<li><a href="mailto:post@aleksanderekman.no"><FontAwesomeIcon icon={faEnvelope} /> post@aleksanderekman.no</a></li>
 			</ul>
 		</div>
 		<div class="footer-col">
