@@ -1,4 +1,8 @@
 {
+	"hPageTitle": "Fullstack Developer Portfolio",
+	"pPageTitle": "Projects",
+	"cPageTitle": "Contact Me",
+
 	"error.notFound": "Oops! Page not found.",
 	"error.backHome": "Back to Home",
 

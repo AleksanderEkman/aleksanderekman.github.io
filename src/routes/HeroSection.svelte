@@ -9,7 +9,6 @@
 	let percentage = 45;
 	let increment = -0.5;
 
-
 	function updateGradient() {
 		percentage += increment;
 		if (percentage <= 22 || percentage >= 45) {
@@ -59,8 +58,8 @@
 	}
 
 	.hero-section_content {
+		z-index: 2;
 		text-align: left;
-		max-width: 800px;
 		opacity: 0;
 		transform: translateY(20px);
 		transition:

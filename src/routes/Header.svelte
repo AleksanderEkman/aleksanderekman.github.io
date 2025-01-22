@@ -2,6 +2,7 @@
 	import { fade } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 	import LanguageToggle from './components/LanguageToggle.svelte';
+	import { page } from '$app/state';
 	import { t } from 'svelte-i18n';
 	import { waitLocale } from 'svelte-i18n';
 	import { onMount } from 'svelte';
@@ -29,7 +30,7 @@
 						tabindex="0"
 						class="name"
 						aria-label="Home page"
-						title="{$t('nav0')}"
+						title={$t('nav0')}
 					>
 						<img src="/favicon.png" alt="" />
 						<h1>
@@ -41,32 +42,32 @@
 				<div class="desktop" in:fade={{ duration: 200 }}>
 					<div class="right">
 						<div class="side-menu">
-							<li role="menuitem">
+							<li role="menuitem" class:active={page.url.pathname === '/projects'}>
 								<button
 									onclick={() => goto(`/projects`)}
 									tabindex="0"
 									aria-label="View Projects"
-									title="{$t('nav1')}"
+									title={$t('nav1')}
 								>
 									{$t('nav1')}
 								</button>
 							</li>
-							<li role="menuitem">
+							<li role="menuitem" class:active={page.url.pathname === '/about'}>
 								<button
 									onclick={() => goto(`/about`)}
 									tabindex="0"
 									aria-label="View about page"
-									title="{$t('nav2')}"
+									title={$t('nav2')}
 								>
 									{$t('nav2')}
 								</button>
 							</li>
-							<li role="menuitem">
+							<li role="menuitem" class:active={page.url.pathname === '/contact'}>
 								<button
 									onclick={() => goto(`/contact`)}
 									tabindex="0"
 									aria-label="Contact me"
-									title="{$t('nav3')}"
+									title={$t('nav3')}
 								>
 									{$t('nav3')}
 								</button>
@@ -181,7 +182,6 @@
 		transition: width 0.3s;
 	}
 	.side-menu li:hover {
-		transform: scale(1.05);
 		transition:
 			transform 0.3s ease,
 			color 0.3s ease;
@@ -189,7 +189,15 @@
 	li:hover::after {
 		width: 100%;
 	}
-
+	li.active::after {
+		width: 100%;
+	}
+	li.active {
+		color: white;
+		text-shadow:
+			0 0 5px black,
+			0 0 10px black;
+	}
 	button {
 		display: flex;
 		flex-direction: row;

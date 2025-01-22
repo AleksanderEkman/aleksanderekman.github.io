@@ -1,10 +1,11 @@
 <script lang="ts">
 	import ContactSection from './ContactSection.svelte';
 	import ParticleCanvas from '../components/ParticleCanvas.svelte';
+	import { t } from 'svelte-i18n';
 </script>
 
 <svelte:head>
-	<title>Aleksander Ekman Kontaktskjema</title>
+	<title>Aleksander Ekman | {$t('cPageTitle')}</title>
 	<link rel="canonical" href="https://allsers.github.io/contact" />
 </svelte:head>
 

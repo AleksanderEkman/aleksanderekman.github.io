@@ -82,11 +82,11 @@
 
 <style>
 	.contact-field {
-        visibility: hidden;
-    }
-    .contact-field.ready {
-        visibility: visible;
-    }
+		visibility: hidden;
+	}
+	.contact-field.ready {
+		visibility: visible;
+	}
 	.divide {
 		display: flex;
 		flex-direction: column;
@@ -189,7 +189,7 @@
 		background-color: transparent;
 		transition: background-color 0.2s;
 		font-size: 0.95rem;
-		--tw-ring-color: rgba(255, 255, 255, 0.5); 
+		--tw-ring-color: rgba(255, 255, 255, 0.5);
 	}
 	input:active {
 		border-color: white !important;

@@ -13,15 +13,14 @@ const config = {
 		prerender: {
 			entries: ['*'],
 			handleHttpError: ({ message }) => {
+				if (message.includes('429')) {
+					return;
+				}
 
-			  if (message.includes('429')) {
-				return;
-			  }
-			  
-			  // Throw other errors
-			  throw new Error(message);
+				// Throw other errors
+				throw new Error(message);
 			}
-		  },
+		},
 		adapter:
 			process.env.ADAPTER === 'VERCEL'
 				? adapterVercel()
@@ -42,9 +41,12 @@ const config = {
 			}
 		},
 		files: {
-			hooks: process.env.ADAPTER === 'GITHUB_PAGES' ? undefined : {
-				server: 'src/hooks/hooks.server.ts'
-			}
+			hooks:
+				process.env.ADAPTER === 'GITHUB_PAGES'
+					? undefined
+					: {
+							server: 'src/hooks/hooks.server.ts'
+						}
 		}
 	}
 };
