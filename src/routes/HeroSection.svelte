@@ -4,9 +4,11 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { goto } from '$app/navigation';
+	let visible = false;
+	
 	let percentage = 45;
 	let increment = -0.5;
-	let visible = false;
+
 
 	function updateGradient() {
 		percentage += increment;
