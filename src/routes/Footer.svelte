@@ -23,17 +23,17 @@
 			<h3 id="header">© 2025 Aleksander Ekman</h3>
 		</div>
 		<div class="footer-col">
+			<h3 id="header">{$t('contactMe')}</h3>
+			<ul>
+				<li><a href="mailto:post@aleksanderekman.no"><FontAwesomeIcon icon={faEnvelope} /> post@aleksanderekman.no</a></li>
+			</ul>
+		</div>
+		<div class="footer-col">
 			<h3 id="header">{$t('location')}</h3>
 			<ul>
 				<li>
 					<FontAwesomeIcon icon={faMapMarkedAlt} /> Oslo, {$t('norway')}
 				</li>
-			</ul>
-		</div>
-		<div class="footer-col">
-			<h3 id="header">{$t('contactMe')}</h3>
-			<ul>
-				<li><a href="mailto:post@aleksanderekman.no"><FontAwesomeIcon icon={faEnvelope} /> post@aleksanderekman.no</a></li>
 			</ul>
 		</div>
 		<div class="footer-col">
