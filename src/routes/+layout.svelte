@@ -6,7 +6,7 @@
 	import { onMount } from 'svelte';
 	import '../app.css';
 	import { initGoogleAnalytics } from '$lib/googleAnalytics';
-
+	
 	export let children: import('svelte').Snippet;
 	const timeoutMap = new Map();
 	const moveCursor = (cursor: HTMLElement, e: MouseEvent) => {
@@ -27,13 +27,6 @@
 		timeoutMap.set(cursor, timeoutId);
 	};
 
-	const cursorClick = (cursor: HTMLElement) => {
-		cursor.classList.add('click');
-		setTimeout(() => {
-			cursor.classList.remove('click');
-		}, 75);
-	};
-
 	onMount(() => {
 		initGoogleAnalytics();
 		document.body.style.cursor = 'none';
@@ -44,8 +37,11 @@
 			moveCursor(cursor, e);
 		});
 
-		document.addEventListener('click', () => {
-			cursorClick(cursor);
+        document.addEventListener('mousedown', () => {
+			cursor.classList.add('click');
+		});
+        document.addEventListener('mouseup', () => {
+			cursor.classList.remove('click');
 		});
 		document.addEventListener('mouseenter', () => {
 			cursor.style.opacity = '1';
@@ -57,6 +53,8 @@
 			document.removeEventListener('mousemove', () => {});
 			document.removeEventListener('mouseenter', () => {});
 			document.removeEventListener('mouseleave', () => {});
+			document.removeEventListener('mousedown', () => {});
+			document.removeEventListener('mouseup', () => {});
 		};
 	});
 </script>
@@ -112,7 +110,18 @@
 		background-color: rgba(255, 255, 255, 1);
 		box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.7);
 	}
-
+	:global(.trail) {
+        position: fixed;
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5); /* Customize the color and opacity as needed */
+        pointer-events: none;
+        z-index: 9998; /* Behind the main cursor */
+        transform: translate(-50%, -50%) scale(0.8); /* Center and scale the cursor */
+        transition: all 0.1s ease-out; /* Smooth transitions */
+        animation: fade 1s forwards; /* Fade effect */
+    }
 	@keyframes pulse {
 		0% {
 			transform: scale(1);
