@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Aleksander Ekman</title>
+	<title>Aleksander Ekman: Fullstack Developer Portfolio</title>
 	<meta name="description" content="Aleksander's portfolio website with view over projects." />
 </svelte:head>
 

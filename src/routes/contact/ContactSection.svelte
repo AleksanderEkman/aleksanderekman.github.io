@@ -114,7 +114,7 @@
 		align-items: center;
 		cursor: none;
 		border-radius: 40px;
-		padding: 2rem;
+		padding: 1rem;
 		width: 100%;
 		background-color: rgba(10, 15, 10, 0.2);
 		box-shadow:
@@ -182,8 +182,11 @@
 		background-color: transparent;
 		transition: background-color 0.2s;
 		font-size: 0.95rem;
+		--tw-ring-color: rgba(255, 255, 255, 0.5); 
 	}
-
+	input:active {
+		border-color: white !important;
+	}
 	input:focus,
 	textarea:focus {
 		cursor: none;
