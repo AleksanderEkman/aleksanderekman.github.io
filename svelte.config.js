@@ -23,7 +23,7 @@ const config = {
 			}
 		  },
 		adapter:
-			process.env.ADAPTER === 'vercel'
+			process.env.ADAPTER === 'VERCEL'
 				? adapterVercel()
 				: adapterStatic({
 						pages: 'build',
