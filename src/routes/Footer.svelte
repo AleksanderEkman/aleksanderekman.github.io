@@ -25,7 +25,11 @@
 		<div class="footer-col">
 			<h3 id="header">{$t('contactMe')}</h3>
 			<ul>
-				<li><a href="mailto:post@aleksanderekman.no"><FontAwesomeIcon icon={faEnvelope} /> post@aleksanderekman.no</a></li>
+				<li>
+					<a href="mailto:mail@aleksanderekman.no"
+						><FontAwesomeIcon icon={faEnvelope} /> mail@aleksanderekman.no</a
+					>
+				</li>
 			</ul>
 		</div>
 		<div class="footer-col">

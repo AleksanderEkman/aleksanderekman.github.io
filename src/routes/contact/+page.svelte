@@ -16,7 +16,7 @@
 
 <style>
 	.contact {
-		padding: 2rem 0.75rem;
+		padding: 1rem 0.75rem;
 		color: var(--text-color);
 		display: flex;
 		flex-direction: column;
