@@ -7,13 +7,14 @@ register('no', () => import('./no.json'));
 
 export const setupI18n = () => {
 	init({
-		fallbackLocale: 'en-US',
+		fallbackLocale: 'no',
 		initialLocale: get(language)
 	});
 
 	language.subscribe((newLang) => {
 		init({
-			fallbackLocale: 'en-US'
+			fallbackLocale: 'no',
+			initialLocale: newLang
 		});
 	});
 };

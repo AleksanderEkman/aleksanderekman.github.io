@@ -20,14 +20,17 @@
 <footer aria-label="Footer Informasjon">
 	<div class="content">
 		<div class="footer-col">
-			<h3 id="header">© 2025 Aleksander Ekman</h3>
+			<h3 class="copy" id="header">© 2025 Aleksander Ekman</h3>
+			<p>{ $t('cRights') }</p>
 		</div>
 		<div class="footer-col">
 			<h3 id="header">{$t('contactMe')}</h3>
 			<ul>
 				<li>
 					<a href="mailto:mail@aleksanderekman.no"
-						><FontAwesomeIcon icon={faEnvelope} /> mail@aleksanderekman.no</a
+						>{#if visible}
+							<FontAwesomeIcon icon={faEnvelope} />
+						{/if} mail@aleksanderekman.no</a
 					>
 				</li>
 			</ul>
@@ -36,7 +39,7 @@
 			<h3 id="header">{$t('location')}</h3>
 			<ul>
 				<li>
-					<FontAwesomeIcon icon={faMapMarkedAlt} /> Oslo, {$t('norway')}
+					{#if visible}<FontAwesomeIcon icon={faMapMarkedAlt} />{/if} Oslo, {$t('norway')}
 				</li>
 			</ul>
 		</div>
@@ -46,12 +49,12 @@
 				{#if visible}
 					<li>
 						<a href="https://github.com/allsers" target="_blank" rel="noopener">
-							<FontAwesomeIcon icon={faGithub} /> GitHub
+							{#if visible}<FontAwesomeIcon icon={faGithub} />{/if} GitHub
 						</a>
 					</li>
 					<li>
 						<a href="https://www.instagram.com/aleksanderekman/" target="_blank" rel="noopener">
-							<FontAwesomeIcon icon={faInstagram} /> Instagram
+							{#if visible}<FontAwesomeIcon icon={faInstagram} />{/if} Instagram
 						</a>
 					</li>
 					<li>
@@ -60,7 +63,7 @@
 							target="_blank"
 							rel="noopener"
 						>
-							<FontAwesomeIcon icon={faFacebook} /> Facebook
+						{#if visible}<FontAwesomeIcon icon={faFacebook} />{/if} Facebook
 						</a>
 					</li>
 					<li>
@@ -69,7 +72,7 @@
 							target="_blank"
 							rel="noopener"
 						>
-							<FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+						{#if visible}<FontAwesomeIcon icon={faLinkedin} />{/if} LinkedIn
 						</a>
 					</li>
 					<li></li>
@@ -122,9 +125,13 @@
 		font-size: 1.3rem;
 		font-weight: bold;
 		color: var(--text-color);
-		margin-bottom: 0.5em;
+		margin-bottom: 0.5rem;
 	}
 
+	p {
+		font-size: 1rem;
+		color: var(--text-color);
+	}
 	ul {
 		list-style-type: none;
 		padding: 0;
@@ -193,20 +200,24 @@
 
 	@media (max-width: 1030px) and (orientation: landscape) {
 		#header {
-			font-size: 0.9em;
+			font-size: 0.9rem;
 		}
-
+		p {
+			font-size: 0.8rem;
+		}
 		li {
-			font-size: 0.8em;
+			font-size: 0.8rem;
 		}
 	}
 	@media (max-width: 480px) {
 		#header {
-			font-size: 1.1em;
+			font-size: 1.1rem;
 		}
-
+		p {
+			font-size: 0.8rem;
+		}
 		li {
-			font-size: 0.8em;
+			font-size: 0.8rem;
 		}
 		footer {
 			height: auto;
