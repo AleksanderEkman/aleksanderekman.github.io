@@ -1,9 +1,38 @@
 <script lang="ts">
-    import elvebakkenrevyen from "$lib/assets/elvebakkenrevyen-web.webp";
-    import ufc from "$lib/assets/ufc-web.webp";
-    import vargrclan from "$lib/assets/vargrclan-web.webp";
     import { goto } from "$app/navigation";
     import {t} from "svelte-i18n";
+    import { onMount } from "svelte";
+
+    let showImages = false;
+    let images: { elvebakkenrevyen: string | null, ufc: string | null, vargrclan: string | null } = {
+        elvebakkenrevyen: null,
+        ufc: null,
+        vargrclan: null
+    };
+
+    onMount(() => {
+        const options = {
+            root: document.querySelector('.project-section'),
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(async entry => {
+                if (entry.isIntersecting) {
+                    showImages = true;
+                    images.elvebakkenrevyen = (await import("$lib/assets/elvebakkenrevyen-web.webp")).default;
+                    images.ufc = (await import("$lib/assets/ufc-web.webp")).default;
+                    images.vargrclan = (await import("$lib/assets/vargrclan-web.webp")).default;
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        document.querySelectorAll('.project').forEach(project => {
+            observer.observe(project);
+        });
+    })
 </script>
 
 <section class="project-section">
@@ -11,17 +40,23 @@
     <div class="project-list">
 
         <div class="project">
-            <img src="{ufc}" alt="UFC website project" />
+            {#if showImages}
+                <img src="{images.ufc}" alt="UFC website project" />
+            {/if}
             <h3>UFC Website</h3>
             <p>Project 2 description</p>
         </div>
         <div class="project">
-            <img id="project-img" src="{elvebakkenrevyen}" alt="Elvebakkenrevyen website project" />
+            {#if showImages}
+                <img id="project-img" src="{images.elvebakkenrevyen}" alt="Elvebakkenrevyen website project" />
+            {/if}
             <h3>Elvebakkenrevyen</h3>
             <p>Elvebakkenrevyen project description</p>
         </div>
         <div class="project">
-            <img id="project-img" src="{vargrclan}" alt="Vikingtokt website project" />
+            {#if showImages}
+                <img id="project-img" src="{images.vargrclan}" alt="Vikingtokt website project" />
+            {/if}
             <h3>Vargrclan</h3>
             <p>Project 3 description</p>
         </div>
