@@ -46,35 +46,35 @@
 		<div class="footer-col">
 			<h3 id="header">{$t('SocialMedia')}</h3>
 			<ul>
-					<li>
-						<a href="https://github.com/allsers" target="_blank" rel="noopener">
-							{#if visible}<FontAwesomeIcon icon={faGithub} />{/if} GitHub
-						</a>
-					</li>
-					<li>
-						<a href="https://www.instagram.com/aleksanderekman/" target="_blank" rel="noopener">
-							{#if visible}<FontAwesomeIcon icon={faInstagram} />{/if} Instagram
-						</a>
-					</li>
-					<li>
-						<a
-							href="https://www.facebook.com/profile.php?id=100092579926144"
-							target="_blank"
-							rel="noopener"
-						>
-							{#if visible}<FontAwesomeIcon icon={faFacebook} />{/if} Facebook
-						</a>
-					</li>
-					<li>
-						<a
-							href="https://www.linkedin.com/in/aleksander-ekman-a4b6712ba/"
-							target="_blank"
-							rel="noopener"
-						>
-							{#if visible}<FontAwesomeIcon icon={faLinkedin} />{/if} LinkedIn
-						</a>
-					</li>
-					<li></li>
+				<li>
+					<a href="https://github.com/allsers" target="_blank" rel="noopener">
+						{#if visible}<FontAwesomeIcon icon={faGithub} />{/if} GitHub
+					</a>
+				</li>
+				<li>
+					<a href="https://www.instagram.com/aleksanderekman/" target="_blank" rel="noopener">
+						{#if visible}<FontAwesomeIcon icon={faInstagram} />{/if} Instagram
+					</a>
+				</li>
+				<li>
+					<a
+						href="https://www.facebook.com/profile.php?id=100092579926144"
+						target="_blank"
+						rel="noopener"
+					>
+						{#if visible}<FontAwesomeIcon icon={faFacebook} />{/if} Facebook
+					</a>
+				</li>
+				<li>
+					<a
+						href="https://www.linkedin.com/in/aleksander-ekman-a4b6712ba/"
+						target="_blank"
+						rel="noopener"
+					>
+						{#if visible}<FontAwesomeIcon icon={faLinkedin} />{/if} LinkedIn
+					</a>
+				</li>
+				<li></li>
 			</ul>
 		</div>
 	</div>

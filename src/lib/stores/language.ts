@@ -11,20 +11,20 @@ export const language = writable(initialLanguage);
 
 // Function to set the language
 export function setLanguage(lang: string) {
-    if (allowedLanguages.includes(lang)) {
-        language.set(lang);
-        if (typeof localStorage !== 'undefined') {
-            localStorage.setItem('language', lang);
-        }
-    }
+	if (allowedLanguages.includes(lang)) {
+		language.set(lang);
+		if (typeof localStorage !== 'undefined') {
+			localStorage.setItem('language', lang);
+		}
+	}
 }
 
 // Function to initialize language on the client side
 export function initLanguage() {
-    if (typeof localStorage !== 'undefined') {
-        const storedLang = localStorage.getItem('language');
-        if (storedLang && allowedLanguages.includes(storedLang)) {
-            language.set(storedLang);
-        }
-    }
+	if (typeof localStorage !== 'undefined') {
+		const storedLang = localStorage.getItem('language');
+		if (storedLang && allowedLanguages.includes(storedLang)) {
+			language.set(storedLang);
+		}
+	}
 }

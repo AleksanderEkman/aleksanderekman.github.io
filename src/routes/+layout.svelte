@@ -90,8 +90,8 @@
 		transform: translate(-50%, -50%);
 	}
 	:global(img:hover + .mouse-cursor) {
-        mix-blend-mode: normal !important;
-    }
+		mix-blend-mode: normal !important;
+	}
 
 	:global(.mouse-cursor::after) {
 		content: '';
