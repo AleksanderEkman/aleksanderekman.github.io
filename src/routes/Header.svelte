@@ -52,9 +52,9 @@
 									{$t('nav1')}
 								</button>
 							</li>
-							<li role="menuitem" class:active={page.url.pathname === '/about'}>
+							<li role="menuitem" class:active={page.url.pathname === '/about-me'}>
 								<button
-									onclick={() => goto(`/about`)}
+									onclick={() => goto(`/about-me`)}
 									tabindex="0"
 									aria-label="View about page"
 									title={$t('nav2')}

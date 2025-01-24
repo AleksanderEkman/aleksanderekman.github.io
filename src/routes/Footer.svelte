@@ -21,7 +21,7 @@
 	<div class="content">
 		<div class="footer-col">
 			<h3 class="copy" id="header">© 2025 Aleksander Ekman</h3>
-			<p>{ $t('cRights') }</p>
+			<p>{$t('cRights')}</p>
 		</div>
 		<div class="footer-col">
 			<h3 id="header">{$t('contactMe')}</h3>
@@ -63,7 +63,7 @@
 							target="_blank"
 							rel="noopener"
 						>
-						{#if visible}<FontAwesomeIcon icon={faFacebook} />{/if} Facebook
+							{#if visible}<FontAwesomeIcon icon={faFacebook} />{/if} Facebook
 						</a>
 					</li>
 					<li>
@@ -72,7 +72,7 @@
 							target="_blank"
 							rel="noopener"
 						>
-						{#if visible}<FontAwesomeIcon icon={faLinkedin} />{/if} LinkedIn
+							{#if visible}<FontAwesomeIcon icon={faLinkedin} />{/if} LinkedIn
 						</a>
 					</li>
 					<li></li>
