@@ -21,7 +21,7 @@
 	<div class="content">
 		<div class="footer-col">
 			<h3 class="copy" id="header">© 2025 Aleksander Ekman</h3>
-			<p>{ $t('cRights') }</p>
+			<p>{$t('cRights')}</p>
 		</div>
 		<div class="footer-col">
 			<h3 id="header">{$t('contactMe')}</h3>
@@ -46,7 +46,6 @@
 		<div class="footer-col">
 			<h3 id="header">{$t('SocialMedia')}</h3>
 			<ul>
-				{#if visible}
 					<li>
 						<a href="https://github.com/allsers" target="_blank" rel="noopener">
 							{#if visible}<FontAwesomeIcon icon={faGithub} />{/if} GitHub
@@ -63,7 +62,7 @@
 							target="_blank"
 							rel="noopener"
 						>
-						{#if visible}<FontAwesomeIcon icon={faFacebook} />{/if} Facebook
+							{#if visible}<FontAwesomeIcon icon={faFacebook} />{/if} Facebook
 						</a>
 					</li>
 					<li>
@@ -72,11 +71,10 @@
 							target="_blank"
 							rel="noopener"
 						>
-						{#if visible}<FontAwesomeIcon icon={faLinkedin} />{/if} LinkedIn
+							{#if visible}<FontAwesomeIcon icon={faLinkedin} />{/if} LinkedIn
 						</a>
 					</li>
 					<li></li>
-				{/if}
 			</ul>
 		</div>
 	</div>

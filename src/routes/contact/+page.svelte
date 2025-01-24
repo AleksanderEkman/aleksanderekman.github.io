@@ -16,7 +16,7 @@
 
 <style>
 	.contact {
-		padding: 1rem 0.75rem;
+		padding: 3rem 0.75rem;
 		color: var(--text-color);
 		display: flex;
 		flex-direction: column;
@@ -33,7 +33,7 @@
 
 	@media (max-width: 1024px) {
 		.contact {
-			padding: 4.5rem 1rem;
+			padding: 1rem 1rem;
 			height: 100svh;
 		}
 	}

@@ -6,7 +6,7 @@
 	import { onMount } from 'svelte';
 	import '../app.css';
 	import { initGoogleAnalytics } from '$lib/googleAnalytics';
-	
+
 	export let children: import('svelte').Snippet;
 	const timeoutMap = new Map();
 	const moveCursor = (cursor: HTMLElement, e: MouseEvent) => {
@@ -37,10 +37,10 @@
 			moveCursor(cursor, e);
 		});
 
-        document.addEventListener('mousedown', () => {
+		document.addEventListener('mousedown', () => {
 			cursor.classList.add('click');
 		});
-        document.addEventListener('mouseup', () => {
+		document.addEventListener('mouseup', () => {
 			cursor.classList.remove('click');
 		});
 		document.addEventListener('mouseenter', () => {
@@ -89,6 +89,9 @@
 			transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 		transform: translate(-50%, -50%);
 	}
+	:global(img:hover + .mouse-cursor) {
+        mix-blend-mode: normal !important;
+    }
 
 	:global(.mouse-cursor::after) {
 		content: '';
@@ -111,17 +114,17 @@
 		box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.7);
 	}
 	:global(.trail) {
-        position: fixed;
-        width: 0.8rem;
-        height: 0.8rem;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.5); /* Customize the color and opacity as needed */
-        pointer-events: none;
-        z-index: 9998; /* Behind the main cursor */
-        transform: translate(-50%, -50%) scale(0.8); /* Center and scale the cursor */
-        transition: all 0.1s ease-out; /* Smooth transitions */
-        animation: fade 1s forwards; /* Fade effect */
-    }
+		position: fixed;
+		width: 0.8rem;
+		height: 0.8rem;
+		border-radius: 50%;
+		background-color: rgba(255, 255, 255, 0.5); /* Customize the color and opacity as needed */
+		pointer-events: none;
+		z-index: 9998; /* Behind the main cursor */
+		transform: translate(-50%, -50%) scale(0.8); /* Center and scale the cursor */
+		transition: all 0.1s ease-out; /* Smooth transitions */
+		animation: fade 1s forwards; /* Fade effect */
+	}
 	@keyframes pulse {
 		0% {
 			transform: scale(1);
