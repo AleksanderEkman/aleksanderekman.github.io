@@ -1,15 +1,30 @@
 import { writable } from 'svelte/store';
-import { browser } from '$app/environment';
 
 const allowedLanguages = ['en-US', 'no'];
-const storedLanguage = browser ? localStorage.getItem('language') : null;
-const initialLanguage =
-	storedLanguage && allowedLanguages.includes(storedLanguage) ? storedLanguage : 'no';
+const defaultLanguage = 'en-US';
 
+// This will be replaced during SSR
+let initialLanguage = defaultLanguage;
+
+// Create the store
 export const language = writable(initialLanguage);
 
-if (browser) {
-	language.subscribe((newLang) => {
-		localStorage.setItem('language', newLang);
-	});
+// Function to set the language
+export function setLanguage(lang: string) {
+    if (allowedLanguages.includes(lang)) {
+        language.set(lang);
+        if (typeof localStorage !== 'undefined') {
+            localStorage.setItem('language', lang);
+        }
+    }
+}
+
+// Function to initialize language on the client side
+export function initLanguage() {
+    if (typeof localStorage !== 'undefined') {
+        const storedLang = localStorage.getItem('language');
+        if (storedLang && allowedLanguages.includes(storedLang)) {
+            language.set(storedLang);
+        }
+    }
 }

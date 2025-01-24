@@ -46,7 +46,6 @@
 		<div class="footer-col">
 			<h3 id="header">{$t('SocialMedia')}</h3>
 			<ul>
-				{#if visible}
 					<li>
 						<a href="https://github.com/allsers" target="_blank" rel="noopener">
 							{#if visible}<FontAwesomeIcon icon={faGithub} />{/if} GitHub
@@ -76,7 +75,6 @@
 						</a>
 					</li>
 					<li></li>
-				{/if}
 			</ul>
 		</div>
 	</div>

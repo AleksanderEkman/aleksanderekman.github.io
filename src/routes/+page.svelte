@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import HeroSection from './HeroSection.svelte';
+	import ProjectSection from './ProjectSection.svelte';
 	import { t } from 'svelte-i18n';
 </script>
 
@@ -12,3 +13,4 @@
 </svelte:head>
 
 <HeroSection />
+<ProjectSection />

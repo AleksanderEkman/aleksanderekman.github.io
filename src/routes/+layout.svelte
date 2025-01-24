@@ -89,6 +89,9 @@
 			transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 		transform: translate(-50%, -50%);
 	}
+	:global(img:hover + .mouse-cursor) {
+        mix-blend-mode: normal !important;
+    }
 
 	:global(.mouse-cursor::after) {
 		content: '';
