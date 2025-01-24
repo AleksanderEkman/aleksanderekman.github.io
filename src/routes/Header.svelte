@@ -341,14 +341,13 @@
 			touch-action: manipulation;
 		}
 		.mobile-menu li {
-			padding: 0.5rem 4rem 0.5rem 4rem;
 			margin: 0.5rem 0;
 			font-size: 1rcap;
 			border-radius: 10px;
 		}
 		.mobile-menu a {
 			font-size: 1.2rem;
-			padding: 0.5rem 1rem;
+			padding: 1rem 5rem;
 		}
 		.mobile-menu li:active,
 		.mobile-menu li:hover,
