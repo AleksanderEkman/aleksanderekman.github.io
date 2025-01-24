@@ -83,8 +83,6 @@
 </section>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-    
 	.project-section {
 		box-shadow: 0 -3px 15px rgba(255, 255, 255, 0.2);
 		background-color: #0a1828;
@@ -173,10 +171,10 @@
 		);
 	}
 	.project h3 {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Montserrat';
 		font-weight: 900;
 		letter-spacing: 0.05rem;
-		font-size: 1.25rem;
+		font-size: 1.4rem;
 		margin-bottom: 0.5rem;
 	}
 
