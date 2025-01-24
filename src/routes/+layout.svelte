@@ -76,8 +76,8 @@
 		display: flex;
 		opacity: 0;
 		position: fixed;
-		width: 2.2rem;
-		height: 2.2rem;
+		width: 2.3rem;
+		height: 2.3rem;
 		border-radius: 50%;
 		background-color: rgba(255, 255, 255, 0.8);
 		pointer-events: none;
