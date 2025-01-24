@@ -232,12 +232,16 @@
 		}
 
 		.project-list {
+			gap: 4rem;
 			flex-direction: column;
 			align-items: center;
 		}
 
 		.project {
 			width: 100%;
+		}
+		.btn-primary {
+			margin: 1rem;
 		}
 	}
 </style>
