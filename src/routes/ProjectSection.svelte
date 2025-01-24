@@ -39,7 +39,7 @@
 		<div class="project">
 			{#if images.ufc}
 				<img
-					in:fade={{ duration: 300 }}
+					in:fade={{ duration: 350 }}
 					id="project-img"
 					src={images.ufc}
 					alt="UFC website project"
@@ -53,7 +53,7 @@
 		<div class="project">
 			{#if images.elvebakkenrevyen}
 				<img
-					in:fade={{ duration: 300 }}
+					in:fade={{ duration: 350 }}
 					id="project-img"
 					src={images.elvebakkenrevyen}
 					alt="Elvebakkenrevyen website project"
@@ -67,7 +67,7 @@
 		<div class="project">
 			{#if images.vargrclan}
 				<img
-					in:fade={{ duration: 300 }}
+					in:fade={{ duration: 350 }}
 					id="project-img"
 					src={images.vargrclan}
 					alt="Vikingtokt website project"
@@ -79,10 +79,12 @@
 			<p>Project 3 description</p>
 		</div>
 	</div>
-	<button onclick={() => goto('/projects')} class="btn-primary">{$t('projectsAction')} </button>
+	<button onclick={() => goto('/projects')} class="btn-primary">{$t('pAction')} </button>
 </section>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    
 	.project-section {
 		box-shadow: 0 -3px 15px rgba(255, 255, 255, 0.2);
 		background-color: #0a1828;
@@ -137,6 +139,7 @@
 	}
 	.project p {
 		padding: 1rem;
+        margin-bottom: 1rem;
 	}
 
 	.project:hover {
@@ -164,13 +167,14 @@
 		margin-bottom: 1rem;
 		background: linear-gradient(
 			45deg,
-			rgba(255, 255, 255, 0.01) 0%,
+			rgba(255, 255, 255, 0.0) 0%,
 			rgba(255, 255, 255, 0.02) 50%,
-			rgba(255, 255, 255, 0.03) 100%
+			rgba(255, 255, 255, 0.04) 100%
 		);
 	}
 	.project h3 {
-		font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+		font-weight: 900;
 		letter-spacing: 0.05rem;
 		font-size: 1.25rem;
 		margin-bottom: 0.5rem;
@@ -199,7 +203,7 @@
 		cursor: none;
 		transform: translateY(-4px);
 	}
-	@media (min-width: 1024px) {
+	@media (min-width: 1500px) {
 		.project-section {
 			height: 70rem;
 		}
@@ -211,7 +215,7 @@
 			gap: 5rem;
 		}
 		.project {
-			width: 45rem;
+			width: 47rem;
 		}
 	}
 	@media (max-width: 768px) {
