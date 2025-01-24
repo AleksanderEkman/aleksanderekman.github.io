@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { t } from 'svelte-i18n';
+	import { t, waitLocale } from 'svelte-i18n';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
@@ -10,8 +10,11 @@
 		ufc: null,
 		vargrclan: null
 	};
+	let visible = false;
 
-	onMount(() => {
+	onMount(async () => {
+        await waitLocale();
+		visible = true;
 		const options = {
 			root: null,
 			rootMargin: '0px',
@@ -79,7 +82,14 @@
 			<p>Project 3 description</p>
 		</div>
 	</div>
-	<button onclick={() => goto('/projects')} class="btn-primary">{$t('pAction')} </button>
+
+	<button onclick={() => goto('/projects')} class="btn-primary"
+		>{#if visible}{$t(
+				'pAction'
+			)}{:else}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {/if}</button
+	>
 </section>
 
 <style>
@@ -137,7 +147,7 @@
 	}
 	.project p {
 		padding: 1rem;
-        margin-bottom: 1rem;
+		margin-bottom: 1rem;
 	}
 
 	.project:hover {
@@ -165,7 +175,7 @@
 		margin-bottom: 1rem;
 		background: linear-gradient(
 			45deg,
-			rgba(255, 255, 255, 0.0) 0%,
+			rgba(255, 255, 255, 0) 0%,
 			rgba(255, 255, 255, 0.02) 50%,
 			rgba(255, 255, 255, 0.04) 100%
 		);
