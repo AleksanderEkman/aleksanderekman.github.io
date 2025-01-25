@@ -7,8 +7,13 @@
 	import { waitLocale } from 'svelte-i18n';
 	import { onMount } from 'svelte';
 
+	let scrollY = 0;
 	let translationReady = false;
 	let mobileMenuOpen = false;
+
+
+	let isScrolled = false;
+	$: isScrolled = scrollY > 15;
 
 	function toggleMobileMenu() {
 		mobileMenuOpen = !mobileMenuOpen;
@@ -20,7 +25,9 @@
 	});
 </script>
 
-<header>
+<svelte:window bind:scrollY={scrollY}></svelte:window>
+
+<header class:scroll={isScrolled}>
 	<nav aria-label="Main navigation">
 		<ul role="menubar">
 			{#if translationReady}
@@ -142,13 +149,15 @@
 		top: 0;
 		left: 0;
 		z-index: 1000;
-		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-		background-color: rgba(10, 24, 40, 0.5);
-		backdrop-filter: blur(10px);
 		color: var(--text-color);
 		touch-action: manipulation;
+		transition: box-shadow 0.3s, background-color 0.3s, backdrop-filter 0.3s;
 	}
-
+	:global(header.scroll) {
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+		background-color: rgba(10, 24, 40, 0.5);
+		backdrop-filter: blur(10px);
+	}
 	nav {
 		width: 100vw;
 		display: flex;
