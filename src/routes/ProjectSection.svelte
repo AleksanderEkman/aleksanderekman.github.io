@@ -21,7 +21,7 @@
 			threshold: 0.01
 		};
 
-		const observer = new IntersectionObserver((entries, observer) => {
+		const observer   = new IntersectionObserver((entries, observer) => {
 			entries.forEach(async (entry) => {
 				if (entry.isIntersecting) {
 					images.elvebakkenrevyen = (await import('$lib/assets/elvebakkenrevyen-web.webp')).default;
@@ -37,7 +37,11 @@
 </script>
 
 <section class="project-section" bind:this={projectSection}>
-	<h2>{$t('nav1')}</h2>
+    {#if visible}
+	    <h2>{$t('nav1')}</h2>
+    {:else}
+        <h2>&nbsp;</h2>
+    {/if}
 	<div class="project-list">
 		<div class="project">
 			{#if images.ufc}
@@ -79,7 +83,7 @@
 					src={images.vargrclan}
 					alt="Vikingtokt website project"
 				/>
-			{:else}
+			{:else} 
 				<div class="placeholder"></div>
 			{/if}
 			<div class="text">
@@ -168,6 +172,7 @@
 		filter: brightness(105%);
 	}
 	.project img {
+        -webkit-user-drag: none;
 		filter: brightness(75%);
 		margin-bottom: 0;
 		aspect-ratio: 16/10;
