@@ -7,7 +7,8 @@
 	import '../app.css';
 	import { initGoogleAnalytics } from '$lib/googleAnalytics';
 
-	export let children: import('svelte').Snippet;
+	let { children } = $props();
+
 	const timeoutMap = new Map();
 	const moveCursor = (cursor: HTMLElement, e: MouseEvent) => {
 		cursor.style.opacity = '1';
@@ -49,6 +50,7 @@
 		document.addEventListener('mouseleave', () => {
 			cursor.style.opacity = '0';
 		});
+
 		return () => {
 			document.removeEventListener('mousemove', () => {});
 			document.removeEventListener('mouseenter', () => {});
@@ -62,7 +64,7 @@
 <div class="app">
 	<Header />
 	<main>
-		{@render children?.()}
+		{@render children()}
 	</main>
 	<Footer />
 </div>
@@ -86,9 +88,6 @@
 			opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
 			transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 		transform: translate(-50%, -50%);
-	}
-	:global(img:hover + .mouse-cursor) {
-		mix-blend-mode: normal !important;
 	}
 
 	:global(.mouse-cursor::after) {
@@ -122,6 +121,9 @@
 		transform: translate(-50%, -50%) scale(0.8); /* Center and scale the cursor */
 		transition: all 0.1s ease-out; /* Smooth transitions */
 		animation: fade 1s forwards; /* Fade effect */
+	}
+	:global(img:hover ~ :global(.mouse-cursor)) {
+		mix-blend-mode: normal !important;
 	}
 	@keyframes pulse {
 		0% {

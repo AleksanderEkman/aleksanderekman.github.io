@@ -112,7 +112,7 @@
 		justify-content: center;
 		align-items: center;
 		width: 100vw;
-		min-height: 50rem;
+		height: auto;
 		position: relative;
 		text-transform: none;
 		overflow: hidden;
@@ -235,7 +235,8 @@
 
 	@media (min-width: 1500px) {
 		.project-section {
-			height: 70rem;
+			height: auto;
+			padding: 10rem 0;
 		}
 		.project img,
 		.placeholder {
