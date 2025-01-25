@@ -168,11 +168,11 @@
 	}
 	.project:hover img {
 		transform: scale(1.06) translateY(2.5%);
-		filter: brightness(105%);
+		filter: brightness(110%);
 	}
 	.project img {
 		-webkit-user-drag: none;
-		filter: brightness(75%);
+		filter: brightness(74%);
 		margin-bottom: 0;
 		aspect-ratio: 16/10;
 		transition:
