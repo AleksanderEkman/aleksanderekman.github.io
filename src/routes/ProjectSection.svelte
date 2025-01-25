@@ -50,8 +50,10 @@
 			{:else}
 				<div class="placeholder"></div>
 			{/if}
-			<h3>UFC Website</h3>
-			<p>Project 2 description</p>
+			<div class="text">
+				<h3>UFC Website</h3>
+				<p>Project 2 description</p>
+			</div>
 		</div>
 		<div class="project">
 			{#if images.elvebakkenrevyen}
@@ -64,8 +66,10 @@
 			{:else}
 				<div class="placeholder"></div>
 			{/if}
-			<h3>Elvebakkenrevyen</h3>
-			<p>Elvebakkenrevyen project description</p>
+			<div class="text">
+				<h3>Elvebakkenrevyen</h3>
+				<p>Elvebakkenrevyen project description</p>
+			</div>
 		</div>
 		<div class="project">
 			{#if images.vargrclan}
@@ -78,8 +82,10 @@
 			{:else}
 				<div class="placeholder"></div>
 			{/if}
-			<h3>Vargrclan</h3>
-			<p>Project 3 description</p>
+			<div class="text">
+				<h3>Vargrclan</h3>
+				<p>Project 3 description</p>
+			</div>
 		</div>
 	</div>
 
@@ -130,6 +136,7 @@
 
 	.project {
 		background-color: #0b1621;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%);
 		border-radius: 10px;
 		box-shadow:
 			0 4px 8px rgba(0, 0, 0, 0.2),
@@ -157,15 +164,17 @@
 			0 0px 15px rgba(255, 255, 255, 0.4);
 	}
 	.project:hover img {
-		transform: scale(1.05) translateY(2.5%);
+		transform: scale(1.06) translateY(2.5%);
+		filter: brightness(105%);
 	}
 	.project img {
+		filter: brightness(80%);
+		margin-bottom: 0;
 		aspect-ratio: 16/10;
-		transition: transform 0.4s;
+		transition: transform 0.4s, filter 0.4s;
 		width: 100%;
 		height: auto;
 		border-radius: 10px;
-		margin-bottom: 1rem;
 	}
 	.placeholder {
 		aspect-ratio: 16/10;
@@ -181,13 +190,19 @@
 		);
 	}
 	.project h3 {
+		-webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
         font-family: 'Montserrat';
 		font-weight: 900;
-		letter-spacing: 0.05rem;
+		letter-spacing: 0.025rem;
 		font-size: 1.4rem;
 		margin-bottom: 0.5rem;
 	}
-
+	.text {
+		padding: 1rem;
+		border-radius: 8px;
+		width: 100%;
+		background: rgba(0, 0, 0, 0.1);
+	}
 	.project p {
 		font-size: 1rem;
 		color: #ccc;
@@ -206,18 +221,20 @@
 		background-color: var(--text-color);
 		color: #0a1828;
 	}
+	
 
 	.btn-primary:hover {
 		cursor: none;
-		transform: translateY(-4px);
+		transform: translateY(-7.5%);
 	}
+
 	@media (min-width: 1500px) {
 		.project-section {
 			height: 70rem;
 		}
 		.project img,
 		.placeholder {
-			margin-bottom: 2.5rem;
+			margin-bottom: 1rem;
 		}
 		.project-list {
 			gap: 5rem;
@@ -227,6 +244,9 @@
 		}
 	}
 	@media (max-width: 768px) {
+		.project-section h2 {
+			font-size: 2rem;
+		}
 		.project-section {
 			padding: 2rem;
 		}
