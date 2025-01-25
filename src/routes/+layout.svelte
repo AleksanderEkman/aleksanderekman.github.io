@@ -69,8 +69,6 @@
 
 <div class="mouse-cursor"></div>
 
-<!-- Ensure this div is present -->
-
 <style>
 	:global(.mouse-cursor) {
 		display: flex;
