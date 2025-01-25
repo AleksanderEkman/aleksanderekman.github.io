@@ -231,7 +231,7 @@
 		font-family: 'Montserrat';
 		font-weight: 900;
 		letter-spacing: 0.025rem;
-		font-size: 1.6rem;
+		font-size: 1.4rem;
 		margin-bottom: 0.5rem;
 	}
 	.text {
@@ -289,6 +289,9 @@
 	}
 
 	@media (min-width: 1500px) {
+        .project h3, #pt {
+            font-size: 1.6rem;
+        }
 		.project-section {
 			height: auto;
 			padding: 10rem 0;
