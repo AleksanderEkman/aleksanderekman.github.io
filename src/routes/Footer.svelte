@@ -83,7 +83,7 @@
 <style>
 	footer {
 		z-index: 1;
-		height: auto;
+		height: 15rem;
 		overflow: hidden;
 		display: flex;
 		justify-content: center;

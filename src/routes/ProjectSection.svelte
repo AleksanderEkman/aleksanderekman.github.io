@@ -80,7 +80,7 @@
 	{#if visible}
 		<h2>{$t('nav1')}</h2>
 	{:else}
-		<span>&nbsp;</span>
+		<span id="pst">&nbsp;</span>
 	{/if}
 	<div class="project-list">
 		{#each projects as project}
@@ -101,7 +101,7 @@
 						<p>{project.description}</p>
 					{:else}
 						<span id="pt">&nbsp;</span>
-						<p>&nbsp;</p>
+						<div style="margin: 7.5rem;"></div>
 					{/if}
 					<div class="tech">
 						{#each project.tech as tech}
@@ -149,7 +149,7 @@
 	}
 
 	.project-section h2,
-	span {
+	#pst {
 		font-family: var(--font-impact);
 		font-size: 2.5rem;
 		margin-bottom: 2rem;
@@ -166,6 +166,7 @@
 	}
 
 	.project {
+        aspect-ratio: 10/11.9;
 		background-color: #0b1621;
 		background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%);
 		border-radius: 15px;
@@ -217,7 +218,6 @@
 		width: 100%;
 		height: auto;
 		border-radius: 10px;
-		margin-bottom: 1rem;
 		background: linear-gradient(
 			45deg,
 			rgba(255, 255, 255, 0) 0%,
@@ -253,11 +253,12 @@
 		width: 100%;
 	}
 	.tech img {
+        user-select: none;
 		width: 3.75rem;
 		height: auto;
 	}
 	.placeholder-icon {
-		aspect-ratio: 1/1;
+		aspect-ratio: 2/2;
 		background: linear-gradient(
 			45deg,
 			rgba(255, 255, 255, 0) 0%,
@@ -265,7 +266,7 @@
 			rgba(255, 255, 255, 0.04) 100%
 		);
 		border-radius: 50%;
-		width: 3.25rem;
+		width: 3.5rem;
 		margin: 0 0.3rem;
 		height: auto;
 	}
@@ -318,6 +319,7 @@
 		}
 
 		.project {
+            aspect-ratio: 0; 
 			width: 100%;
 		}
 		.btn-primary {

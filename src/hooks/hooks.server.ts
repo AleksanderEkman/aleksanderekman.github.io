@@ -2,7 +2,7 @@ import { error, type Handle } from '@sveltejs/kit';
 import { RateLimiter } from 'sveltekit-rate-limiter/server';
 
 const limiter = new RateLimiter({
-	IP: [100, 'd'],
+	IP: [1000, 'd'],
 	IPUA: [1000, 'h']
 });
 
