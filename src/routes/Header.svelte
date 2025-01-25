@@ -13,9 +13,9 @@
 	let isMobile = false;
 
 	let isScrolled = false;
-    $: if (!isMobile) {
-        isScrolled = scrollY > 15;
-    }
+	$: if (!isMobile) {
+		isScrolled = scrollY > 15;
+	}
 	function toggleMobileMenu() {
 		mobileMenuOpen = !mobileMenuOpen;
 	}
@@ -27,8 +27,7 @@
 	});
 </script>
 
-<svelte:window bind:scrollY={scrollY}></svelte:window>
-
+<svelte:window bind:scrollY />
 
 <header class:scroll={isScrolled || isMobile}>
 	<nav aria-label="Main navigation">
@@ -154,7 +153,10 @@
 		z-index: 1000;
 		color: var(--text-color);
 		touch-action: manipulation;
-		transition: box-shadow 0.3s, background-color 0.3s, backdrop-filter 0.3s;
+		transition:
+			box-shadow 0.3s,
+			background-color 0.3s,
+			backdrop-filter 0.3s;
 	}
 	:global(header.scroll) {
 		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);

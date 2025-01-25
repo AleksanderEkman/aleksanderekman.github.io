@@ -13,7 +13,7 @@
 	let visible = false;
 
 	onMount(async () => {
-        await waitLocale();
+		await waitLocale();
 		visible = true;
 		const options = {
 			root: null,
@@ -21,7 +21,7 @@
 			threshold: 0.01
 		};
 
-		const observer   = new IntersectionObserver((entries, observer) => {
+		const observer = new IntersectionObserver((entries, observer) => {
 			entries.forEach(async (entry) => {
 				if (entry.isIntersecting) {
 					images.elvebakkenrevyen = (await import('$lib/assets/elvebakkenrevyen-web.webp')).default;
@@ -37,11 +37,11 @@
 </script>
 
 <section class="project-section" bind:this={projectSection}>
-    {#if visible}
-	    <h2>{$t('nav1')}</h2>
-    {:else}
-        <h2>&nbsp;</h2>
-    {/if}
+	{#if visible}
+		<h2>{$t('nav1')}</h2>
+	{:else}
+		<span>&nbsp;</span>
+	{/if}
 	<div class="project-list">
 		<div class="project">
 			{#if images.ufc}
@@ -83,7 +83,7 @@
 					src={images.vargrclan}
 					alt="Vikingtokt website project"
 				/>
-			{:else} 
+			{:else}
 				<div class="placeholder"></div>
 			{/if}
 			<div class="text">
@@ -94,11 +94,9 @@
 	</div>
 
 	<button onclick={() => goto('/projects')} class="btn-primary"
-		>{#if visible}{$t(
-				'pAction'
-			)}{:else}
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            {/if}</button
+		>{#if visible}{$t('pAction')}{:else}
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		{/if}</button
 	>
 </section>
 
@@ -122,7 +120,8 @@
 		transition: background-image 1s ease-in-out;
 	}
 
-	.project-section h2 {
+	.project-section h2,
+	span {
 		font-family: var(--font-impact);
 		font-size: 2.5rem;
 		margin-bottom: 2rem;
@@ -172,11 +171,13 @@
 		filter: brightness(105%);
 	}
 	.project img {
-        -webkit-user-drag: none;
+		-webkit-user-drag: none;
 		filter: brightness(75%);
 		margin-bottom: 0;
 		aspect-ratio: 16/10;
-		transition: transform 0.4s, filter 0.4s;
+		transition:
+			transform 0.4s,
+			filter 0.4s;
 		width: 100%;
 		height: auto;
 		border-radius: 10px;
@@ -196,7 +197,7 @@
 	}
 	.project h3 {
 		-webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
-        font-family: 'Montserrat';
+		font-family: 'Montserrat';
 		font-weight: 900;
 		letter-spacing: 0.025rem;
 		font-size: 1.6rem;
@@ -226,7 +227,6 @@
 		background-color: var(--text-color);
 		color: #0a1828;
 	}
-	
 
 	.btn-primary:hover {
 		cursor: none;
