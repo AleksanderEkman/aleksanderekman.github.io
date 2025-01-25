@@ -104,8 +104,7 @@
 		justify-content: space-between;
 		align-items: flex-start;
 		width: 100%;
-		max-width: 1200px;
-		gap: 3em;
+		max-width: 1550px;
 	}
 
 	.footer-col {
@@ -114,7 +113,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		text-align: center;
+		text-align: left;
 		flex: 1;
 		padding: 0 0.5em;
 	}

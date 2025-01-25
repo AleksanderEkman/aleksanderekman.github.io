@@ -22,7 +22,7 @@
 	});
 </script>
 
-<div class="lang-menu" role="menubar" aria-label="Language selection">
+<div class="lang-menu" role="menuitem" aria-label="Language selection">
 	<button
 		id="no-button"
 		class={currentLocale === 'no' ? 'active' : ''}

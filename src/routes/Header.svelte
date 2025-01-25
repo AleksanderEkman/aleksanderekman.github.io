@@ -7,8 +7,13 @@
 	import { waitLocale } from 'svelte-i18n';
 	import { onMount } from 'svelte';
 
+	let scrollY = 0;
 	let translationReady = false;
 	let mobileMenuOpen = false;
+
+
+	let isScrolled = false;
+	$: isScrolled = scrollY > 15;
 
 	function toggleMobileMenu() {
 		mobileMenuOpen = !mobileMenuOpen;
@@ -20,7 +25,9 @@
 	});
 </script>
 
-<header>
+<svelte:window bind:scrollY={scrollY}></svelte:window>
+
+<header class:scroll={isScrolled}>
 	<nav aria-label="Main navigation">
 		<ul role="menubar">
 			{#if translationReady}
@@ -77,7 +84,7 @@
 					</div>
 				</div>
 			{/if}
-			<li id="unset">
+			<div role="menuitem" id="unset">
 				<button id="menu-button" aria-label="Åpne meny" onclick={toggleMobileMenu}>
 					<svg class:open={mobileMenuOpen} width="100" height="100" viewBox="0 0 100 100">
 						<path class="line top" d="M 20,30 H 80" />
@@ -85,7 +92,7 @@
 						<path class="line bottom" d="M 20,70 H 80" />
 					</svg>
 				</button>
-			</li>
+			</div>
 		</ul>
 	</nav>
 </header>
@@ -106,7 +113,7 @@
 			</li>
 			<li role="menuitem">
 				<a
-					href="/about"
+					href="/about-me"
 					onclick={() => {
 						setTimeout(toggleMobileMenu, 150);
 					}}
@@ -142,13 +149,15 @@
 		top: 0;
 		left: 0;
 		z-index: 1000;
-		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-		background-color: rgba(10, 24, 40, 0.5);
-		backdrop-filter: blur(10px);
 		color: var(--text-color);
 		touch-action: manipulation;
+		transition: box-shadow 0.3s, background-color 0.3s, backdrop-filter 0.3s;
 	}
-
+	:global(header.scroll) {
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+		background-color: rgba(10, 24, 40, 0.5);
+		backdrop-filter: blur(10px);
+	}
 	nav {
 		width: 100vw;
 		display: flex;
@@ -341,14 +350,13 @@
 			touch-action: manipulation;
 		}
 		.mobile-menu li {
-			padding: 0.5rem 4rem 0.5rem 4rem;
 			margin: 0.5rem 0;
 			font-size: 1rcap;
 			border-radius: 10px;
 		}
 		.mobile-menu a {
 			font-size: 1.2rem;
-			padding: 0.5rem 1rem;
+			padding: 1rem 5rem;
 		}
 		.mobile-menu li:active,
 		.mobile-menu li:hover,

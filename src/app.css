@@ -16,6 +16,11 @@
 	src: url('/fonts/MediaSansExtended-Regular-Trial.otf') format('opentype');
 	font-display: swap;
 }
+@font-face {
+	font-family: 'Montserrat';
+	src: url('/fonts/Montserrat-ExtraBold.ttf') format('truetype');
+	font-display: swap;
+}
 :root {
 	--text-color: #c9af93;
 	--font-header: 'SF Pro Display', 'Poppins', sans-serif;
