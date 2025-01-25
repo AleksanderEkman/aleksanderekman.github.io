@@ -168,7 +168,7 @@
 		filter: brightness(105%);
 	}
 	.project img {
-		filter: brightness(80%);
+		filter: brightness(75%) blur(1px);
 		margin-bottom: 0;
 		aspect-ratio: 16/10;
 		transition: transform 0.4s, filter 0.4s;
@@ -194,7 +194,7 @@
         font-family: 'Montserrat';
 		font-weight: 900;
 		letter-spacing: 0.025rem;
-		font-size: 1.4rem;
+		font-size: 1.6rem;
 		margin-bottom: 0.5rem;
 	}
 	.text {
