@@ -19,6 +19,14 @@
 	"contact": "Ta Kontakt",
 	"pAction": "Se Mer",
 
+	"project1": "UFC-Nettside",
+	"project2": "Elvebakkenrevyen Nettside",
+	"project3": "Vargrklan Viking-tema Nettside",
+
+	"project1desc": "Responsiv nettside som viser UFC-fightere og oppdaterte events. Info hentes med offentlig web-scraper.",
+	"project2desc": "Fullstack nettside-konsept for Elvebakkenrevyen, en bredt anerkjent årlig skolerevy i Oslo.",
+	"project3desc": "Viking-tema nettside som et skoleprosjekt for en Danmark-tur. Sentrert rundt en fiktiv vikingklan.",
+
 	"contactTitle": "Kontakt Meg",
 	"contactDesc": "Hvis du har noen spørsmål eller ønsker å jobbe med meg, er det bare å ta kontakt.",
 	"contactName": "Navn",

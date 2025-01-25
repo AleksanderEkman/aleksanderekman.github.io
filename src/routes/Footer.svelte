@@ -145,6 +145,7 @@
 		margin: 0.1em 0;
 	}
 	li a::after {
+		display: inline-block;
 		content: '';
 		position: absolute;
 		width: 0;
@@ -163,10 +164,12 @@
 	:global(li a:hover svg) {
 		transform: rotate(360deg);
 	}
-	a {
+	li a {
+        display: inline-block;
+        position: relative;
 		color: var(--text-color);
 		text-decoration: none;
-	}
+    }
 
 	a:hover {
 		cursor: none;

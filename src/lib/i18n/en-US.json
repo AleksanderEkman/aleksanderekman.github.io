@@ -19,6 +19,14 @@
 	"contact": "Get In Touch",
 	"pAction": "See More",
 
+	"project1": "UFC Website",
+	"project2": "Elvebakken Revue Website",
+	"project3": "Vargrclan Viking-Theme Website",
+
+	"project1desc": "Responsive website showcasing UFC fighters and realtime events. Event info fetched with public web scraper.",
+	"project2desc": "Fullstack website concept for the Elvebakken Revue, a widely recognised yearly school event in Oslo.",
+	"project3desc": "Viking-themed website as a school project for a Denmark trip. Centered around a fictional Viking clan.",
+
 	"contactTitle": "Contact Me",
 	"contactDesc": "If you have any questions or want to work with me, feel free to contact me.",
 	"contactName": "Name",

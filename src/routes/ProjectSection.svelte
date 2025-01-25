@@ -10,6 +10,45 @@
 		ufc: null,
 		vargrclan: null
 	};
+	$: projects = [
+		{
+			name: $t('project1'),
+			image: images.ufc,
+			description: $t('project1desc'),
+			tech: [
+				'github/github-original.svg',
+				'svelte/svelte-original.svg',
+				'/typescript/typescript-plain.svg',
+				'html5/html5-plain.svg',
+				'/css3/css3-plain.svg'
+			]
+		},
+		{
+			name: $t('project2'),
+			image: images.elvebakkenrevyen,
+			description: $t('project2desc'),
+			tech: ['/digitalocean/digitalocean-original.svg',
+				'/docker/docker-plain.svg',
+				'svelte/svelte-original.svg',
+				'/typescript/typescript-plain.svg',
+				'html5/html5-plain.svg',
+				'/css3/css3-plain.svg'
+			]
+		},
+		{
+			name: $t('project3'),
+			image: images.vargrclan,
+			description: $t('project3desc'),
+			tech: [
+				'github/github-original.svg',
+				'svelte/svelte-original.svg',
+				'html5/html5-plain.svg',
+				'/typescript/typescript-plain.svg',
+				'/css3/css3-plain.svg'
+			]
+		}
+	];
+	
 	let visible = false;
 
 	onMount(async () => {
@@ -43,54 +82,40 @@
 		<span>&nbsp;</span>
 	{/if}
 	<div class="project-list">
-		<div class="project">
-			{#if images.ufc}
-				<img
-					in:fade={{ duration: 350 }}
-					id="project-img"
-					src={images.ufc}
-					alt="UFC website project"
-				/>
-			{:else}
-				<div class="placeholder"></div>
-			{/if}
-			<div class="text">
-				<h3>UFC Website</h3>
-				<p>Project 2 description</p>
+		{#each projects as project}
+			<div class="project">
+				{#if project.image}
+					<img
+						in:fade={{ duration: 350 }}
+						id="project-img"
+						src={project.image}
+						alt="{project.name} website project"
+					/>
+				{:else}
+					<div class="placeholder"></div>
+				{/if}
+				<div class="text">
+					{#if visible}
+						<h3>{project.name}</h3>
+						<p>{project.description}</p>
+					{:else}
+						<span id="pt">&nbsp;</span>
+						<p>&nbsp;</p>
+					{/if}
+					<div class="tech">
+
+						{#each project.tech as tech}
+							{#if project.image}
+								<img in:fade={{duration: 350}} src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}`} alt="tech icon" />
+							{:else}
+								<div class="placeholder-icon"></div>
+							{/if}
+						{/each}
+
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="project">
-			{#if images.elvebakkenrevyen}
-				<img
-					in:fade={{ duration: 350 }}
-					id="project-img"
-					src={images.elvebakkenrevyen}
-					alt="Elvebakkenrevyen website project"
-				/>
-			{:else}
-				<div class="placeholder"></div>
-			{/if}
-			<div class="text">
-				<h3>Elvebakkenrevyen</h3>
-				<p>Elvebakkenrevyen project description</p>
-			</div>
-		</div>
-		<div class="project">
-			{#if images.vargrclan}
-				<img
-					in:fade={{ duration: 350 }}
-					id="project-img"
-					src={images.vargrclan}
-					alt="Vikingtokt website project"
-				/>
-			{:else}
-				<div class="placeholder"></div>
-			{/if}
-			<div class="text">
-				<h3>Vargrclan</h3>
-				<p>Project 3 description</p>
-			</div>
-		</div>
+		{/each}
 	</div>
 
 	<button onclick={() => goto('/projects')} class="btn-primary"
@@ -140,7 +165,7 @@
 	.project {
 		background-color: #0b1621;
 		background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%);
-		border-radius: 10px;
+		border-radius: 15px;
 		box-shadow:
 			0 4px 8px rgba(0, 0, 0, 0.2),
 			0 0px 2px rgba(255, 255, 255, 0.2);
@@ -166,13 +191,16 @@
 			0 8px 16px rgba(0, 0, 0, 0.3),
 			0 0px 15px rgba(255, 255, 255, 0.4);
 	}
-	.project:hover img {
+	.project:hover #project-img {
 		transform: scale(1.06) translateY(2.5%);
 		filter: brightness(110%);
 	}
+	#project-img {
+		filter: brightness(74%);
+		border-radius: 10px;
+	}
 	.project img {
 		-webkit-user-drag: none;
-		filter: brightness(74%);
 		margin-bottom: 0;
 		aspect-ratio: 16/10;
 		transition:
@@ -180,7 +208,6 @@
 			filter 0.4s;
 		width: 100%;
 		height: auto;
-		border-radius: 10px;
 	}
 	.placeholder {
 		aspect-ratio: 16/10;
@@ -195,7 +222,7 @@
 			rgba(255, 255, 255, 0.04) 100%
 		);
 	}
-	.project h3 {
+	.project h3, #pt {
 		-webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
 		font-family: 'Montserrat';
 		font-weight: 900;
@@ -205,6 +232,7 @@
 	}
 	.text {
 		padding: 1rem;
+		padding-top: 2rem;
 		border-radius: 8px;
 		width: 100%;
 		background: rgba(0, 0, 0, 0.1);
@@ -213,7 +241,30 @@
 		font-size: 1rem;
 		color: #ccc;
 	}
-
+	.tech {
+		margin-top: 2.5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+	.tech img {
+		width: 3.75rem;
+		height: auto
+	}
+	.placeholder-icon {
+		aspect-ratio: 1/1;
+		background: linear-gradient(
+			45deg,
+			rgba(255, 255, 255, 0) 0%,
+			rgba(255, 255, 255, 0.02) 50%,
+			rgba(255, 255, 255, 0.04) 100%
+		);
+		border-radius: 50%;
+		width: 3.25rem;
+		margin: 0 0.3rem;
+		height: auto;
+	}
 	.btn-primary {
 		font-weight: bold;
 		overflow: hidden;
@@ -232,21 +283,17 @@
 		cursor: none;
 		transform: translateY(-7.5%);
 	}
-
+	
 	@media (min-width: 1500px) {
 		.project-section {
 			height: auto;
 			padding: 10rem 0;
 		}
-		.project img,
-		.placeholder {
-			margin-bottom: 1rem;
-		}
 		.project-list {
 			gap: 5rem;
 		}
 		.project {
-			width: 47rem;
+			width: 30vw;
 		}
 	}
 	@media (max-width: 768px) {
