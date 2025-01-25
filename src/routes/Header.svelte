@@ -10,11 +10,12 @@
 	let scrollY = 0;
 	let translationReady = false;
 	let mobileMenuOpen = false;
-
+	let isMobile = false;
 
 	let isScrolled = false;
-	$: isScrolled = scrollY > 15;
-
+    $: if (!isMobile) {
+        isScrolled = scrollY > 15;
+    }
 	function toggleMobileMenu() {
 		mobileMenuOpen = !mobileMenuOpen;
 	}
@@ -22,12 +23,14 @@
 	onMount(async () => {
 		await waitLocale();
 		translationReady = true;
+		isMobile = window.matchMedia('(max-width: 768px)').matches;
 	});
 </script>
 
 <svelte:window bind:scrollY={scrollY}></svelte:window>
 
-<header class:scroll={isScrolled}>
+
+<header class:scroll={isScrolled || isMobile}>
 	<nav aria-label="Main navigation">
 		<ul role="menubar">
 			{#if translationReady}
