@@ -165,11 +165,11 @@
 		transform: rotate(360deg);
 	}
 	li a {
-        display: inline-block;
-        position: relative;
+		display: inline-block;
+		position: relative;
 		color: var(--text-color);
 		text-decoration: none;
-    }
+	}
 
 	a:hover {
 		cursor: none;

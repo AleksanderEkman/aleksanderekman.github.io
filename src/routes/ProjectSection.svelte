@@ -27,7 +27,8 @@
 			name: $t('project2'),
 			image: images.elvebakkenrevyen,
 			description: $t('project2desc'),
-			tech: ['/digitalocean/digitalocean-original.svg',
+			tech: [
+				'/digitalocean/digitalocean-original.svg',
 				'/docker/docker-plain.svg',
 				'svelte/svelte-original.svg',
 				'/typescript/typescript-plain.svg',
@@ -48,7 +49,7 @@
 			]
 		}
 	];
-	
+
 	let visible = false;
 
 	onMount(async () => {
@@ -103,15 +104,17 @@
 						<p>&nbsp;</p>
 					{/if}
 					<div class="tech">
-
 						{#each project.tech as tech}
 							{#if project.image}
-								<img in:fade={{duration: 350}} src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}`} alt="tech icon" />
+								<img
+									in:fade={{ duration: 350 }}
+									src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}`}
+									alt="tech icon"
+								/>
 							{:else}
 								<div class="placeholder-icon"></div>
 							{/if}
 						{/each}
-
 					</div>
 				</div>
 			</div>
@@ -222,7 +225,8 @@
 			rgba(255, 255, 255, 0.04) 100%
 		);
 	}
-	.project h3, #pt {
+	.project h3,
+	#pt {
 		-webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
 		font-family: 'Montserrat';
 		font-weight: 900;
@@ -250,7 +254,7 @@
 	}
 	.tech img {
 		width: 3.75rem;
-		height: auto
+		height: auto;
 	}
 	.placeholder-icon {
 		aspect-ratio: 1/1;
@@ -283,7 +287,7 @@
 		cursor: none;
 		transform: translateY(-7.5%);
 	}
-	
+
 	@media (min-width: 1500px) {
 		.project-section {
 			height: auto;
