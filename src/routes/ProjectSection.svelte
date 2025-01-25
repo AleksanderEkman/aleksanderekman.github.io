@@ -168,7 +168,7 @@
 		filter: brightness(105%);
 	}
 	.project img {
-		filter: brightness(75%) blur(1px);
+		filter: brightness(75%);
 		margin-bottom: 0;
 		aspect-ratio: 16/10;
 		transition: transform 0.4s, filter 0.4s;
