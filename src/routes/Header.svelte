@@ -113,7 +113,7 @@
 			</li>
 			<li role="menuitem">
 				<a
-					href="/about"
+					href="/about-me"
 					onclick={() => {
 						setTimeout(toggleMobileMenu, 150);
 					}}
