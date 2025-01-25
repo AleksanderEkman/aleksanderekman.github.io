@@ -18,9 +18,9 @@
 			tech: [
 				'github/github-original.svg',
 				'svelte/svelte-original.svg',
-				'/typescript/typescript-plain.svg',
+				'typescript/typescript-plain.svg',
 				'html5/html5-plain.svg',
-				'/css3/css3-plain.svg'
+				'css3/css3-plain.svg'
 			]
 		},
 		{
@@ -28,12 +28,12 @@
 			image: images.elvebakkenrevyen,
 			description: $t('project2desc'),
 			tech: [
-				'/digitalocean/digitalocean-original.svg',
-				'/docker/docker-plain.svg',
+				'digitalocean/digitalocean-original.svg',
+				'docker/docker-plain.svg',
 				'svelte/svelte-original.svg',
-				'/typescript/typescript-plain.svg',
+				'typescript/typescript-plain.svg',
 				'html5/html5-plain.svg',
-				'/css3/css3-plain.svg'
+				'css3/css3-plain.svg'
 			]
 		},
 		{
@@ -44,8 +44,8 @@
 				'github/github-original.svg',
 				'svelte/svelte-original.svg',
 				'html5/html5-plain.svg',
-				'/typescript/typescript-plain.svg',
-				'/css3/css3-plain.svg'
+				'typescript/typescript-plain.svg',
+				'css3/css3-plain.svg'
 			]
 		}
 	];
