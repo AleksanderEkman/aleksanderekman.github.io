@@ -16,12 +16,12 @@
 			image: images.ufc,
 			description: $t('project1desc'),
 			tech: [
-				'github/github-original.svg',
-				'vercel/vercel-original.svg',
-				'svelte/svelte-original.svg',
-				'typescript/typescript-plain.svg',
-				'html5/html5-plain.svg',
-				'css3/css3-plain.svg'
+				{name: 'GitHub Pages', icon: 'github/github-original.svg'},
+				{name: 'Vercel', icon: 'vercel/vercel-original.svg'},
+				{name: 'SvelteKit', icon: 'svelte/svelte-original.svg'},
+				{name: 'TypeScript', icon: 'typescript/typescript-plain.svg'},
+				{name: 'HTML5', icon: 'html5/html5-plain.svg'},
+				{name: 'CSS3', icon: 'css3/css3-plain.svg'}
 			]
 		},
 		{
@@ -29,13 +29,13 @@
 			image: images.elvebakkenrevyen,
 			description: $t('project2desc'),
 			tech: [
-				'digitalocean/digitalocean-original.svg',
-				'docker/docker-plain.svg',
-				'nodejs/nodejs-original.svg',
-				'svelte/svelte-original.svg',
-				'typescript/typescript-plain.svg',
-				'html5/html5-plain.svg',
-				'css3/css3-plain.svg'
+				{name: 'DigitalOcean', icon: 'digitalocean/digitalocean-original.svg'},
+				{name: 'Docker', icon: 'docker/docker-plain.svg'},
+				{name: 'Node.js', icon: 'nodejs/nodejs-original.svg'},
+				{name: 'SvelteKit', icon: 'svelte/svelte-original.svg'},
+				{name: 'TypeScript', icon: 'typescript/typescript-plain.svg'},
+				{name: 'HTML5', icon: 'html5/html5-plain.svg'},
+				{name: 'CSS3', icon: 'css3/css3-plain.svg'}
 			]
 		},
 		{
@@ -43,11 +43,11 @@
 			image: images.vargrclan,
 			description: $t('project3desc'),
 			tech: [
-				'github/github-original.svg',
-				'svelte/svelte-original.svg',
-				'html5/html5-plain.svg',
-				'typescript/typescript-plain.svg',
-				'css3/css3-plain.svg'
+				{name: 'GitHub Pages', icon: 'github/github-original.svg'},
+				{name: 'SvelteKit', icon: 'svelte/svelte-original.svg'},
+				{name: 'TypeScript', icon: 'typescript/typescript-plain.svg'},
+				{name: 'HTML5', icon: 'html5/html5-plain.svg'},
+				{name: 'CSS3', icon: 'css3/css3-plain.svg'}
 			]
 		}
 	];
@@ -108,11 +108,14 @@
 					<div class="tech">
 						{#each project.tech as tech}
 							{#if project.image}
-								<img
-									in:fade={{ duration: 350 }}
-									src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}`}
-									alt="{tech}"
-								/>
+								<div class="tech-col">
+									<img
+										in:fade={{ duration: 350 }}
+										src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}`}
+										alt="{tech.name}"
+									/>
+									<span>{tech.name}</span>
+								</div>
 							{:else}
 								<div class="placeholder-icon"></div>
 							{/if}
@@ -253,6 +256,30 @@
 		justify-content: center;
 		align-items: center;
 		width: 100%;
+	}
+	.tech-col {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+		margin-bottom: 0.9rem;
+	}
+
+	.tech-col span {
+		user-select: none;
+		position: absolute;
+		bottom: -1.5rem;
+		background-color: rgba(0, 0, 0, 0.075);
+		color: #ccc;
+		border-radius: 4px;
+		font-size: 0.75rem;
+		white-space: nowrap;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	.tech-col:hover span {
+		opacity: 1;
 	}
 	.tech img {
 		-webkit-user-drag: none;
