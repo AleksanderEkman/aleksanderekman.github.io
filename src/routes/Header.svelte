@@ -14,7 +14,7 @@
 
 	let isScrolled = false;
 	$: if (!isMobile) {
-		isScrolled = scrollY > 15;
+		isScrolled = scrollY > 100;
 	}
 	function toggleMobileMenu() {
 		mobileMenuOpen = !mobileMenuOpen;

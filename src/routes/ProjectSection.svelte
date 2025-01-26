@@ -101,7 +101,7 @@
 						<p>{project.description}</p>
 					{:else}
 						<span id="pt">&nbsp;</span>
-						<div style="margin: 7.5rem;"></div>
+						<p style="margin-bottom: 13.2%;"></p>
 					{/if}
 					<div class="tech">
 						{#each project.tech as tech}
@@ -109,7 +109,7 @@
 								<img
 									in:fade={{ duration: 350 }}
 									src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}`}
-									alt="tech icon"
+									alt="{tech}"
 								/>
 							{:else}
 								<div class="placeholder-icon"></div>
@@ -199,10 +199,11 @@
 		filter: brightness(110%);
 	}
 	#project-img {
-		filter: brightness(74%);
+		filter: brightness(72%);
 		border-radius: 10px;
 	}
 	.project img {
+		user-select: none;
 		-webkit-user-drag: none;
 		margin-bottom: 0;
 		aspect-ratio: 16/10;
@@ -252,6 +253,7 @@
 		width: 100%;
 	}
 	.tech img {
+		-webkit-user-drag: none;
         user-select: none;
 		width: 3.75rem;
 		height: auto;
@@ -265,8 +267,8 @@
 			rgba(255, 255, 255, 0.04) 100%
 		);
 		border-radius: 50%;
-		width: 3.5rem;
-		margin: 0 0.3rem;
+		width: 2.35rem;
+		margin: 0 0.75rem;
 		height: auto;
 	}
 	.btn-primary {
