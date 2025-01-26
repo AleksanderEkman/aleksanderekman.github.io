@@ -17,6 +17,7 @@
 			description: $t('project1desc'),
 			tech: [
 				'github/github-original.svg',
+				'vercel/vercel-original.svg',
 				'svelte/svelte-original.svg',
 				'typescript/typescript-plain.svg',
 				'html5/html5-plain.svg',
@@ -30,6 +31,7 @@
 			tech: [
 				'digitalocean/digitalocean-original.svg',
 				'docker/docker-plain.svg',
+				'nodejs/nodejs-original.svg',
 				'svelte/svelte-original.svg',
 				'typescript/typescript-plain.svg',
 				'html5/html5-plain.svg',
