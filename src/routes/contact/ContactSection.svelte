@@ -81,9 +81,6 @@
 </form>
 
 <style>
-	.contact-field {
-		visibility: hidden;
-	}
 	.contact-field.ready {
 		visibility: visible;
 	}
@@ -101,12 +98,13 @@
 		align-items: center;
 	}
 	.contact-field {
+		visibility: hidden;
 		font-size: 1.2rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		width: 40%;
+		width: 100vw;
 		height: 100svh;
 		position: relative;
 		text-transform: none;
@@ -122,11 +120,18 @@
 		cursor: none;
 		border-radius: 40px;
 		padding: 1rem;
-		width: 100%;
+		width: 40%;
 		background-color: rgba(10, 15, 10, 0.2);
 		box-shadow:
 			inset 0 0 0 0.1rem rgba(0, 0, 0, 0.1),
 			0 4px 8px rgba(0, 0, 0, 0.4);
+		transition: transform 0.4s, box-shadow 0.4s;
+	}
+	.contact-content:hover {
+		transform: translateY(-1.5%);
+		box-shadow:
+		inset 0 0 0 0.1rem rgba(0, 0, 0, 0.1),
+			0 0px 15px rgba(255, 255, 255, 0.4);
 	}
 
 	.desc {
@@ -165,7 +170,7 @@
 		justify-content: center;
 		overflow: hidden;
 		font-family: Helvetica, sans-serif;
-		width: 50%;
+		width: 60%;
 		margin: 0 0 0.25rem 0;
 		padding: 0.5rem;
 	}
