@@ -125,12 +125,14 @@
 		box-shadow:
 			inset 0 0 0 0.1rem rgba(0, 0, 0, 0.1),
 			0 4px 8px rgba(0, 0, 0, 0.4);
-		transition: transform 0.4s, box-shadow 0.4s;
+		transition:
+			transform 0.4s,
+			box-shadow 0.4s;
 	}
 	.contact-content:hover {
 		transform: translateY(-1.5%);
 		box-shadow:
-		inset 0 0 0 0.1rem rgba(0, 0, 0, 0.1),
+			inset 0 0 0 0.1rem rgba(0, 0, 0, 0.1),
 			0 0px 15px rgba(255, 255, 255, 0.4);
 	}
 
@@ -246,7 +248,6 @@
 	@media screen and (max-width: 1600px) {
 		.contact-field {
 			margin-top: 3rem;
-			width: 55%;
 		}
 		.input-container {
 			margin: 0;
@@ -269,7 +270,9 @@
 		#contact-header {
 			font-size: 2.5rem;
 		}
-
+		.contact-content {
+			width: 80%;
+		}
 		.contact-field {
 			font-size: 0.9rem;
 		}
@@ -298,10 +301,6 @@
 		textarea {
 			padding: 0.25rem;
 			font-size: 0.75rem;
-		}
-
-		.contact-field {
-			width: 97.5%;
 		}
 
 		button {

@@ -16,12 +16,12 @@
 			image: images.ufc,
 			description: $t('project1desc'),
 			tech: [
-				{name: 'GitHub Pages', icon: 'github/github-original.svg'},
-				{name: 'Vercel', icon: 'vercel/vercel-original.svg'},
-				{name: 'SvelteKit', icon: 'svelte/svelte-original.svg'},
-				{name: 'TypeScript', icon: 'typescript/typescript-plain.svg'},
-				{name: 'HTML5', icon: 'html5/html5-plain.svg'},
-				{name: 'CSS3', icon: 'css3/css3-plain.svg'}
+				{ name: 'GitHub Pages', icon: 'github/github-original.svg' },
+				{ name: 'Vercel', icon: 'vercel/vercel-original.svg' },
+				{ name: 'SvelteKit', icon: 'svelte/svelte-original.svg' },
+				{ name: 'TypeScript', icon: 'typescript/typescript-plain.svg' },
+				{ name: 'HTML5', icon: 'html5/html5-plain.svg' },
+				{ name: 'CSS3', icon: 'css3/css3-plain.svg' }
 			]
 		},
 		{
@@ -29,13 +29,13 @@
 			image: images.elvebakkenrevyen,
 			description: $t('project2desc'),
 			tech: [
-				{name: 'DigitalOcean', icon: 'digitalocean/digitalocean-original.svg'},
-				{name: 'Docker', icon: 'docker/docker-plain.svg'},
-				{name: 'Node.js', icon: 'nodejs/nodejs-original.svg'},
-				{name: 'SvelteKit', icon: 'svelte/svelte-original.svg'},
-				{name: 'TypeScript', icon: 'typescript/typescript-plain.svg'},
-				{name: 'HTML5', icon: 'html5/html5-plain.svg'},
-				{name: 'CSS3', icon: 'css3/css3-plain.svg'}
+				{ name: 'DigitalOcean', icon: 'digitalocean/digitalocean-original.svg' },
+				{ name: 'Docker', icon: 'docker/docker-plain.svg' },
+				{ name: 'Node.js', icon: 'nodejs/nodejs-original.svg' },
+				{ name: 'SvelteKit', icon: 'svelte/svelte-original.svg' },
+				{ name: 'TypeScript', icon: 'typescript/typescript-plain.svg' },
+				{ name: 'HTML5', icon: 'html5/html5-plain.svg' },
+				{ name: 'CSS3', icon: 'css3/css3-plain.svg' }
 			]
 		},
 		{
@@ -43,11 +43,11 @@
 			image: images.vargrclan,
 			description: $t('project3desc'),
 			tech: [
-				{name: 'GitHub Pages', icon: 'github/github-original.svg'},
-				{name: 'SvelteKit', icon: 'svelte/svelte-original.svg'},
-				{name: 'TypeScript', icon: 'typescript/typescript-plain.svg'},
-				{name: 'HTML5', icon: 'html5/html5-plain.svg'},
-				{name: 'CSS3', icon: 'css3/css3-plain.svg'}
+				{ name: 'GitHub Pages', icon: 'github/github-original.svg' },
+				{ name: 'SvelteKit', icon: 'svelte/svelte-original.svg' },
+				{ name: 'TypeScript', icon: 'typescript/typescript-plain.svg' },
+				{ name: 'HTML5', icon: 'html5/html5-plain.svg' },
+				{ name: 'CSS3', icon: 'css3/css3-plain.svg' }
 			]
 		}
 	];
@@ -112,7 +112,7 @@
 									<img
 										in:fade={{ duration: 350 }}
 										src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}`}
-										alt="{tech.name}"
+										alt={tech.name}
 									/>
 									<span>{tech.name}</span>
 								</div>
@@ -263,6 +263,13 @@
 		align-items: center;
 		position: relative;
 		margin-bottom: 0.9rem;
+		transition: transform 0.3s ease;
+	}
+	.tech-col:hover {
+		transform: translateY(-5px);
+	}
+	.tech-col:hover img {
+		transform: scale(1.1);
 	}
 
 	.tech-col span {
@@ -283,7 +290,7 @@
 	}
 	.tech img {
 		-webkit-user-drag: none;
-        user-select: none;
+		user-select: none;
 		width: 3.75rem;
 		height: auto;
 	}
@@ -320,9 +327,10 @@
 	}
 
 	@media (min-width: 1500px) {
-        .project h3, #pt {
-            font-size: 1.6rem;
-        }
+		.project h3,
+		#pt {
+			font-size: 1.6rem;
+		}
 		.project-section {
 			height: auto;
 			padding: 10rem 0;
@@ -354,7 +362,7 @@
 		}
 
 		.project {
-            aspect-ratio: 0; 
+			aspect-ratio: 0;
 			width: 100%;
 		}
 		.btn-primary {

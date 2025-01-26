@@ -122,7 +122,7 @@
 		font-size: 1.3rem;
 		font-weight: bold;
 		color: var(--text-color);
-		margin-bottom: 0.5rem;
+		margin-bottom: 0.6rem;
 	}
 
 	p {
@@ -142,7 +142,7 @@
 		position: relative;
 		font-size: 1.1rem;
 		color: var(--text-color);
-		margin: 0.1em 0;
+		margin: 0.025rem 0;
 	}
 	li a::after {
 		display: inline-block;
@@ -153,7 +153,7 @@
 		bottom: -2px;
 		left: 0;
 		background-color: var(--text-color);
-		transition: width 0.2s ease;
+		transition: width 0.3s ease;
 	}
 	li a:hover::after {
 		width: 100%;

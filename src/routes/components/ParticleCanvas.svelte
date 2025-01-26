@@ -46,6 +46,7 @@
 	}
 
 	function animate() {
+		if (!canvas) return;
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		particles.forEach((particle) => {
 			particle.update();
