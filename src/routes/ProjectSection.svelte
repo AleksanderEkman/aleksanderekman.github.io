@@ -166,7 +166,6 @@
 	}
 
 	.project {
-        aspect-ratio: 10/11.9;
 		background-color: #0b1621;
 		background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%);
 		border-radius: 15px;
@@ -302,6 +301,11 @@
 		}
 		.project {
 			width: 30vw;
+		}
+	}
+	@media (max-width: 1500px) {
+		.project {
+			aspect-ratio: 10/11.9;
 		}
 	}
 	@media (max-width: 768px) {
