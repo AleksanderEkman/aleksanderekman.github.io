@@ -6,8 +6,14 @@
     import { goto } from '$app/navigation';
     let visible = false;
 
+<<<<<<< Updated upstream
     let percentage = 45;
     let increment = -0.5;
+=======
+	let percentage = 45;
+	let increment = -0.5;
+	let scrollY = 0;
+>>>>>>> Stashed changes
 
     function updateGradient() {
         percentage += increment;
@@ -17,9 +23,22 @@
     }
     setInterval(updateGradient, 100);
 
+<<<<<<< Updated upstream
     onMount(() => {
         visible = true;
     });
+=======
+	onMount(() => {
+		visible = true;
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	});
+
+	function handleScroll() {
+		scrollY = window.scrollY;
+		console.log(scrollY);
+	}
+>>>>>>> Stashed changes
 </script>
 
 
@@ -48,6 +67,7 @@
 </section>
 
 <style>
+<<<<<<< Updated upstream
     .hero-section {
 		z-index: 0;
 		position: relative;
@@ -108,6 +128,29 @@
         justify-content: center;
         gap: 1rem;
     }
+=======
+	.hero-section {
+		position: relative;
+		height: 100svh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #ffffff;
+		padding: 2rem;
+		font-family: var(--font-header);
+		background-attachment: fixed;
+	}
+
+	.hero-section_content {
+		z-index: 2;
+		text-align: left;
+		opacity: 0;
+		transform: translateY(20px);
+		transition:
+			opacity 0.5s ease,
+			transform 0.5s ease;
+	}
+>>>>>>> Stashed changes
 
     .btn {
         font-size: 1.2rem;
