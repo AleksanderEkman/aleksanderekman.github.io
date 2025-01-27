@@ -125,6 +125,7 @@
 	}
 
 	.contact-content {
+		z-index: 2;
 		backdrop-filter: blur(15px);
 		display: flex;
 		flex-direction: column;
