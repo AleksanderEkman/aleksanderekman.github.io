@@ -3,7 +3,7 @@
 	import { t, waitLocale } from 'svelte-i18n';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-
+	    let scrollY = 0;
 	let projectSection: HTMLElement;
 	let images: { elvebakkenrevyen: string | null; ufc: string | null; vargrclan: string | null } = {
 		elvebakkenrevyen: null,
@@ -135,6 +135,8 @@
 
 <style>
 	.project-section {
+		position: absolute;
+		z-index: 2;
 		box-shadow: 0 -3px 15px rgba(255, 255, 255, 0.2);
 		background-color: #0a1828;
 		background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 60%);
@@ -155,12 +157,14 @@
 
 	.project-section h2,
 	#pst {
+		z-index: 3;
 		font-family: var(--font-impact);
 		font-size: 2.5rem;
 		margin-bottom: 2rem;
 	}
 
 	.project-list {
+		z-index: 3;
 		margin-bottom: 3rem;
 		display: flex;
 		flex-wrap: wrap;
@@ -171,6 +175,7 @@
 	}
 
 	.project {
+		z-index: 3;
 		background-color: #0b1621;
 		background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.3) 100%);
 		border-radius: 15px;
@@ -189,6 +194,7 @@
 		overflow: hidden;
 	}
 	.project p {
+		z-index: 3;
 		padding: 1rem;
 		margin-bottom: 1rem;
 	}

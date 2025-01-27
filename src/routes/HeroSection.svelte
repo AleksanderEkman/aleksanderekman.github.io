@@ -8,7 +8,6 @@
 
     let percentage = 45;
     let increment = -0.5;
-    let scrollY = 0;
 
     function updateGradient() {
         percentage += increment;
@@ -20,14 +19,7 @@
 
     onMount(() => {
         visible = true;
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
     });
-
-    function handleScroll() {
-        scrollY = window.scrollY;
-		console.log(scrollY)
-    }
 </script>
 
 
@@ -36,8 +28,7 @@
     class="hero-section"
     style="background:
         radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 60%),
-        radial-gradient(circle, rgb(15, 35, 55) 10%, rgba(4,20,35) {percentage}%);
-		transform: translateY(${scrollY}px);"
+        radial-gradient(circle, rgb(15, 35, 55) 10%, rgba(4,20,35) {percentage}%);"
 >
     <div class="hero-section_content" class:visible>
         {#if visible}
@@ -58,6 +49,7 @@
 
 <style>
     .hero-section {
+		z-index: 0;
 		position: relative;
         height: 100svh;
         display: flex;
@@ -66,11 +58,10 @@
         color: #ffffff;
         padding: 2rem;
         font-family: var(--font-header);
-        background-attachment: fixed;
     }
 
     .hero-section_content {
-        z-index: 2;
+        z-index: -1;
         text-align: left;
         opacity: 0;
         transform: translateY(20px);
@@ -80,6 +71,7 @@
     }
 
     .hero-section_content.visible {
+		z-index: -1;
         opacity: 1;
         transform: translateY(0);
     }
@@ -90,6 +82,7 @@
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     }
     .hero-section_title {
+		z-index: -1;
         text-wrap: nowrap;
         line-height: 200%;
         font-size: 3.5rem;
@@ -108,7 +101,7 @@
     }
 
     .hero-section_cta {
-		z-index: 2;
+		z-index: 0;
         justify-self: flex-start;
         font-family: var(--font-header);
         display: flex;

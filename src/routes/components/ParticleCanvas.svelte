@@ -4,6 +4,7 @@
 	let canvas: HTMLCanvasElement;
 	const particles: Particle[] = [];
 	let ctx: CanvasRenderingContext2D;
+	let scrollY = 0;
 
 	class Particle {
 		x: number;
@@ -84,6 +85,8 @@
 		};
 	});
 </script>
+
+<svelte:window bind:scrollY={scrollY}></svelte:window>
 
 <canvas bind:this={canvas} id="particleCanvas"></canvas>
 <div class="overlay"></div>
