@@ -65,21 +65,36 @@
 			<div class="divide">
 				<div class="input-container">
 					<label for="name">{$t('contactName')}</label>
-					<input type="text" placeholder="John Doe" id="name" name="from_name" autocomplete="name" required />
+					<input
+						type="text"
+						placeholder="John Doe"
+						id="name"
+						name="from_name"
+						autocomplete="name"
+						required
+					/>
 				</div>
 				<div class="input-container">
 					<label for="email">{$t('contactEmail')}</label>
-					<input placeholder="john.doe@email.com" type="email" id="email" name="from_email" required autocomplete="email" />
+					<input
+						placeholder="john.doe@email.com"
+						type="email"
+						id="email"
+						name="from_email"
+						required
+						autocomplete="email"
+					/>
 				</div>
 				<div class="input-container">
 					<label for="message">{$t('contactMessage')}</label>
-					<textarea placeholder={$t('messagePlaceholder')} id="message" name="message" required></textarea>
+					<textarea placeholder={$t('messagePlaceholder')} id="message" name="message" required
+					></textarea>
 				</div>
 				<div class="success">
 					{#if success}
-						<p in:fade={{duration: 200}}>{$t('contactSuccess')}</p>
-					{:else if success===false}
-						<p style="color: #D21F3C;" in:fade={{duration: 200}}>{$t('contactFail')}</p>
+						<p in:fade={{ duration: 200 }}>{$t('contactSuccess')}</p>
+					{:else if success === false}
+						<p style="color: #D21F3C;" in:fade={{ duration: 200 }}>{$t('contactFail')}</p>
 					{:else}
 						<p>&nbsp;</p>
 					{/if}
@@ -147,7 +162,6 @@
 		box-shadow:
 			inset 0 0 0 0.1rem rgba(0, 0, 0, 0.1),
 			0 0px 15px rgba(255, 255, 255, 0.4);
-		
 	}
 
 	.desc {
@@ -233,7 +247,7 @@
 	}
 	input:focus::placeholder,
 	textarea:focus::placeholder {
-		color: #6e6e6e; 
+		color: #6e6e6e;
 		opacity: 0.4;
 	}
 
@@ -250,7 +264,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-
 	}
 	.success p {
 		user-select: none;
@@ -266,7 +279,9 @@
 		margin: 0;
 		border-radius: 50px;
 		height: 4rem;
-		transition: background-color 0.2s, transform 0.2s;
+		transition:
+			background-color 0.2s,
+			transform 0.2s;
 		background-color: var(--text-color);
 		color: #0a1828;
 	}

@@ -257,7 +257,6 @@
 		color: #ccc;
 	}
 	.tech {
-
 		margin-top: 2.5rem;
 		display: flex;
 		justify-content: center;

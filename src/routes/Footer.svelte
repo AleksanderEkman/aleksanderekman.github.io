@@ -40,7 +40,9 @@
 			<h3 id="header">{$t('location')}</h3>
 			<ul>
 				<li>
-					<a href="https://www.google.com/maps/place/Oslo/">{#if visible}<FontAwesomeIcon icon={faMapMarkedAlt} />{/if} Oslo, {$t('norway')}</a>
+					<a href="https://www.google.com/maps/place/Oslo/"
+						>{#if visible}<FontAwesomeIcon icon={faMapMarkedAlt} />{/if} Oslo, {$t('norway')}</a
+					>
 				</li>
 				<li></li>
 			</ul>
