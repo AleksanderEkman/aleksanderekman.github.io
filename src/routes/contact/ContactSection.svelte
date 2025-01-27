@@ -62,15 +62,15 @@
 			<div class="divide">
 				<div class="input-container">
 					<label for="name">{$t('contactName')}</label>
-					<input type="text" id="name" name="from_name" autocomplete="name" required />
+					<input type="text" placeholder="John Doe" id="name" name="from_name" autocomplete="name" required />
 				</div>
 				<div class="input-container">
 					<label for="email">{$t('contactEmail')}</label>
-					<input type="email" id="email" name="from_email" required autocomplete="email" />
+					<input placeholder="john.doe@email.com" type="email" id="email" name="from_email" required autocomplete="email" />
 				</div>
 				<div class="input-container">
 					<label for="message">{$t('contactMessage')}</label>
-					<textarea id="message" name="message" required></textarea>
+					<textarea placeholder={$t('messagePlaceholder')} id="message" name="message" required></textarea>
 				</div>
 				<div class="button-container">
 					<button type="submit">Send</button>
@@ -134,6 +134,7 @@
 		box-shadow:
 			inset 0 0 0 0.1rem rgba(0, 0, 0, 0.1),
 			0 0px 15px rgba(255, 255, 255, 0.4);
+		
 	}
 
 	.desc {
@@ -210,11 +211,23 @@
 		cursor: none;
 		background-color: rgba(255, 255, 255, 0.06);
 	}
+	input::placeholder,
+	textarea::placeholder {
+		opacity: 0.6;
+		color: #7d7d7d; /* Subtle, muted color */
+		font-size: 0.9rem; /* Slightly smaller than the input text */
+		font-style: italic; /* Optional, to distinguish it from normal text */
+	}
+	input:focus::placeholder,
+	textarea:focus::placeholder {
+		color: #6e6e6e; 
+		opacity: 0.4;
+	}
 
 	#message {
 		height: 15rem;
 		min-height: 15rem;
-		max-height: 20rem;
+		max-height: 17.5rem;
 		padding: 0.4rem;
 		font-size: 1rem;
 		resize: vertical;
@@ -230,7 +243,7 @@
 		margin: 0;
 		border-radius: 50px;
 		height: 4rem;
-		transition: transform 0.2s;
+		transition: background-color 0.2s, transform 0.2s;
 		background-color: var(--text-color);
 		color: #0a1828;
 	}
@@ -238,6 +251,7 @@
 	button:hover {
 		cursor: none;
 		transform: translateY(-3px);
+		background-color: #b49d84;
 	}
 
 	button:active {
@@ -247,7 +261,7 @@
 
 	@media screen and (max-width: 1600px) {
 		.contact-field {
-			margin-top: 3rem;
+			margin-top: 2rem;
 		}
 		.input-container {
 			margin: 0;
@@ -263,7 +277,7 @@
 		#message {
 			height: 6.25rem;
 			min-height: 6.25rem;
-			max-height: 20rem;
+			max-height: 12rem;
 		}
 	}
 
@@ -327,7 +341,7 @@
 			justify-content: space-between; /* Space elements evenly */
 			align-items: flex-start; /* Align items at the start */
 			height: 80%;
-			padding: 0 0.5rem;
+			padding: 0 0rem;
 		}
 
 		.divide {

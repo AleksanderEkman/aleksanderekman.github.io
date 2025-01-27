@@ -32,6 +32,7 @@
 	"contactName": "Navn",
 	"contactEmail": "E-post",
 	"contactMessage": "Melding",
+	"messagePlaceholder": "Skriv meldingen din her...",
 
 	"cRights": "Alle Rettigheter Forbeholdt",
 	"location": "Lokasjon",

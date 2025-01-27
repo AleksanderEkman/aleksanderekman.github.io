@@ -251,11 +251,13 @@
 		color: #ccc;
 	}
 	.tech {
+
 		margin-top: 2.5rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		width: 100%;
+		box-shadow: 0 0 8px rgba(0,0,0,0.4) inset;
 	}
 	.tech-col {
 		display: flex;
@@ -266,7 +268,7 @@
 		transition: transform 0.3s ease;
 	}
 	.tech-col:hover {
-		transform: translateY(-5px);
+		transform: translateY(-4px);
 	}
 	.tech-col:hover img {
 		transform: scale(1.1);
@@ -344,7 +346,7 @@
 	}
 	@media (max-width: 1500px) {
 		.project {
-			aspect-ratio: 10/12.5;
+			width: 30vw;
 		}
 	}
 	@media (max-width: 768px) {

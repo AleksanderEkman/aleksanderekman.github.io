@@ -126,7 +126,7 @@
 	}
 
 	.btn-primary:hover {
-		background-color: var(--text-color);
+		background-color: #b49d84;
 		cursor: none;
 	}
 

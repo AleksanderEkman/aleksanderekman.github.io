@@ -32,7 +32,8 @@
 	"contactName": "Name",
 	"contactEmail": "Email",
 	"contactMessage": "Message",
-
+	"messagePlaceholder": "Type your message here...",
+	
 	"cRights": "All Rights Reserved",
 	"location": "Location",
 	"norway": "Norway",
