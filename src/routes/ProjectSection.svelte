@@ -172,7 +172,7 @@
 
 	.project {
 		background-color: #0b1621;
-		background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%);
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.3) 100%);
 		border-radius: 15px;
 		box-shadow:
 			0 4px 8px rgba(0, 0, 0, 0.2),
@@ -244,7 +244,7 @@
 		padding-top: 2rem;
 		border-radius: 8px;
 		width: 100%;
-		background: rgba(0, 0, 0, 0.1);
+		background: rgba(0, 0, 0, 0.05);
 	}
 	.project p {
 		font-size: 1rem;
@@ -344,7 +344,7 @@
 	}
 	@media (max-width: 1500px) {
 		.project {
-			aspect-ratio: 10/11.9;
+			aspect-ratio: 10/12.5;
 		}
 	}
 	@media (max-width: 768px) {

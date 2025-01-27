@@ -124,7 +124,7 @@
 		background-color: rgba(10, 15, 10, 0.2);
 		box-shadow:
 			inset 0 0 0 0.1rem rgba(0, 0, 0, 0.1),
-			0 4px 8px rgba(0, 0, 0, 0.4);
+			0 3px 6px rgba(0, 0, 0, 0.2);
 		transition:
 			transform 0.4s,
 			box-shadow 0.4s;
