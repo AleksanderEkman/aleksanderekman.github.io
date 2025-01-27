@@ -3,7 +3,7 @@
 	import { t, waitLocale } from 'svelte-i18n';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	    let scrollY = 0;
+	let scrollY = 0;
 	let projectSection: HTMLElement;
 	let images: { elvebakkenrevyen: string | null; ufc: string | null; vargrclan: string | null } = {
 		elvebakkenrevyen: null,
@@ -257,7 +257,6 @@
 		color: #ccc;
 	}
 	.tech {
-
 		margin-top: 2.5rem;
 		display: flex;
 		justify-content: center;
