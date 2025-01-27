@@ -251,11 +251,12 @@
 		}
 		.input-container {
 			margin: 0;
-			width: 60%;
+			width: 65%;
 			padding: 0.5rem;
 		}
 
 		.contact-content {
+			width: 50%;
 			padding: 1rem;
 		}
 
