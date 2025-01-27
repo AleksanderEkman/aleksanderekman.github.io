@@ -6,6 +6,7 @@
 	import { fade } from 'svelte/transition';
 	let form: HTMLFormElement;
 	let translationReady = false;
+	let success: boolean;
 
 	onMount(() => {
 		async function initialize() {
@@ -23,9 +24,11 @@
 		emailjs.sendForm('service_i7l5pv2', 'template_y50jgqf', form).then(
 			() => {
 				form.reset();
+				success = true;
 			},
 			(error) => {
 				console.log('FAILED...', error);
+				success = false;
 			}
 		);
 	};
@@ -71,6 +74,15 @@
 				<div class="input-container">
 					<label for="message">{$t('contactMessage')}</label>
 					<textarea placeholder={$t('messagePlaceholder')} id="message" name="message" required></textarea>
+				</div>
+				<div class="success">
+					{#if success}
+						<p in:fade={{duration: 200}}>{$t('contactSuccess')}</p>
+					{:else if success===false}
+						<p style="color: #D21F3C;" in:fade={{duration: 200}}>{$t('contactFail')}</p>
+					{:else}
+						<p>&nbsp;</p>
+					{/if}
 				</div>
 				<div class="button-container">
 					<button type="submit">Send</button>
@@ -190,7 +202,7 @@
 		overflow: hidden;
 		border-radius: 7px;
 		border: solid 0.8px var(--text-color);
-		color: white;
+		color: white !important;
 		padding: 0.4rem;
 		width: 100%;
 		resize: none;
@@ -233,7 +245,17 @@
 		resize: vertical;
 		color: var(--text-color);
 	}
+	.success {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
+	}
+	.success p {
+		user-select: none;
+		font-size: 0.9rem;
+		color: var(--text-color);
+	}
 	button {
 		font-weight: bold;
 		overflow: hidden;

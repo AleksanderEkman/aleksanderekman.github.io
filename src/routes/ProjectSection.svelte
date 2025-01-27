@@ -257,7 +257,6 @@
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		box-shadow: 0 0 8px rgba(0,0,0,0.4) inset;
 	}
 	.tech-col {
 		display: flex;
