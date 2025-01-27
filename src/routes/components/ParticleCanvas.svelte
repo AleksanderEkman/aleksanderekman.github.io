@@ -10,18 +10,20 @@
 		y: number;
 		size: number;
 		speedY: number;
+		alpha: number;
 
 		constructor(x: number, y: number, size: number, speedY: number) {
 			this.x = x;
 			this.y = y;
 			this.size = size;
 			this.speedY = speedY;
+			this.alpha = Math.random() * 0.5 + 0.2;
 		}
 
 		draw() {
 			ctx.beginPath();
 			ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-			ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+			ctx.fillStyle = 'rgba(255, 255, 255, ' + this.alpha + ')';
 
 			ctx.fill();
 		}
@@ -36,7 +38,7 @@
 	}
 
 	function createParticles() {
-		for (let i = 0; i < 60; i++) {
+		for (let i = 0; i < 70; i++) {
 			const x = Math.random() * canvas.width;
 			const y = Math.random() * canvas.height;
 			const size = Math.random() * 2 + 2;
@@ -44,14 +46,16 @@
 			particles.push(new Particle(x, y, size, speedY));
 		}
 	}
-
 	function animate() {
 		if (!canvas) return;
+		ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		
 		particles.forEach((particle) => {
 			particle.update();
 			particle.draw();
 		});
+		
 		requestAnimationFrame(animate);
 	}
 
@@ -96,17 +100,17 @@
 		z-index: 1;
 		background: linear-gradient(
 			45deg,
-			rgba(255, 255, 255, 0.04) 0%,
-			rgba(255, 255, 255, 0) 10%,
-			rgba(255, 255, 255, 0.03) 20%,
-			rgba(255, 255, 255, 0.04) 30%,
-			rgba(255, 255, 255, 0.05) 40%,
-			rgba(255, 255, 255, 0.04) 50%,
-			rgba(255, 255, 255, 0.03) 60%,
-			rgba(255, 255, 255, 0) 70%,
-			rgba(255, 255, 255, 0.03) 80%,
-			rgba(255, 255, 255, 0.04) 90%,
-			rgba(255, 255, 255, 0.05) 100%
+			rgba(255, 255, 255, 0) 0%,
+			rgba(255, 255, 255, 0.02) 10%,
+			rgba(255, 255, 255, 0.05) 20%,
+			rgba(255, 255, 255, 0.02) 30%,
+			rgba(255, 255, 255, 0) 40%,
+			rgba(255, 255, 255, 0.02) 50%,
+			rgba(255, 255, 255, 0.05) 60%,
+			rgba(255, 255, 255, 0.02) 70%,
+			rgba(255, 255, 255, 0) 80%,
+			rgba(255, 255, 255, 0.02) 90%,
+			rgba(255, 255, 255, 0) 100%
 		);
 		mix-blend-mode: difference;
 	}

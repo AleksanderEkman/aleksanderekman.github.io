@@ -6,6 +6,7 @@
 	import { fade } from 'svelte/transition';
 	let form: HTMLFormElement;
 	let translationReady = false;
+	let success: boolean;
 
 	onMount(() => {
 		async function initialize() {
@@ -23,9 +24,11 @@
 		emailjs.sendForm('service_i7l5pv2', 'template_y50jgqf', form).then(
 			() => {
 				form.reset();
+				success = true;
 			},
 			(error) => {
 				console.log('FAILED...', error);
+				success = false;
 			}
 		);
 	};
@@ -62,15 +65,24 @@
 			<div class="divide">
 				<div class="input-container">
 					<label for="name">{$t('contactName')}</label>
-					<input type="text" id="name" name="from_name" autocomplete="name" required />
+					<input type="text" placeholder="John Doe" id="name" name="from_name" autocomplete="name" required />
 				</div>
 				<div class="input-container">
 					<label for="email">{$t('contactEmail')}</label>
-					<input type="email" id="email" name="from_email" required autocomplete="email" />
+					<input placeholder="john.doe@email.com" type="email" id="email" name="from_email" required autocomplete="email" />
 				</div>
 				<div class="input-container">
 					<label for="message">{$t('contactMessage')}</label>
-					<textarea id="message" name="message" required></textarea>
+					<textarea placeholder={$t('messagePlaceholder')} id="message" name="message" required></textarea>
+				</div>
+				<div class="success">
+					{#if success}
+						<p in:fade={{duration: 200}}>{$t('contactSuccess')}</p>
+					{:else if success===false}
+						<p style="color: #D21F3C;" in:fade={{duration: 200}}>{$t('contactFail')}</p>
+					{:else}
+						<p>&nbsp;</p>
+					{/if}
 				</div>
 				<div class="button-container">
 					<button type="submit">Send</button>
@@ -125,7 +137,7 @@
 		background-color: rgba(10, 15, 10, 0.2);
 		box-shadow:
 			inset 0 0 0 0.1rem rgba(0, 0, 0, 0.1),
-			0 4px 8px rgba(0, 0, 0, 0.4);
+			0 3px 6px rgba(0, 0, 0, 0.2);
 		transition:
 			transform 0.4s,
 			box-shadow 0.4s;
@@ -135,6 +147,7 @@
 		box-shadow:
 			inset 0 0 0 0.1rem rgba(0, 0, 0, 0.1),
 			0 0px 15px rgba(255, 255, 255, 0.4);
+		
 	}
 
 	.desc {
@@ -190,7 +203,7 @@
 		overflow: hidden;
 		border-radius: 7px;
 		border: solid 0.8px var(--text-color);
-		color: white;
+		color: white !important;
 		padding: 0.4rem;
 		width: 100%;
 		resize: none;
@@ -211,17 +224,39 @@
 		cursor: none;
 		background-color: rgba(255, 255, 255, 0.06);
 	}
+	input::placeholder,
+	textarea::placeholder {
+		opacity: 0.6;
+		color: #7d7d7d; /* Subtle, muted color */
+		font-size: 0.9rem; /* Slightly smaller than the input text */
+		font-style: italic; /* Optional, to distinguish it from normal text */
+	}
+	input:focus::placeholder,
+	textarea:focus::placeholder {
+		color: #6e6e6e; 
+		opacity: 0.4;
+	}
 
 	#message {
 		height: 15rem;
 		min-height: 15rem;
-		max-height: 20rem;
+		max-height: 17.5rem;
 		padding: 0.4rem;
 		font-size: 1rem;
 		resize: vertical;
 		color: var(--text-color);
 	}
+	.success {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
+	}
+	.success p {
+		user-select: none;
+		font-size: 0.9rem;
+		color: var(--text-color);
+	}
 	button {
 		font-weight: bold;
 		overflow: hidden;
@@ -231,7 +266,7 @@
 		margin: 0;
 		border-radius: 50px;
 		height: 4rem;
-		transition: transform 0.2s;
+		transition: background-color 0.2s, transform 0.2s;
 		background-color: var(--text-color);
 		color: #0a1828;
 	}
@@ -239,6 +274,7 @@
 	button:hover {
 		cursor: none;
 		transform: translateY(-3px);
+		background-color: #b49d84;
 	}
 
 	button:active {
@@ -248,22 +284,23 @@
 
 	@media screen and (max-width: 1600px) {
 		.contact-field {
-			margin-top: 3rem;
+			margin-top: 2rem;
 		}
 		.input-container {
 			margin: 0;
-			width: 60%;
+			width: 65%;
 			padding: 0.5rem;
 		}
 
 		.contact-content {
+			width: 50%;
 			padding: 1rem;
 		}
 
 		#message {
 			height: 6.25rem;
 			min-height: 6.25rem;
-			max-height: 20rem;
+			max-height: 12rem;
 		}
 	}
 
@@ -327,7 +364,7 @@
 			justify-content: space-between; /* Space elements evenly */
 			align-items: flex-start; /* Align items at the start */
 			height: 80%;
-			padding: 0 0.5rem;
+			padding: 0 0rem;
 		}
 
 		.divide {

@@ -138,10 +138,10 @@
         color: #0a1828;
     }
 
-    .btn-primary:hover {
-        background-color: var(--text-color);
-        cursor: none;
-    }
+	.btn-primary:hover {
+		background-color: #b49d84;
+		cursor: none;
+	}
 
     .btn-secondary {
         background-color: transparent;
@@ -181,6 +181,7 @@
             font-size: 1rem;
         }
     }
+
 
     @media (max-width: 1024px) and (orientation: landscape) {
         .hero-section_content {

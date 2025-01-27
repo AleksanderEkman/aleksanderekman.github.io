@@ -33,14 +33,16 @@
 						{/if} mail@aleksanderekman.no</a
 					>
 				</li>
+				<li></li>
 			</ul>
 		</div>
 		<div class="footer-col">
 			<h3 id="header">{$t('location')}</h3>
 			<ul>
 				<li>
-					{#if visible}<FontAwesomeIcon icon={faMapMarkedAlt} />{/if} Oslo, {$t('norway')}
+					<a href="https://www.google.com/maps/place/Oslo/">{#if visible}<FontAwesomeIcon icon={faMapMarkedAlt} />{/if} Oslo, {$t('norway')}</a>
 				</li>
+				<li></li>
 			</ul>
 		</div>
 		<div class="footer-col">
@@ -142,7 +144,7 @@
 		position: relative;
 		font-size: 1.1rem;
 		color: var(--text-color);
-		margin: 0.025rem 0;
+		margin: 0 0;
 	}
 	li a::after {
 		display: inline-block;

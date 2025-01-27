@@ -172,7 +172,7 @@
 
 	.project {
 		background-color: #0b1621;
-		background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%);
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.3) 100%);
 		border-radius: 15px;
 		box-shadow:
 			0 4px 8px rgba(0, 0, 0, 0.2),
@@ -244,13 +244,14 @@
 		padding-top: 2rem;
 		border-radius: 8px;
 		width: 100%;
-		background: rgba(0, 0, 0, 0.1);
+		background: rgba(0, 0, 0, 0.05);
 	}
 	.project p {
 		font-size: 1rem;
 		color: #ccc;
 	}
 	.tech {
+
 		margin-top: 2.5rem;
 		display: flex;
 		justify-content: center;
@@ -266,7 +267,7 @@
 		transition: transform 0.3s ease;
 	}
 	.tech-col:hover {
-		transform: translateY(-5px);
+		transform: translateY(-4px);
 	}
 	.tech-col:hover img {
 		transform: scale(1.1);
@@ -344,7 +345,7 @@
 	}
 	@media (max-width: 1500px) {
 		.project {
-			aspect-ratio: 10/11.9;
+			width: 30vw;
 		}
 	}
 	@media (max-width: 768px) {

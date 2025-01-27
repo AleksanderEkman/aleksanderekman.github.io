@@ -32,6 +32,9 @@
 	"contactName": "Name",
 	"contactEmail": "Email",
 	"contactMessage": "Message",
+	"contactSuccess": "Message sent successfully!",
+	"contactFail": "Message failed to send!",
+	"messagePlaceholder": "Type your message here...",
 
 	"cRights": "All Rights Reserved",
 	"location": "Location",
