@@ -44,7 +44,7 @@
 			const y = Math.random() * canvas.height;
 			const size = Math.random() * 2 + 2;
 			const speedY = Math.random() * 0.3 + 0.3;
-			const alpha = Math.random() * 0.5 + 0.5;
+			const alpha = Math.random() * 0.1 + 0.4;
 			particles.push(new Particle(x, y, size, speedY, alpha));
 		}
 	}
