@@ -99,7 +99,7 @@
 	</nav>
 </header>
 {#if mobileMenuOpen}
-	<div in:fade={{ duration: 150 }} class="overlay"></div>
+	<div aria-hidden="true" in:fade={{ duration: 150 }} class="overlay" onclick={toggleMobileMenu}></div>
 {/if}
 <aside class="mobile">
 	{#if mobileMenuOpen}
@@ -378,11 +378,11 @@
 			background: linear-gradient(
 				180deg,
 				rgba(3, 8, 14, 0.8) 0%,
-				rgba(3, 8, 14, 0.5) 80%,
-				rgba(3, 8, 14, 0) 100%
+				rgba(3, 8, 14, 0.5) 60%,
+				rgba(3, 8, 14, 0) 80%
 			);
 			width: 100vw;
-			height: 80%;
+			height: 100%;
 		}
 		#unset {
 			all: unset;
