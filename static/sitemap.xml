@@ -8,22 +8,22 @@
     xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
 >
     <url>
-        <loc>https://allsers.github.io/</loc>
+        <loc>https://www.aleksanderekman.no/</loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://allsers.github.io/projects</loc>
+        <loc>https://www.aleksanderekman.no/projects</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://allsers.github.io/contact</loc>
+        <loc>https://www.aleksanderekman.no/contact</loc>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://allsers.github.io/bio</loc>
+        <loc>https://www.aleksanderekman.no/about-me</loc>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
