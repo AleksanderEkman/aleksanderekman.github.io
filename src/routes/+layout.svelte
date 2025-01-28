@@ -122,9 +122,7 @@
 		transition: all 0.1s ease-out; /* Smooth transitions */
 		animation: fade 1s forwards; /* Fade effect */
 	}
-	:global(img:hover ~ :global(.mouse-cursor)) {
-		mix-blend-mode: normal !important;
-	}
+
 	@keyframes pulse {
 		0% {
 			transform: scale(1);

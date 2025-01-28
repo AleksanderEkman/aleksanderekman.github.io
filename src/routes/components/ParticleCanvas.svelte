@@ -13,12 +13,12 @@
 		speedY: number;
 		alpha: number;
 
-		constructor(x: number, y: number, size: number, speedY: number) {
+		constructor(x: number, y: number, size: number, speedY: number, alpha: number) {
 			this.x = x;
 			this.y = y;
 			this.size = size;
 			this.speedY = speedY;
-			this.alpha = Math.random() * 0.5 + 0.2;
+			this.alpha = alpha;
 		}
 
 		draw() {
@@ -44,7 +44,8 @@
 			const y = Math.random() * canvas.height;
 			const size = Math.random() * 2 + 2;
 			const speedY = Math.random() * 0.3 + 0.3;
-			particles.push(new Particle(x, y, size, speedY));
+			const alpha = Math.random() * 0.5 + 0.5;
+			particles.push(new Particle(x, y, size, speedY, alpha));
 		}
 	}
 	function animate() {
