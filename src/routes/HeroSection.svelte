@@ -48,8 +48,6 @@
 
 <style>
 	.hero-section {
-		z-index: 0;
-		position: relative;
 		height: 100svh;
 		display: flex;
 		justify-content: center;
@@ -60,7 +58,6 @@
 	}
 
 	.hero-section_content {
-		z-index: -1;
 		text-align: left;
 		opacity: 0;
 		transform: translateY(20px);
@@ -70,7 +67,6 @@
 	}
 
 	.hero-section_content.visible {
-		z-index: -1;
 		opacity: 1;
 		transform: translateY(0);
 	}
@@ -81,7 +77,6 @@
 		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 	}
 	.hero-section_title {
-		z-index: -1;
 		text-wrap: nowrap;
 		line-height: 200%;
 		font-size: 3.5rem;
@@ -100,7 +95,6 @@
 	}
 
 	.hero-section_cta {
-		z-index: 0;
 		justify-self: flex-start;
 		font-family: var(--font-header);
 		display: flex;
