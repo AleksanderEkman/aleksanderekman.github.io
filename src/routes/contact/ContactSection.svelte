@@ -364,6 +364,14 @@
 			width: 80%;
 		}
 	}
+	@media (max-width: 540px) {
+		#contact-header {
+			font-size: 1.5rem;
+		}
+		.desc {
+			margin-bottom: 0;
+		}
+	}
 	@media (max-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
 		.contact-field {
 			width: 90%;
