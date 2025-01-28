@@ -336,6 +336,7 @@
 			align-items: center;
 		}
 		.mobile-menu {
+			z-index: 6;
 			top: 5rem;
 			color: var(--text-color);
 			width: 80vw;
@@ -370,7 +371,7 @@
 		}
 		.overlay {
 			user-select: none;
-			z-index: 1;
+			z-index: 5;
 			position: fixed;
 			top: 0;
 			left: 0;
