@@ -364,7 +364,7 @@
 			width: 80%;
 		}
 	}
-	@media (max-width: 540px) {
+	@media (max-height: 930px) {
 		.contact-content {
 			padding: 0rem 0rem;
 		}
