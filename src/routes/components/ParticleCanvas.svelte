@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	let outerWidth = 0;
+	let prevWidth = 0;
 	let canvas: HTMLCanvasElement;
 	const particles: Particle[] = [];
 	let ctx: CanvasRenderingContext2D;
@@ -69,14 +71,15 @@
 
 		createParticles();
 		animate();
-
+		prevWidth = outerWidth;
 		const handleResize = () => {
-			if (window.matchMedia('(min-width: 900px)').matches) {
+			if (window.matchMedia('(min-width: 900px)').matches || Math.abs(outerWidth - prevWidth) >= outerWidth* 0.2) {
 				canvas.width = window.innerWidth;
 				canvas.height = window.innerHeight;
 				particles.length = 0;
 				createParticles();
 			}
+			prevWidth = outerWidth;
 		};
 
 		window.addEventListener('resize', handleResize);
@@ -87,7 +90,7 @@
 	});
 </script>
 
-<svelte:window bind:scrollY />
+<svelte:window bind:scrollY bind:outerWidth={outerWidth}/>
 
 <canvas bind:this={canvas} id="particleCanvas"></canvas>
 <div class="overlay"></div>
