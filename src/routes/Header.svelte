@@ -33,7 +33,7 @@
 	<nav aria-label="Main navigation">
 		<ul role="menubar">
 			{#if translationReady}
-				<li role="menuitem" in:fade={{ duration: 200 }}>
+				<li id="header-title" role="menuitem" in:fade={{ duration: 200 }}>
 					<button
 						onclick={() => goto(`/`)}
 						tabindex="0"
@@ -401,6 +401,20 @@
 		}
 		.mobile-menu li {
 			padding: 0.25rem 2rem 0.25rem 2rem;
+		}
+	}
+	@media (max-width: 500px) {
+		#header-title {
+			margin: 0;
+		}
+		#unset {
+			height: 0;
+		}
+		ul {
+			height: 2.75rem;
+		}
+		.mobile-menu {
+			top:  4.25rem;
 		}
 	}
 </style>

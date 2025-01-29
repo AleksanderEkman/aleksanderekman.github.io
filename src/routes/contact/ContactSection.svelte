@@ -365,6 +365,9 @@
 		}
 	}
 	@media (max-width: 540px) {
+		.contact-content {
+			padding: 0rem 0rem;
+		}
 		#contact-header {
 			font-size: 1.5rem;
 		}
