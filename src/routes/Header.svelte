@@ -154,7 +154,6 @@
 		color: var(--text-color);
 		touch-action: manipulation;
 		transition:
-			box-shadow 0.3s,
 			background-color 0.3s,
 			backdrop-filter 0.3s;
 	}
@@ -352,7 +351,6 @@
 			padding: 4rem 0 4rem 0;
 			margin: 0;
 			height: auto;
-			border: 1px solid rgba(0, 0, 0, 0.4);
 			touch-action: manipulation;
 		}
 		.mobile-menu li {
