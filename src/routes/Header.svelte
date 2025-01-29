@@ -403,7 +403,7 @@
 			padding: 0.25rem 2rem 0.25rem 2rem;
 		}
 	}
-	@media (max-height: 930px) and (max-width: 540px) {
+	@media (max-height: 768px) and (max-width: 540px) {
 		#header-title {
 			margin: 0;
 		}
