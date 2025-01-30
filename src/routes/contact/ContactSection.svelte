@@ -158,7 +158,6 @@
 			box-shadow 0.4s;
 	}
 	.contact-content:hover {
-		transform: translateY(-1.5%);
 		box-shadow:
 			inset 0 0 0 0.1rem rgba(0, 0, 0, 0.1),
 			0 0px 15px rgba(255, 255, 255, 0.4);
@@ -296,7 +295,11 @@
 		background-color: rgb(122, 105, 88);
 		transform: scale(0.95);
 	}
-
+	@media (min-width: 540px) {
+		.contact-content:hover {
+			transform: translateY(-1.5%);
+		}
+	}
 	@media screen and (max-width: 1600px) {
 		.contact-field {
 			margin-top: 2rem;
