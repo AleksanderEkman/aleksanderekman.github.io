@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Aleksander Ekman | {$t('cPageTitle')}</title>
+	<title>Aleksander Ekman - {$t('cPageTitle')}</title>
 	<link rel="canonical" href="https://aleksanderekman.no/contact" />
 </svelte:head>
 
