@@ -3,6 +3,6 @@
 </script>
 
 <svelte:head>
-	<title>Aleksander Ekman | {$t('aPageTitle')}</title>
+	<title>Aleksander Ekman - {$t('aPageTitle')}</title>
 	<link rel="canonical" href="https://aleksanderekman.no/about-me" />
 </svelte:head>
