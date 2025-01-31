@@ -35,7 +35,12 @@ body {
 	background-color: white;
 	cursor: none !important;
 }
-
+@media (max-width: 1024px) {
+	html,
+	body {
+		cursor: pointer !important;
+	}
+}
 pre {
 	font-size: 16px;
 	font-family: var(--font-mono);
