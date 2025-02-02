@@ -73,9 +73,9 @@
 		animate();
 		prevWidth = outerWidth;
 		const handleResize = () => {
-			canvas.width = window.innerWidth;
-			canvas.height = window.innerHeight;
-			if (window.matchMedia('(min-width: 900px)').matches || Math.abs(outerWidth - prevWidth) >= outerWidth* 0.2) {
+			if (!Device.isMobile || Math.abs(outerWidth - prevWidth) >= outerWidth* 0.2) {
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight;
 				particles.length = 0;
 				createParticles();
 			}
