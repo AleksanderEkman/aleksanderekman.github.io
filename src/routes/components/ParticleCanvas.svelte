@@ -79,7 +79,7 @@
 				setTimeout(async() => {
 					particles.length = 0;
 					createParticles()}
-					, 100);
+					, 200);
 			}
 			prevWidth = outerWidth;
 		};
