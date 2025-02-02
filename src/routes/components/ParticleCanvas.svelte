@@ -28,7 +28,6 @@
 			ctx.beginPath();
 			ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
 			ctx.fillStyle = 'rgba(255, 255, 255, ' + this.alpha + ')';
-
 			ctx.fill();
 		}
 
@@ -77,7 +76,10 @@
 				canvas.width = window.innerWidth;
 				canvas.height = window.innerHeight;
 				particles.length = 0;
-				createParticles();
+				setTimeout(async() => {
+					particles.length = 0;
+					createParticles()}
+					, 100);
 			}
 			prevWidth = outerWidth;
 		};
