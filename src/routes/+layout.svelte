@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Device from 'svelte-device-info';
 	import { setupI18n } from '$lib/i18n/index';
 	setupI18n();
 	import Header from './Header.svelte';
@@ -69,7 +70,9 @@
 	<Footer />
 </div>
 
-<div class="mouse-cursor"></div>
+{#if !Device.isMobile}
+	<div class="mouse-cursor"></div>
+{/if}
 
 <style>
 	:global(.mouse-cursor) {
@@ -151,15 +154,5 @@
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-	}
-	@media (max-width: 930px) {
-		:global(.mouse-cursor) {
-			display: none;
-		}
-	}
-	@media (max-width: 1024px) and (orientation: landscape) {
-		:global(.mouse-cursor) {
-			display: none;
-		}
 	}
 </style>

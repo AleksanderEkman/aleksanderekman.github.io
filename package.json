@@ -37,6 +37,7 @@
 		"@vercel/speed-insights": "^1.1.0",
 		"eslint": "^9.19.0",
 		"glob": "^11.0.1",
+		"svelte-device-info": "^1.0.6",
 		"svelte-i18n": "^4.0.1",
 		"sveltekit-rate-limiter": "^0.6.1"
 	}
