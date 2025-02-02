@@ -34,6 +34,8 @@
 	"contactMessage": "Message",
 	"contactSuccess": "Message sent successfully!",
 	"contactFail": "Message failed to send!",
+	"namePlaceholder": "John Doe",
+	"emailPlaceholder": "john.doe@email.com",
 	"messagePlaceholder": "Type your message here...",
 
 	"cRights": "All Rights Reserved",

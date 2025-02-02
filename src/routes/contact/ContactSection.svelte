@@ -67,7 +67,7 @@
 					<label for="name">{$t('contactName')}</label>
 					<input
 						type="text"
-						placeholder="John Doe"
+						placeholder={$t('namePlaceholder')}
 						id="name"
 						name="from_name"
 						autocomplete="name"
@@ -77,7 +77,7 @@
 				<div class="input-container">
 					<label for="email">{$t('contactEmail')}</label>
 					<input
-						placeholder="john.doe@email.com"
+						placeholder={$t('emailPlaceholder')}
 						type="email"
 						id="email"
 						name="from_email"

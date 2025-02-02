@@ -34,6 +34,8 @@
 	"contactMessage": "Melding",
 	"contactSuccess": "Meldingen ble sendt!",
 	"contactFail": "Det oppstod en feil, meldingen ble ikke sendt!",
+	"namePlaceholder": "Ola Nordmann",
+	"emailPlaceholder": "ola.nordmann@epost.no",
 	"messagePlaceholder": "Skriv meldingen din her...",
 
 	"cRights": "Alle Rettigheter Forbeholdt",
