@@ -51,7 +51,7 @@
 			<h3 id="header">{$t('SocialMedia')}</h3>
 			<ul>
 				<li>
-					<a href="https://github.com/allsers" target="_blank" rel="noopener">
+					<a href="https://github.com/aleksanderekman" target="_blank" rel="noopener">
 						{#if visible}<FontAwesomeIcon icon={faGithub} />{/if} GitHub
 					</a>
 				</li>
