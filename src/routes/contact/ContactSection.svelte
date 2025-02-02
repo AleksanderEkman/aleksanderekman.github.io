@@ -379,6 +379,14 @@
 			padding: 0.5rem;
 		}
 	}
+	@media (max-height: 800px) {
+		.contact-content {
+			transform: scale(0.78);
+		}
+		.contact-content:hover {
+			transform: scale(0.78);
+		}
+	}
 	@media (max-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
 		.contact-field {
 			width: 90%;

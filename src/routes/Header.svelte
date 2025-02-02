@@ -221,7 +221,7 @@
 		letter-spacing: 0.03em;
 		background: none;
 		border: none;
-		cursor: pointer;
+		cursor: none;
 		transition: all 0.3s ease;
 		font-family: var(--font-header);
 	}

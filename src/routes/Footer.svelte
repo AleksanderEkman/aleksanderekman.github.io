@@ -212,6 +212,12 @@
 		li {
 			font-size: 0.8rem;
 		}
+		footer {
+			height: auto;
+		}
+		.content {
+			gap: 1.5rem;
+		}
 	}
 	@media (max-width: 480px) {
 		#header {
