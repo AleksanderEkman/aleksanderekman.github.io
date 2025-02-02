@@ -379,7 +379,7 @@
 			padding: 0.5rem;
 		}
 	}
-	@media (max-height: 800px) {
+	@media (max-height: 800px) and (min-width: 540px) {
 		.contact-content {
 			transform: scale(0.78);
 		}
