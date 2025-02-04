@@ -226,8 +226,8 @@
 		font-family: var(--font-header);
 	}
 	button img {
-		width: 2rem;
-		height: 2rem;
+		width: 2.25rem;
+		height: 2.25rem;
 		margin-right: 0.5rem;
 	}
 
