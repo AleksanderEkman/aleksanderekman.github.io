@@ -108,7 +108,7 @@
 		justify-content: space-between;
 		align-items: flex-start;
 		width: 100%;
-		max-width: 1550px;
+		max-width: 1600px;
 	}
 
 	.footer-col {
@@ -159,6 +159,7 @@
 		background-color: var(--text-color);
 		transition: width 0.3s ease;
 	}
+
 	li a:hover::after {
 		width: 100%;
 	}
@@ -173,9 +174,11 @@
 		position: relative;
 		color: var(--text-color);
 		text-decoration: none;
+		transition: color 0.3s ease;
 	}
 
 	a:hover {
+		color: white;
 		cursor: none;
 	}
 

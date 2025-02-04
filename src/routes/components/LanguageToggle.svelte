@@ -13,11 +13,8 @@
 	};
 	onMount(() => {
 		if (browser) {
-			const storedLanguage = localStorage.getItem('language');
-			currentLocale = storedLanguage || 'en-US';
-			if (storedLanguage) {
-				changeLanguage(storedLanguage);
-			}
+			currentLocale = localStorage.getItem('language') || 'en-US';
+            locale.set(currentLocale);
 		}
 	});
 </script>
