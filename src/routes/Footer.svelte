@@ -95,7 +95,6 @@
     footer {
         z-index: 1;
         height: 15rem;
-        overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -109,7 +108,6 @@
 
     .content {
         z-index: 1;
-        overflow: hidden;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -120,7 +118,6 @@
 
     .footer-col {
         z-index: 1;
-        overflow: hidden;
         display: flex;
         flex-direction: column;
         align-items: center;
