@@ -331,7 +331,10 @@
 		cursor: none;
 		transform: translateY(-7.5%);
 	}
-
+	.btn-primary:active {
+		background-color: rgb(122, 105, 88);
+		transform: scale(0.95) translateY(-7.5%);
+	}
 	@media (min-width: 1500px) {
 		.project h3,
 		#pt {

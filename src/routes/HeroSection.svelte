@@ -128,7 +128,10 @@
 		background-color: #b49d84;
 		cursor: none;
 	}
-
+	.btn-primary:active {
+		background-color: rgb(122, 105, 88);
+		transform: scale(0.95) translateY(-7.5%);
+	}
 	.btn-secondary {
 		background-color: transparent;
 		color: var(--text-color);
@@ -139,7 +142,9 @@
 		background-color: rgba(191, 161, 129, 0.1);
 		cursor: none;
 	}
-
+	.btn-secondary:active {
+		transform: scale(0.95) translateY(-7.5%);
+	}
 	@media (max-width: 1024px) {
 		.hero-section {
 			height: 100lvh;
