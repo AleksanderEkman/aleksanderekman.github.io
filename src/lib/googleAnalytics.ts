@@ -15,7 +15,7 @@ export function initGoogleAnalytics() {
 						window.dataLayer.push(arguments);
 					}
 					gtag('js', new Date());
-					gtag('config', 'G-LYL2HNSHV0');
+					gtag('config', 'G-2GB2CHNFXH');
 				};
 				console.log('Google Analytics loaded');
 			}, 5000); // Delay by 5 seconds after the load event
