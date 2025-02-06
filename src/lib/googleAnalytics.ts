@@ -18,7 +18,7 @@ export function initGoogleAnalytics() {
 					gtag('config', 'G-2GB2CHNFXH');
 				};
 				console.log('Google Analytics loaded');
-			}, 5000); // Delay by 5 seconds after the load event
+			}, 0); // Delay by 5 seconds after the load event
 		});
 	});
 }
