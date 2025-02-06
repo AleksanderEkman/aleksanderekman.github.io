@@ -99,6 +99,7 @@
 
 <style>
 	.overlay {
+		z-index: 2;
 		-webkit-user-drag: none;
 		user-select: none;
 		position: absolute;
@@ -123,6 +124,7 @@
 		mix-blend-mode: difference;
 	}
 	#particleCanvas {
+		z-index: 2;
 		position: fixed;
 		user-select: none;
 		-webkit-user-drag: none;

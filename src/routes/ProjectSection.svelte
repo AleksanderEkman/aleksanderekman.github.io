@@ -3,7 +3,8 @@
 	import { t, waitLocale } from 'svelte-i18n';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	let scrollY = 0;
+	
+	let projectDiv: HTMLElement;
 	let projectSection: HTMLElement;
 	let images: { elvebakkenrevyen: string | null; ufc: string | null; vargrclan: string | null } = {
 		elvebakkenrevyen: null,
@@ -86,7 +87,7 @@
 	{/if}
 	<div class="project-list">
 		{#each projects as project}
-			<div class="project">
+			<div class="project" bind:this={projectDiv}>
 				{#if project.image}
 					<img
 						in:fade={{ duration: 350 }}

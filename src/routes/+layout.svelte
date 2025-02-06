@@ -9,7 +9,8 @@
 	import { initGoogleAnalytics } from '$lib/googleAnalytics';
 
 	let { children } = $props();
-
+	let blob: HTMLElement | undefined = $state();
+	
 	const timeoutMap = new Map();
 	const moveCursor = (cursor: HTMLElement, e: MouseEvent) => {
 		cursor.style.opacity = '1';
@@ -37,6 +38,15 @@
 
 		document.addEventListener('mousemove', (e) => {
 			moveCursor(cursor, e);
+
+			if (!blob) return;
+			blob.animate({
+				left: e.clientX + 'px',
+				top: e.clientY + 'px'
+			}, {
+				duration: 3000,
+				fill: 'forwards'
+			})
 		});
 
 		document.addEventListener('mousedown', () => {
@@ -68,13 +78,28 @@
 		{@render children()}
 	</main>
 	<Footer />
+	{#if !Device.isMobile}
+		<div class="mouse-cursor"></div>
+		<div class="blob-container">
+			<div id="blob" bind:this={blob}></div>
+		</div>
+		<div id="blur"></div>
+	{/if}
 </div>
 
-{#if !Device.isMobile}
-	<div class="mouse-cursor"></div>
-{/if}
-
 <style>
+	.app {
+		
+		overflow-x: hidden;
+		width: 100%;
+	}
+	.blob-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+    }
 	:global(.mouse-cursor) {
 		display: flex;
 		opacity: 0;
@@ -125,7 +150,44 @@
 		transition: all 0.1s ease-out; /* Smooth transitions */
 		animation: fade 1s forwards; /* Fade effect */
 	}
+	#blob {
+		overflow: hidden;
+		z-index: 0;
+		position: absolute;
+		background: linear-gradient(
+			to right,
+			rgba(62, 147, 245,0.1),
+			rgba(37, 86, 141, 0.1)
+		);
+		height: 400px;
+		aspect-ratio: 1;
+		left: 50%;
+		top: 50%;
+		translate: -50% -50%;
+		border-radius: 50%;
+		animation: rotate 20s infinite;
+		filter: blur(50px);
+	}
+	#blur {
+		overflow: hidden;
+		top: 0;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		position: absolute;
 
+	}
+	@keyframes rotate {
+		0% {
+			transform: rotate(0deg);
+		}
+		50% {
+			scale: 1 1.5;
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
 	@keyframes pulse {
 		0% {
 			transform: scale(1);

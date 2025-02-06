@@ -58,6 +58,7 @@
 	}
 
 	.hero-section_content {
+		z-index: 2;
 		text-align: left;
 		opacity: 0;
 		transform: translateY(20px);
