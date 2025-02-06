@@ -6,7 +6,7 @@
 
 <svelte:head>
 	<title>Aleksander Ekman - {$t('cPageTitle')}</title>
-	<link rel="canonical" href="https://aleksanderekman.no/contact" />
+	<link rel="canonical" href="https://www.aleksanderekman.no/contact" />
 </svelte:head>
 
 <ParticleCanvas />

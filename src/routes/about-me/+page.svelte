@@ -4,5 +4,5 @@
 
 <svelte:head>
 	<title>Aleksander Ekman - {$t('aPageTitle')}</title>
-	<link rel="canonical" href="https://aleksanderekman.no/about-me" />
+	<link rel="canonical" href="https://www.aleksanderekman.no/about-me" />
 </svelte:head>

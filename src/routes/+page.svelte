@@ -8,7 +8,7 @@
 
 <svelte:head>
 	<title>Aleksander Ekman - {$t('hPageTitle')}</title>
-	<link rel="canonical" href="https://aleksanderekman.no" />
+	<link rel="canonical" href="https://www.aleksanderekman.no" />
 	<meta name="description" content="Aleksander's portfolio website with view over projects." />
 </svelte:head>
 
