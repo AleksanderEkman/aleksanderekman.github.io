@@ -26,9 +26,9 @@
 <section
 	class="hero-section"
 	style="background:
-        radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 60%),
-        radial-gradient(circle, rgb(15, 35, 55) 10%, rgba(4,20,35) {percentage}%);"
->
+        radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 60%);"
+>	
+	<div class="gradient-overlay" style="background: radial-gradient(circle, rgb(15, 35, 55) 10%, rgba(4,20,35,0) {percentage}%);"></div>
 	<div class="hero-section_content" class:visible>
 		{#if visible}
 			<h1 class="hero-section_title" transition:fade={{ delay: 200, duration: 1000 }}>
@@ -56,7 +56,12 @@
 		padding: 2rem;
 		font-family: var(--font-header);
 	}
-
+	.gradient-overlay {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		z-index: 2;
+	}
 	.hero-section_content {
 		z-index: 2;
 		text-align: left;
