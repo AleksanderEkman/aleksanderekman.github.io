@@ -93,7 +93,7 @@
     }
 
     footer {
-        z-index: 1;
+        z-index: 2;
         height: 15rem;
         display: flex;
         justify-content: center;

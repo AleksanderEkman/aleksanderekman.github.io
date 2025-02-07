@@ -44,7 +44,7 @@
 				left: e.clientX + 'px',
 				top: e.clientY + 'px'
 			}, {
-				duration: 3000,
+				duration: 2000,
 				fill: 'forwards'
 			})
 		});
@@ -145,10 +145,10 @@
 		position: absolute;
 		background: linear-gradient(
 			to right,
-			rgb(151, 151, 151),
-			rgb(29, 64, 107)
+			rgb(58, 68, 116),
+			rgba(8,23,38,1)
 		);
-		height: 100px;
+		height: 500px;
 		aspect-ratio: 1;
 		left: 50%;
 		top: 50%;
