@@ -145,8 +145,8 @@
 		position: absolute;
 		background: linear-gradient(
 			to right,
-			rgba(62, 147, 245,0.1),
-			rgba(37, 86, 141, 0.1)
+			rgb(151, 151, 151),
+			rgb(29, 64, 107)
 		);
 		height: 100px;
 		aspect-ratio: 1;
@@ -155,7 +155,6 @@
 		translate: -50% -50%;
 		border-radius: 50%;
 		animation: rotate 20s infinite;
-		filter: blur(50px);
 	}
 	#blur {
 		overflow: hidden;
@@ -164,7 +163,7 @@
 		width: 100%;
 		height: 100%;
 		position: absolute;
-
+		backdrop-filter: blur(200px);
 	}
 	@keyframes rotate {
 		0% {
