@@ -23,6 +23,7 @@
 
 <style>
 	:global(.error-section_content.visible) {
+		z-index: 2;
 		opacity: 1 !important;
 		transform: translateY(0);
 	}
