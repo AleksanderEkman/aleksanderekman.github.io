@@ -44,7 +44,7 @@
 				left: e.clientX + 'px',
 				top: e.clientY + 'px'
 			}, {
-				duration: 2000,
+				duration: 3000,
 				fill: 'forwards'
 			})
 		});
@@ -145,8 +145,8 @@
 		position: absolute;
 		background: linear-gradient(
 			to right,
-			rgb(0, 0, 0),
-			rgb(29, 64, 107)
+			rgba(62, 147, 245,0.1),
+			rgba(37, 86, 141, 0.1)
 		);
 		height: 400px;
 		aspect-ratio: 1;
@@ -155,6 +155,7 @@
 		translate: -50% -50%;
 		border-radius: 50%;
 		animation: rotate 20s infinite;
+		filter: blur(50px);
 	}
 	#blur {
 		overflow: hidden;
@@ -163,7 +164,6 @@
 		width: 100%;
 		height: 100%;
 		position: absolute;
-		backdrop-filter: blur(200px);
 
 	}
 	@keyframes rotate {
