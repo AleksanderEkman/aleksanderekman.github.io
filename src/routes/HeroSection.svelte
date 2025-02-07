@@ -56,7 +56,12 @@
 		padding: 2rem;
 		font-family: var(--font-header);
 	}
-
+	.gradient-overlay {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		z-index: 2;
+	}
 	.hero-section_content {
 		z-index: 2;
 		text-align: left;
