@@ -148,7 +148,7 @@
 			rgba(62, 147, 245,0.1),
 			rgba(37, 86, 141, 0.1)
 		);
-		height: 400px;
+		height: 100px;
 		aspect-ratio: 1;
 		left: 50%;
 		top: 50%;
