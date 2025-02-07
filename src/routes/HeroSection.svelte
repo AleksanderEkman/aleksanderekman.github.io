@@ -25,10 +25,10 @@
 <ParticleCanvas />
 <section
 	class="hero-section"
-	style=""
->	
-	<div class="gradient-overlay" style="background:
-        radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 60%); background: radial-gradient(circle, rgb(15, 35, 55) 10%, rgba(4,20,35,0) {percentage}%);"></div>
+	style="background:
+        radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 60%),
+        radial-gradient(circle, rgb(15, 35, 55) 10%, rgba(4,20,35) {percentage}%);"
+>
 	<div class="hero-section_content" class:visible>
 		{#if visible}
 			<h1 class="hero-section_title" transition:fade={{ delay: 200, duration: 1000 }}>
