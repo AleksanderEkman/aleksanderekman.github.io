@@ -148,7 +148,7 @@
 			rgb(151, 151, 151),
 			rgb(29, 64, 107)
 		);
-		height: 400px;
+		height: 100px;
 		aspect-ratio: 1;
 		left: 50%;
 		top: 50%;
