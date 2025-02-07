@@ -145,10 +145,10 @@
 		position: absolute;
 		background: linear-gradient(
 			to right,
-			rgb(0, 0, 0),
+			rgb(82, 82, 82),			
 			rgb(29, 64, 107)
 		);
-		height: 400px;
+		height: 100px;
 		aspect-ratio: 1;
 		left: 50%;
 		top: 50%;
