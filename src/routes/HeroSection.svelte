@@ -66,7 +66,12 @@
 			opacity 0.5s ease,
 			transform 0.5s ease;
 	}
-
+	.gradient-overlay {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		z-index: 2;
+	}
 	.hero-section_content.visible {
 		opacity: 1;
 		transform: translateY(0);
