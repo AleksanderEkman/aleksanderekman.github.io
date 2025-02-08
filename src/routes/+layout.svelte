@@ -41,8 +41,8 @@
 
 			if (!blob) return;
 			blob.animate({
-				left: e.clientX + 'px',
-				top: e.clientY + 'px'
+				left: e.clientX + window.scrollX + 'px',
+				top: e.clientY + window.scrollY + 'px'
 			}, {
 				duration: 2000,
 				fill: 'forwards'
@@ -57,9 +57,11 @@
 		});
 		document.addEventListener('mouseenter', () => {
 			cursor.style.opacity = '1';
+			blob.style.opacity = '1';
 		});
 		document.addEventListener('mouseleave', () => {
 			cursor.style.opacity = '0';
+			blob.style.opacity = '0';
 		});
 
 		return () => {
@@ -89,11 +91,16 @@
 
 <style>
 	.app {
-		
-		overflow-x: hidden;
+		-webkit-user-drag: none;	
 		width: 100%;
+		cursor: none;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		overflow-x: hidden;
 	}
 	.blob-container {
+		-webkit-user-drag: none;	
         position: absolute;
         width: 100%;
         height: 100%;
@@ -101,6 +108,7 @@
         z-index: 0;
     }
 	:global(.mouse-cursor) {
+		-webkit-user-drag: none;	
 		display: flex;
 		opacity: 0;
 		position: fixed;
@@ -119,6 +127,7 @@
 	}
 
 	:global(.mouse-cursor::after) {
+		-webkit-user-drag: none;		
 		content: '';
 		position: absolute;
 		width: 100%;
@@ -129,17 +138,20 @@
 	}
 
 	:global(.mouse-cursor.glow) {
+		-webkit-user-drag: none;
 		opacity: 1;
 		box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
 	}
 
 	:global(.mouse-cursor.click) {
+		-webkit-user-drag: none;	
 		transform: translate(-50%, -50%) scale(1.25);
 		background-color: rgba(255, 255, 255, 1);
 		box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.7);
 	}
 
 	#blob {
+		-webkit-user-drag: none;
 		overflow: hidden;
 		z-index: 0;
 		position: absolute;
@@ -148,15 +160,17 @@
 			rgb(58, 68, 116),
 			rgba(8,23,38,1)
 		);
-		height: 500px;
+		height: 25rem;
 		aspect-ratio: 1;
 		left: 50%;
 		top: 50%;
 		translate: -50% -50%;
 		border-radius: 50%;
 		animation: rotate 20s infinite;
+		transition: opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
 	#blur {
+		-webkit-user-drag: none;	
 		overflow: hidden;
 		top: 0;
 		z-index: 1;
@@ -191,15 +205,9 @@
 		}
 	}
 
-	.app {
-		cursor: none;
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-		overflow-x: hidden;
-	}
 
 	main {
+		-webbkit-user-drag: none;
 		flex: 1;
 		display: flex;
 		flex-direction: column;

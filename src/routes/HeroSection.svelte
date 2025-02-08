@@ -90,7 +90,7 @@
 	.hero-section_title {
 		text-wrap: nowrap;
 		line-height: 200%;
-		font-size: 3.5rem;
+		font-size: 4rem;
 		color: var(--text-color);
 	}
 

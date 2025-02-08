@@ -217,7 +217,7 @@
 		align-items: center;
 		height: 100%;
 		color: var(--color-text);
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 		letter-spacing: 0.03em;
 		background: none;
 		border: none;
