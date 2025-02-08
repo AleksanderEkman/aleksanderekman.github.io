@@ -2,13 +2,8 @@ import { error, type Handle } from '@sveltejs/kit';
 import { RateLimiter } from 'sveltekit-rate-limiter/server';
 
 const limiter = new RateLimiter({
-<<<<<<< HEAD
-    IP: [1000, 'd'],
-    IPUA: [1000, 'h']
-=======
 	IP: [1000, 'd'],
 	IPUA: [1000, 'h']
->>>>>>> parent of 8e8d4c5 (Set up express server and redirects for malformed URI)
 });
 
 const securityHeaders = {
