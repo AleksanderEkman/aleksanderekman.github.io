@@ -224,6 +224,9 @@
         li {
             text-align: center;
         }
+        #social-media {
+            align-items: center;
+        }
     }
 
     @media (max-width: 1030px) and (orientation: landscape) {
