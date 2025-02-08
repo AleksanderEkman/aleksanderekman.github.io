@@ -1,5 +1,5 @@
 import adapterStatic from '@sveltejs/adapter-static';
-import adapterVercel from '@sveltejs/adapter-vercel';
+import adapterNode from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -12,18 +12,19 @@ const config = {
 		},
 		prerender: {
 			entries: ['*'],
-			handleHttpError: ({ message }) => {
-				if (message.includes('429')) {
-					return;
+			handleHttpError: ({ status, path, referrer, referenceType }) => {
+				if (status === 429) {
+				  console.warn(`Rate limited while prerending ${path}`);
+				  return;
 				}
-
+			  
 				// Throw other errors
-				throw new Error(message);
-			}
+				throw new Error(`${status} ${path}${referrer ? ` (${referenceType} from ${referrer})` : ''}`);
+			  }
 		},
 		adapter:
 			process.env.ADAPTER === 'VERCEL'
-				? adapterVercel()
+				? adapterNode()
 				: adapterStatic({
 						pages: 'build',
 						assets: 'build',

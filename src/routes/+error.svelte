@@ -1,9 +1,13 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import ParticleCanvas from './components/ParticleCanvas.svelte';
 	import { t } from 'svelte-i18n';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	let visible = false;
+
+    $: status = $page.status;
+
 
 	onMount(() => {
 		visible = true;
@@ -14,7 +18,7 @@
 <section class="error-section">
 	<div class="error-section_content" class:visible>
 		<h1 class="error-section_title">
-			<div class="font-impact">404</div>
+			<div class="font-impact">{status}</div>
 		</h1>
 		<p>{$t('error.notFound')}</p>
 		<button class="btn" onclick={() => goto('/')}>{$t('error.backHome')}</button>
@@ -61,8 +65,8 @@
 	}
 	.error-section_title {
 		line-height: 200%;
-		font-size: 4.5rem;
-		margin-bottom: 0.5rem;
+		font-size: 5rem;
+		margin-bottom: 1rem;
 		color: #c9af93;
 	}
 	.btn:hover {
@@ -71,6 +75,7 @@
 		transform: translateY(-4px);
 	}
 	.btn {
+		font-size: 1.2rem;
 		padding: 0.75rem 1.5rem;
 		border-radius: 50px;
 		text-decoration: none;
