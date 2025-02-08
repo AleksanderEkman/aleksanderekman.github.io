@@ -35,9 +35,7 @@ export const handle: Handle = async ({ event, resolve }) => {
         });
     }
 
-    const response = await resolve(event, {
-        transformPageChunk: ({ html }) => html.replace(/<script type="module" src="\/_app\/start-[a-z0-9]+\.js"><\/script>/, '')
-    });
+    const response = await resolve(event);
 
     response.headers.set('Strict-Transport-Security', securityHeaders['Strict-Transport-Security']);
     response.headers.set('X-Frame-Options', securityHeaders['X-Frame-Options']);
