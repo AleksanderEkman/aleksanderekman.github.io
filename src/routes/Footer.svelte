@@ -47,7 +47,7 @@
 				<li></li>
 			</ul>
 		</div>
-		<div class="footer-col">
+		<div class="footer-col" id="social-media">
 			<h3 id="header">{$t('SocialMedia')}</h3>
 			<ul>
 				<li>
@@ -125,6 +125,9 @@
         flex: 1;
         padding: 0 0.5em;
     }
+    #social-media {
+        align-items: flex-start;
+    }
 
     #header {
         box-shadow: 0 1px rgba(0, 0, 0, 0.2);
@@ -132,7 +135,7 @@
         border-bottom: 1px solid rgba(201, 175, 147, 0.1);
         display: flex;
         align-items: center;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         font-weight: bold;
         color: var(--text-color);
         margin-bottom: 0.9rem;
@@ -184,6 +187,8 @@
     }
 
     :global(li a svg) {
+        font-size: 1.2rem;
+        margin-right: 0.25rem;
         transition: transform 0.3s ease;
     }
 
@@ -196,7 +201,7 @@
         cursor: none;
     }
 
-    @media (max-width: 880px) {
+    @media (max-width: 920px) {
         footer {
             padding: 2.75rem 0;
             height: auto;

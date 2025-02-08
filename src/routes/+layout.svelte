@@ -57,10 +57,14 @@
 		});
 		document.addEventListener('mouseenter', () => {
 			cursor.style.opacity = '1';
+			
+			if (!blob) return;
 			blob.style.opacity = '1';
 		});
 		document.addEventListener('mouseleave', () => {
 			cursor.style.opacity = '0';
+
+			if (!blob) return;
 			blob.style.opacity = '0';
 		});
 
