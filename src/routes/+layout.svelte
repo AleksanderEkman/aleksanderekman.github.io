@@ -44,7 +44,7 @@
 				left: e.clientX + window.scrollX + 'px',
 				top: e.clientY + window.scrollY + 'px'
 			}, {
-				duration: 2000,
+				duration: 1500,
 				fill: 'forwards'
 			})
 		});

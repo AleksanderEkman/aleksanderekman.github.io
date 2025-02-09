@@ -1,5 +1,6 @@
 import { error, type Handle } from '@sveltejs/kit';
 import { RateLimiter } from 'sveltekit-rate-limiter/server';
+import { redirect } from '@sveltejs/kit';
 
 const limiter = new RateLimiter({
 	IP: [1000, 'd'],
@@ -20,6 +21,13 @@ const securityHeaders = {
 };
 
 export const handle: Handle = async ({ event, resolve }) => {
+    try {
+        decodeURI(event.url.pathname);
+    } catch (uriError) {
+        // Handle malformed URI
+        console.error('Malformed URI:', event.url.pathname);
+        throw error(400, 'Bad Request: Malformed URI');
+    }
     // Apply rate limiting
     if (await limiter.isLimited(event)) {
         throw error(429, 'Too Many Requests');
