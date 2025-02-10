@@ -169,6 +169,7 @@
 			flex-direction: column;
 		}
 		.hero-section_description {
+			text-align: center;
 			line-height: auto;
 			font-size: 1rem;
 			text-wrap: wrap;
