@@ -96,7 +96,7 @@
 
 	.hero-section_description {
 		text-wrap: nowrap;
-		text-align: center;
+		text-align: left;
 		font-size: 1.5rem; /* Increased size for emphasis */
 		margin-bottom: 2rem;
 		color: #178582;
