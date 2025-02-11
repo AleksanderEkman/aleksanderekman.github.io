@@ -35,10 +35,10 @@
 				<div class="font-impact">{$t('welcome')}</div>
 				{$t('name')}
 			</h1>
-			<p class="hero-section_description" transition:fade={{ delay: 500, duration: 1000 }}>
+			<p class="hero-section_description" transition:fade={{ delay: 400, duration: 1000 }}>
 				{$t('desc')}
 			</p>
-			<div class="hero-section_cta" transition:fade={{ delay: 800, duration: 1000 }}>
+			<div class="hero-section_cta" transition:fade={{ delay: 700, duration: 1000 }}>
 				<button onclick={() => goto('/projects')} class="btn btn-primary">{$t('work')}</button>
 				<button onclick={() => goto('/contact')} class="btn btn-secondary">{$t('contact')}</button>
 			</div>
