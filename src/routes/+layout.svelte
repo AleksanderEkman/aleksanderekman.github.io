@@ -57,7 +57,6 @@
 		});
 		document.addEventListener('mouseenter', () => {
 			cursor.style.opacity = '1';
-			
 			if (!blob) return;
 			blob.style.opacity = '1';
 		});
@@ -112,6 +111,7 @@
         z-index: 0;
     }
 	:global(.mouse-cursor) {
+		user-select: none;
 		-webkit-user-drag: none;	
 		display: flex;
 		opacity: 0;
@@ -155,6 +155,7 @@
 	}
 
 	#blob {
+		user-select: none;
 		-webkit-user-drag: none;
 		overflow: hidden;
 		z-index: 0;
@@ -174,6 +175,7 @@
 		transition: opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
 	#blur {
+		user-select: none;
 		-webkit-user-drag: none;	
 		overflow: hidden;
 		top: 0;

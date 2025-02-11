@@ -31,7 +31,7 @@
         radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 60%); background: radial-gradient(circle, rgb(15, 35, 55) 10%, rgba(4,20,35,0) {percentage}%);"></div>
 	<div class="hero-section_content" class:visible>
 		{#if visible}
-			<h1 class="hero-section_title" transition:fade={{ delay: 200, duration: 1000 }}>
+			<h1 class="hero-section_title" transition:fade={{ delay: 100, duration: 1000 }}>
 				<div class="font-impact">{$t('welcome')}</div>
 				{$t('name')}
 			</h1>
