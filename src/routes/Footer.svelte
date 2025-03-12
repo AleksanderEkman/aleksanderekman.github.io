@@ -201,6 +201,17 @@
         cursor: none;
     }
 
+    @media (max-width: 1550px) {
+        #header {
+            font-size: 1.2rem;
+        }
+        li {
+            font-size: 1rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+    }
     @media (max-width: 920px) {
         footer {
             padding: 2.75rem 0;
