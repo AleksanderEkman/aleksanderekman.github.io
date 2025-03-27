@@ -21,7 +21,7 @@ const securityHeaders = {
     'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     Vary: 'Origin',
-    'Cache-Control': 'public, max-age=1800'
+    'Cache-Control': 'public, max-age=3600'
 };
 
 export const handle: Handle = async ({ event, resolve }) => {
@@ -47,11 +47,15 @@ export const handle: Handle = async ({ event, resolve }) => {
         const { data: { session } } = await event.locals.supabase.auth.getSession();
         return session;
     };
-
-    if (event.url.pathname.startsWith('/admin')) {
-        const session = await event.locals.getSession(); 
+    const session = await event.locals.getSession(); 
+    const location = event.url.pathname
+    if (location.startsWith('/admin')) {
         if (!session) {
             throw redirect(303, '/');
+        }
+    } else if (location.startsWith('/secure')) {
+        if (session) {
+            throw redirect(303, '/admin-dashboard767d24c-a69a-448d-a025-5db944c51167')
         }
     }
     
@@ -79,7 +83,10 @@ export const handle: Handle = async ({ event, resolve }) => {
     response.headers.set('Access-Control-Allow-Methods', securityHeaders['Access-Control-Allow-Methods']);
     response.headers.set('Access-Control-Allow-Headers', securityHeaders['Access-Control-Allow-Headers']);
     response.headers.set('Vary', securityHeaders['Vary']);
-    response.headers.set('Cache-Control', securityHeaders['Cache-Control']);
-
+    if (location.startsWith('/admin') || location.startsWith('/secure')) {
+        response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    } else {
+        response.headers.set('Cache-Control', securityHeaders['Cache-Control']);
+    }
     return response;
 };

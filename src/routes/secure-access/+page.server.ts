@@ -41,6 +41,6 @@ export const actions = {
 			form.errors.password = ['Uyldig e-postadresse eller passord'];
 			return fail(401, { form });
 		}
-		throw redirect(303, '/admin-dashboard8ddd52aa-f984');
+		throw redirect(303, '/admin-dashboard767d24c-a69a-448d-a025-5db944c51167');
 	}
 };
