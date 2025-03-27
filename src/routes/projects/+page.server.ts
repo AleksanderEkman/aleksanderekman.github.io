@@ -1,6 +1,14 @@
-import { fetchProjects } from '$lib/supabaseClient.js'
+import { fetchProjects, fetchProjectImages } from '$lib/supabaseClient.js'
 
 export const load = async (event) => {
     const projects = await fetchProjects()
-    return { projects }
+    if (!projects) {
+        return null
+    }
+    const projectsWithImages = await Promise.all(projects.map(async (project) => {
+        project.images = await fetchProjectImages(project.id)
+        return project
+    }))
+    
+    return { projectsWithImages }
 }

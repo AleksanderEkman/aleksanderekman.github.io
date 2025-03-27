@@ -7,4 +7,4 @@ Hvordan oppretter du prosjekter på porteføljesiden?
 * Prosjektlisten vil dermed oppdateres automatisk
 Hvordan er nettsiden satt opp?
 * Nettsiden er laget med SvelteKit, TypeScript og PostgreSQL gjennom Supabase
-* For å se prosjekter kan du navigere til prosjekter-siden, og for å ta kontakt kan man bruke kontakt-siden ved å fylle ut navn, e-post og melding
+* For å se prosjekter kan du navigere til prosjekter-siden, og for å ta kontakt kan man bruke kontakt-siden ved å fylle ut navn, e-post og melding. Dette tar dermed i bruk EmailJS

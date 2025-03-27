@@ -21,7 +21,7 @@ const securityHeaders = {
     'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     Vary: 'Origin',
-    'Cache-Control': 'public, max-age=3600'
+    'Cache-Control': 'public, max-age=1800'
 };
 
 export const handle: Handle = async ({ event, resolve }) => {
@@ -55,7 +55,7 @@ export const handle: Handle = async ({ event, resolve }) => {
         }
     }
     
-    
+
     if (event.request.method === 'OPTIONS') {
         return new Response(null, {
             headers: {

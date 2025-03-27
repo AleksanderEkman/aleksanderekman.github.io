@@ -12,8 +12,8 @@
 	});
 </script>
 
-<section class="login-section">
-	<form method="POST" use:enhance class="login-form" enctype="multipart/form-data">
+<section class="section">
+	<form method="POST" use:enhance class="project-form" enctype="multipart/form-data">
 		<h1>Opprett prosjekt</h1>
 			<div class="input-container">
 				<label for="title">Tittel</label>
@@ -65,6 +65,7 @@
                     id="image"
                     name="image"
                     accept="image/*"
+                    multiple
                     required
                 />
                 {#if $errors.image}
@@ -78,14 +79,14 @@
 </section>
 
 <style>
-    .login-section {
+    .section {
 		z-index: 5;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
 	}
-	.login-form {
+	.project-form {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -99,6 +100,11 @@
 		z-index: 5;
 		color: white;
 	}
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
     input,textarea {
         color: black;
     }

@@ -32,12 +32,17 @@ export const actions = {
             console.error('No project ID returned');
             return fail(500);
         };
-        const file = data.get('image') as File;
-        if (file && file.size > 0) {
+        const files = data.getAll('image') as File[];
+        
+        if (files.length > 0) {
             try {
-                const filename = file.name;
-                await uploadImage('projectimgs', file, filename, project_id);
-                console.log('Image uploaded successfully:', filename);
+                await Promise.all(
+                    files.map(async (file) => {
+                    const filename = file.name;
+                    await uploadImage('projectimgs', file, filename, project_id);
+                    console.log('Image uploaded successfully:', filename);
+                    })
+                );
             } catch (error) {
                 console.error('Error uploading image:', error);
                 return fail(500, { form });
