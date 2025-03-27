@@ -1,6 +1,10 @@
 import { error, type Handle } from '@sveltejs/kit';
 import { RateLimiter } from 'sveltekit-rate-limiter/server';
+import { createSupabaseServerClient } from '@supabase/auth-helpers-sveltekit';
 import { redirect } from '@sveltejs/kit';
+import { config } from 'dotenv';
+
+config();
 
 const limiter = new RateLimiter({
 	IP: [1000, 'd'],
@@ -33,6 +37,25 @@ export const handle: Handle = async ({ event, resolve }) => {
         throw error(429, 'Too Many Requests');
     }
 
+    event.locals.supabase = createSupabaseServerClient({
+        supabaseUrl: process.env.SUPABASE_URL!,
+        supabaseKey: process.env.SUPABASE_ANON_KEY!,
+        event
+    });
+
+    event.locals.getSession = async () => {
+        const { data: { session } } = await event.locals.supabase.auth.getSession();
+        return session;
+    };
+
+    if (event.url.pathname.startsWith('/admin')) {
+        const session = await event.locals.getSession(); 
+        if (!session) {
+            throw redirect(303, '/');
+        }
+    }
+    
+    
     if (event.request.method === 'OPTIONS') {
         return new Response(null, {
             headers: {
