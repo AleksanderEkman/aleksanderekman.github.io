@@ -62,8 +62,6 @@
 	.login-section {
 		z-index: 5;
 		display: flex;
-		justify-content: center;
-		align-items: center;
 		font-size: 1.2rem;
 		flex-direction: column;
 		justify-content: center;
@@ -80,7 +78,7 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 1rem;
-		width: 100%;
+		width: 100vw;
 		max-width: 400px;
 		padding: 1rem;
 		background-color: var(--color-background);
@@ -219,7 +217,7 @@
 		transform: scale(0.95);
 	}
 	@media screen and (max-width: 1600px) {
-		.login-section {
+		.login-form {
 			margin-top: 2rem;
 			width: 90vw;
 		}
@@ -287,7 +285,7 @@
 		}
 	}
 	@media (max-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
-		.login-section {
+		.login-form {
 			width: 90%;
 			height: 100%;
 			margin-top: 0;
