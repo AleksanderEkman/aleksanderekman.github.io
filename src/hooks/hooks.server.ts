@@ -83,7 +83,7 @@ export const handle: Handle = async ({ event, resolve }) => {
     response.headers.set('Access-Control-Allow-Methods', securityHeaders['Access-Control-Allow-Methods']);
     response.headers.set('Access-Control-Allow-Headers', securityHeaders['Access-Control-Allow-Headers']);
     response.headers.set('Vary', securityHeaders['Vary']);
-    if (location.startsWith('/admin') || location.startsWith('/secure')) {
+    if (location.startsWith('/admin') || location.startsWith('/secure') || location.startsWith('/proje')) {
         response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
     } else {
         response.headers.set('Cache-Control', securityHeaders['Cache-Control']);
