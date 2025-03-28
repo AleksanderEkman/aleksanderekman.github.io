@@ -78,8 +78,8 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 1rem;
-		width: 100vw;
-		max-width: 400px;
+		width: 100%;
+		max-width: 600px;
 		padding: 1rem;
 		background-color: var(--color-background);
 		border-radius: 1rem;
@@ -194,11 +194,11 @@
 		font-weight: bold;
 		overflow: hidden;
 		font-family: var(--font-header);
-		font-size: 1.2rem;
-		padding: 0 2rem;
+		font-size: 1.1rem;
+		padding: 0 1.75rem;
 		margin: 0;
 		border-radius: 50px;
-		height: 4rem;
+		height: 3rem;
 		transition:
 			background-color 0.2s,
 			transform 0.2s;

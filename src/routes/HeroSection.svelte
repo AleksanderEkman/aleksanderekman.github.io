@@ -97,11 +97,11 @@
 	.hero-section_description {
 		text-wrap: nowrap;
 		text-align: left;
-		font-size: 1.5rem; /* Increased size for emphasis */
+		font-size: 1.5rem; 
 		margin-bottom: 2rem;
 		color: #178582;
 		font-weight: bold;
-		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add shadow for emphasis */
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); 
 		font-family: var(--font-header);
 	}
 
